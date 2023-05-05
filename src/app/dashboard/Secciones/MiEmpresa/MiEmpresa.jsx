@@ -1,5 +1,5 @@
 import React from "react";
-import InputFormularioDatos from "../../app/dashboard/DatosPersonales/InputFormularioDatos";
+import InputFormularioDatos from "../../DatosPersonales/InputFormularioDatos";
 
 export default function MiEmpresa() {
   return (

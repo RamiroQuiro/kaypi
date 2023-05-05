@@ -35,15 +35,15 @@ export default function Sidebar() {
       <div
         className={`${
           !toggle && "hidden md:flex"
-          }  mx-auto flex flex-col py-2 duration-300 items-center md:items-start justify-between gap-4 relative z-30`}
+          }  mx-auto flex flex-col py-2 duration-300 items-center md:items-start justify-between gap-5 relative z-30`}
       >
         <ButtonSidebar link={"dashboard"} icon={faDashboard} setToggle={setToggle}>
           Dashboard
         </ButtonSidebar>
         <ButtonSidebar link={"dashboard/DatosPersonales"} icon={faUserPen} setToggle={setToggle}>
-          Info User
+          Datos
         </ButtonSidebar>
-        <ButtonSidebar link={"/seccionesCompartir"} icon={faSection} setToggle={setToggle}>
+        <ButtonSidebar link={"dashboard/Secciones"} icon={faSection} setToggle={setToggle}>
           Secciones
         </ButtonSidebar>
         <ButtonSidebar link={"/diseños"} icon={faSprayCan} setToggle={setToggle}>Diseños</ButtonSidebar>

@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from "react";
-import InputFormularioDatos from "../app/dashboard/DatosPersonales/InputFormularioDatos";
+import InputFormularioDatos from "../DatosPersonales/InputFormularioDatos";
 
 export default function FormularioPrimerosLink({ dataUser }) {
   const [formEntry, setFormEntry] = useState(dataUser);

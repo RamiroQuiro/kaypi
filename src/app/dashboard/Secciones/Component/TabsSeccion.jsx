@@ -1,14 +1,14 @@
 "use client"
+import Link from "next/link";
 import React from "react";
-import { NavLink } from "react-router-dom";
 
 export default function TabsSeccion() {
   return (
     <div className="w-full px-5">
       <ul className="flex border-b border-gray-100">
         <li className="flex-1">
-          <NavLink
-            to={"/seccionesCompartir/miEmpresa"}
+          <Link
+            href={"dashboard/Secciones/MiEmpresa"}
             className={({ isActive }) =>
               isActive
                 ? " relative block p-4 border-b-2 duration-200 border-blue-500/70"
@@ -38,17 +38,17 @@ export default function TabsSeccion() {
                 Mi Empresa{" "}
               </span>
             </div>
-          </NavLink>
+          </Link>
         </li>
 
         <li className="flex-1">
-          <NavLink
+          <Link
             className={({ isActive }) =>
               isActive
                 ? " relative block p-4 border-b-2 duration-200 border-blue-500/70"
                 : "block p-4 "
             }
-            to={"/seccionesCompartir/servicio"}
+            href={"dashboard/Secciones/ProductoServicio"}
           >
             <div className="flex items-center justify-center gap-4">
               <svg
@@ -71,17 +71,17 @@ export default function TabsSeccion() {
                 Producto o Servicio{" "}
               </span>
             </div>
-          </NavLink>
+          </Link>
         </li>
 
         <li className="flex-1">
-          <NavLink
+          <Link
             className={({ isActive }) =>
               isActive
                 ? " relative block duration-200 p-4 border-b-2  border-blue-500/70"
                 : "block p-4 "
             }
-            to={"/seccionesCompartir/ubicacion"}
+            href={"dashboard/Secciones/Ubicacion"}
           >
             <div className="flex items-center justify-center gap-4">
               <svg
@@ -104,17 +104,17 @@ export default function TabsSeccion() {
                 Ubicación{" "}
               </span>
             </div>
-          </NavLink>
+          </Link>
         </li>
 
         <li className="flex-1">
-          <NavLink
+          <Link
             className={({ isActive }) =>
               isActive
                 ? " relative block p-4 border-b-2 duration-200 border-blue-500/70"
                 : "block p-4 "
             }
-            to={"/seccionesCompartir/multimedia"}
+            href={"dashboard/Secciones/Multimedia"}
           >
             <div className="flex items-center justify-center gap-4">
               <svg
@@ -137,7 +137,7 @@ export default function TabsSeccion() {
                 Video o Imagen{" "}
               </span>
             </div>
-          </NavLink>
+          </Link>
         </li>
       </ul>
     </div>
