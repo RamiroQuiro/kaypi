@@ -6,8 +6,8 @@ import {
   faUserTag,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 import React from "react";
-import { Link } from "react-router-dom";
 
 export default function NavBarTarjeta() {
   const linkDeMenu = [
@@ -38,14 +38,14 @@ export default function NavBarTarjeta() {
   ];
 
   return (
-    <div className="w-full bg-neutral-100 py-2">
+    <div className="w-full bg-neutral-100 py-2 absolute bottom-0 left-0">
       <ul className="w-full flex items-center text-xl justify-evenly text-neutral-600">
         {linkDeMenu.map((link) => (
           <li 
           className="hover:text-sky-900 hover:-translate-y-1 duration-200"
           key={link.id}
           >
-            <Link to={link.link}>
+            <Link href={link.link}>
               <FontAwesomeIcon icon={link.icon} />
             </Link>
           </li>

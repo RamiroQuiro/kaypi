@@ -1,6 +1,6 @@
-import celu from "../../../images/celuIcon.svg";
-import mailIcon from "../../../images/mailIcon.svg";
-import ubicacionIcon from "../../../images/ubicaionIcon.svg";
+import celu from "./../../../public/celuIcon.svg";
+import mailIcon from "./../../../public//mailIcon.svg";
+import ubicacionIcon from "./../../../public//ubicaionIcon.svg";
 import ContactosComponente from "./ContactosComponente";
 
 import TituloDescripcion from "./TituloDescripcion";
