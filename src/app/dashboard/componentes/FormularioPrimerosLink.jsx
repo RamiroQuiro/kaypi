@@ -19,8 +19,8 @@ export default function FormularioPrimerosLink({ dataUser }) {
       onSubmit={handleSubmit}
       className="py-5 flex flex-col item-centar justify-between"
     >
-      <div className="flex md:flex-row flex-col items-center justify-evenly md:text-center">
-        <div className="flex md:w-full items-center justify-center">
+      <div className="flex md:flex-row flex-wrap flex-col items-center justify-evenly md:text-center">
+        <div className="flex  md:w-full items-center justify-center">
           <input type="checkbox" name="llamada" id="llamada" className="peer" />
           <label
             htmlFor="llamada"

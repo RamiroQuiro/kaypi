@@ -1,5 +1,7 @@
 import React from "react";
 import CardDashboard from "./CardDashboard";
+import BackgroundDorm from "@/components/BackgroundDorm";
+import CabeceraContenedor from "@/components/CabeceraContenedor";
 
 const infoCard = [
   {
@@ -67,11 +69,11 @@ const infoCard = [
 
 export default function CardsDasboard({ children }) {
   return (
-    <div className="pt-1 pb-2 px-2 overflow-y-auto mx-auto ">
-      <span className="uppercase bg-primary-400 px-4 rounded-b-lg py-2 font-bold text-neutral-700 flex-auto w-full mb-2">
-        Click a Enlaces
-      </span>
-      <div className="flex gap-2 items-center mx-auto justify-envely my-4 w-full">
+    <BackgroundDorm>
+          <CabeceraContenedor>
+          <h2 className="text-blueGray-700 md:text-xl font-bold">  Click a Enlaces</h2>
+        </CabeceraContenedor>
+      <div className="flex gap-2 flex-wrap px-2 items-center m-auto h-full justify-envely my-4 w-full">
         {infoCard?.map((card, i) => (
           <CardDashboard
             descripcion={card.descripcion}
@@ -81,6 +83,6 @@ export default function CardsDasboard({ children }) {
           />
         ))}
       </div>
-    </div>
+    </BackgroundDorm>
   );
 }

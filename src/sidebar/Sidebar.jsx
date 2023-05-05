@@ -69,13 +69,13 @@ export default function Sidebar() {
           Secciones
         </ButtonSidebar>
         <ButtonSidebar
-          link={"/diseños"}
+          link={"dashboard/Disenio"}
           icon={faSprayCan}
           setToggle={setToggle}
         >
           Diseños
         </ButtonSidebar>
-        <ButtonSidebar link={"/crearQR"} icon={faQrcode} setToggle={setToggle}>
+        <ButtonSidebar link={"dashboard/Qr"} icon={faQrcode} setToggle={setToggle}>
           QR
         </ButtonSidebar>
         <button onClick={"logOut"}  className="flex flex-col items-center mx-auto text-center absolute bottom-14 w-full px-2 justify-center gap-4 cursor-pointer"

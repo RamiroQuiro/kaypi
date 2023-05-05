@@ -4,7 +4,6 @@ import TabsSeccion from "./Component/TabsSeccion";
 import SectionOutlet from "@/components/SectionOutlet";
 import BackgroundDorm from "@/components/BackgroundDorm";
 import CabeceraContenedor from "@/components/CabeceraContenedor";
-import FormularioPrimerosLink from "./FormularioPrimerosLink";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
