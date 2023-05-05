@@ -24,7 +24,7 @@ export default function Sidebar() {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <div className="md:w-20 md:border-r border-primary-300/50 w-screen fixed top-0 left-0 md:h-screen duration-300  md:bg-gradient-to-t md:from-primary-300 md:via-primary-200 md:to-primary-100 bg-gradient-to-r from-primary-100/80 via-primary-100/80 to-primary-200/80 backdrop-blur-sm  mx-auto md:items-center    shadow-lg md:shadow-none z-20">
+    <div className="md:w-20 md:border-r border-primary-300/50 w-screen fixed top-0 left-0 md:h-screen duration-300 md:bg-sidebar md:from-primary-300 md:via-primary-200 md:to-primary-100 bg-gradient-to-r from-primary-100/80 via-primary-100/80 to-primary-200/80 backdrop-blur-sm  mx-auto md:items-center    shadow-lg md:shadow-none z-20">
       <div
         className={`bg-gradient-to-r from-primary-100 via-primary-200 to-primary-200 w-full md:hidden cursor-pointer py-3 flex items-center justify-end pr-10 text-sky-50 text-2xl  duration-300`}
         onClick={() => setToggle(!toggle)}
