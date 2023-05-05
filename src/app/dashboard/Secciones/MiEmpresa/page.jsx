@@ -1,7 +1,8 @@
 import React from 'react'
+import MiEmpresa from './MiEmpresa'
 
-export default function MiEmpresa() {
+export default function MiEmpresaHome() {
   return (
-    <div>MiEmpresa</div>
+    <MiEmpresa/>
   )
 }

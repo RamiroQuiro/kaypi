@@ -1,7 +1,8 @@
 import React from 'react'
+import Multimedia from './Multimedia'
 
-export default function Multimedia() {
+export default function MultimediaHome() {
   return (
-    <div>Multimedia</div>
+    <Multimedia/>
   )
 }

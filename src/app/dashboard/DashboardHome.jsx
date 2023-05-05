@@ -7,6 +7,7 @@ export default function DashboardHome() {
         <InfoDasboard />
 
         <div className="w-[450px]">
+          
         </div>
     </SectionOutlet>
     );

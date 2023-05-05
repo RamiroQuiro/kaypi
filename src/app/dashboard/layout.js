@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       <body>
         <main className="relative  w-screen overflow-x-hidden">
 
-          <NavBar />
+          {/* <NavBar /> */}
 
           <Sidebar/>
           {children}
