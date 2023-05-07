@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import BotonSelectorColores from "./BotonSelectorColores";
+import MenuColores from "./MenuColores";
 export default function SelecionColores() {
   const [color, setColor] = useState("black");
   return (
@@ -13,11 +14,7 @@ export default function SelecionColores() {
       {
         color&&
         (
-            <nav className="absolute z-30 top-20   left-0 w-full bg-white/90 backdrop-blur-sm p-4 shadow-md">
-            <div className="flex px-10 justify-center   w-full h-full gap-10 items-center">
-                <input type="color" name="" id="" />
-                </div>
-                </nav>
+           <MenuColores/>
         )
       }
     </div>
