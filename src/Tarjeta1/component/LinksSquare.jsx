@@ -5,7 +5,7 @@ export default function LinksSquare() {
     <div className="gap-5  h-full mx-auto flex items-center justify-evenly ">
       <div className="w-16 h-16 rounded-lg bg-neutral-520 p-2 shadow-md delay-200 animate-[aparecer_3s]">
         <svg
-          className="w-full h-full fill-cyan-600 "
+          className="w-full h-full fill-primary-100 "
           width="36"
           height="36px"
           viewBox="0 0 24 24"
@@ -17,7 +17,7 @@ export default function LinksSquare() {
       </div>
       <div className="w-16 h-16 rounded-lg bg-neutral-50 p-2 shadow-md delay-300 animate-[aparecer_3s]">
         <svg
-          className="w-full h-full fill-cyan-600"
+          className="w-full h-full fill-primary-100"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -30,7 +30,7 @@ export default function LinksSquare() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          className="w-full h-full fill-cyan-600"
+          className="w-full h-full fill-primary-100"
           width="36"
           height="36"
         >

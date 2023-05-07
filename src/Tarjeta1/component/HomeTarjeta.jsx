@@ -6,6 +6,9 @@ import LinksSquare from "./LinksSquare";
 export default function HomeTarjeta() {
 
 const userData={
+  nombre:"Ramiro",
+  apellido:"Quiroga",
+  descripcion:"soy WebDeveloper FrontEnd",
   celular:156771992,
   email:"rama.exe.13@gmail.com",
   direccion:"El Rincon La banda",
