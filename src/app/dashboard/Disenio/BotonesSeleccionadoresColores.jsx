@@ -2,22 +2,22 @@
 import { useState } from "react";
 import { ChromePicker, SketchPicker } from "react-color";
 
-export default function BotonesSeleccionadoresColores() {
+export default function BotonesSeleccionadoresColores({name}) {
   const [background, setBackground] = useState({
     color1: "#c5c5c5",
     color2: "#e1e1e1",
   });
   const [open, setOpen] = useState(false);
 
-  const handleChangeComplete = (e, background) => {
-    setBackground({ [e.name]: background.hex });
+  const handleChangeComplete = (background) => {
+    setBackground({[name]: background.hex });
   };
   return (
     <button
-      name="color1"
+      name={name}
       onClick={() => setOpen(!open)}
       style={{
-        backgroundColor: background.color1,
+        backgroundColor: background[name],
       }}
       className={`w-8 h-8 rounded-lg cursor-pointer group  `}
     >

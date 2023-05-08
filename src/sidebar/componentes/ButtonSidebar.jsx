@@ -12,7 +12,6 @@ export default function ButtonSidebar({
   link,
 }) {
   const pathname = usePathname();
-  console.log( pathname==="/"+link);
   return (
     <Link
       onClick={() => setToggle(false)}

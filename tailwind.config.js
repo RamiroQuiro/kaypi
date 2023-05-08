@@ -29,7 +29,7 @@ module.exports = {
         borderRounded:'23% 77% 0% 100% / 0% 67% 33% 100%'
       },
       backgroundImage:{
-        sidebar: "linear-gradient(-52deg,#FF6B7599 30%,transparent 20%),linear-gradient(65deg,#5555de 40%,transparent 30%),linear-gradient(to bottom, #323479 60%,#132230 100%)",
+        sidebar: "linear-gradient(-52deg,#FF6B7599 22%,transparent 20%),linear-gradient(65deg,#5555de 35%,transparent 30%),linear-gradient(to bottom, #323479 60%,#132230 100%)",
         ruido1:'url(http://api.thumbr.it/whitenoise-361x370.png?) ',
         ruido2:'ffffffff&noise=a3d3e6&density=100&opacity=19',
         curva1:'radial-gradient(ellipse  at 45px 30px , transparent 50%, rgba(0, 255, 0, 0) 0%, #f0f000 0%)'

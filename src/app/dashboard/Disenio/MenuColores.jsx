@@ -7,8 +7,8 @@ export default function MenuColores() {
       <div className="flex px-10 justify-center   w-full h-full gap-10 items-center">
         {/*  */}
         <h2 className="font-bold text-xs">Elige los colores </h2>
-      <BotonesSeleccionadoresColores/>
-      <BotonesSeleccionadoresColores/>
+      <BotonesSeleccionadoresColores name={"color1"}/>
+      <BotonesSeleccionadoresColores name={"color2"}/>
      
       </div>
     </nav>
