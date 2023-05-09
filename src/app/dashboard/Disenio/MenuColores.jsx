@@ -1,11 +1,11 @@
 "use client"
-import { useStore } from "zustand";
+import shadow from "zustand/shallow";
 import BotonesSeleccionadoresColores from "./BotonesSeleccionadoresColores";
 import { useStoraStyle } from "@/context/DiseñoUser/contextStyles";
 
 export default function MenuColores() {
-    const size=useStoraStyle((state)=>state.sizeFont)
-    console.log(size)
+    const state=useStoraStyle((state)=>state)
+    console.log(state)
 
   return (
     <nav className="absolute z-30 top-20 animate-[sliceUp_.5s]  left-0 w-full bg-white/90 backdrop-blur-sm p-4 shadow-md">
