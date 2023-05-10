@@ -7,14 +7,7 @@ export default function HeroTarjeta() {
   }));
   return (
     <>
-      {/* <div
-    style={{
-      clipPath: "url(#trazado)",
-      backgroundImage: `linear-gradient(0deg,${color.color1} 0%,${color.color2} 80%) `,
-      //   mixBlendMode: "overlay",
-    }}
-    className="absolute top-0   left-0 w-full h-full bg-gradient-to-t  from-primary-100 to-primary-500 "
-  ></div> */}
+   
       <svg
         className={`absolute top-0   left-0 w-full drop-shadow-lg h-full`}
         version="1.2"
