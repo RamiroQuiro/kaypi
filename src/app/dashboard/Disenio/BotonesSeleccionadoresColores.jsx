@@ -3,25 +3,32 @@ import { useStoraStyle } from "@/context/DiseñoUser/contextStyles";
 import { useState } from "react";
 import { ChromePicker, SketchPicker } from "react-color";
 
-export default function BotonesSeleccionadoresColores({name}) {
- 
 
+export default function BotonesSeleccionadoresColores({name,porcentaje}) {
+ 
+  const guardarPorcentajes=useStoraStyle((state)=>state.guardarPorcentajes)
+ 
   const [open, setOpen] = useState(false);
   const guardarColores=useStoraStyle((state)=>state.guardarColores)
-
+  
   const {heroTarget}=useStoraStyle((state)=>({
     heroTarget:state.heroTarget
   }))
   
-
+  
   const handleChangeComplete = (background) => {
     guardarColores(name,background.hex)
   };
+  const onClickButton=()=>{
+    alert(!open)
+    guardarPorcentajes("porcentaje"+name,Math.trunc(porcentaje*100))
+    
+  }
 
   return (
     <button
       name={name}
-      onClick={() => setOpen(!open)}
+      onClick={onClickButton}
       style={{
         backgroundColor: heroTarget[name],
       }}

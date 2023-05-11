@@ -5,10 +5,11 @@ export default function HeroTarjeta() {
   const { heroTarget } = useStoraStyle((state) => ({
     heroTarget: state.heroTarget,
   }));
+  console.log(heroTarget)
   const styles = {
-    conic: `conic-gradient(${heroTarget.color1} 0%,${heroTarget.color2} 80%) `,
-    radial: `radial-gradient(${heroTarget.color1} 0%,${heroTarget.color2} 80%) `,
-    linear: `linear-gradient(90deg, ${heroTarget.color1} 0%,${heroTarget.color2} 80%) `,
+    conic: `conic-gradient(${heroTarget.Color1} ${heroTarget.porcentajeColor1}%,${heroTarget.Color2} ${heroTarget.porcentajeColor1}%) `,
+    radial: `radial-gradient(${heroTarget.Color1} ${heroTarget.porcentajeColor1}%,${heroTarget.Color2}  ${heroTarget.porcentajeColor2}%) `,
+    linear: `linear-gradient(90deg, ${heroTarget.Color1}  ${heroTarget.porcentajeColor1}%,${heroTarget.Color2}  ${heroTarget.porcentajeColor2}%) `,
   };
   return (
     <>

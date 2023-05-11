@@ -3,9 +3,9 @@ import { create } from "zustand";
 export const useStoraStyle = create((set) => ({
   heroTarget: {
     degradado:"linear",
-    color1: "#323479",
+    Color1: "#323479",
     porcentajeColor1:0,
-    color2: "#5353DA",
+    Color2: "#5353DA",
     porcentajeColor2:50,
   },
   

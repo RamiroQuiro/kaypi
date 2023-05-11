@@ -4,13 +4,12 @@ import useWidth from "@/hook/useWidth";
 
 export default function SelectorColores({ heroTarget }) {
   const styles = {
-    conic: `conic-gradient(${heroTarget.color1} 0%,${heroTarget.color2} 80%) `,
-    radial: `radial-gradient(${heroTarget.color1} 0%,${heroTarget.color2} 80%) `,
-    linear: `linear-gradient(90deg, ${heroTarget.color1} 0%,${heroTarget.color2} 80%) `,
+    conic: `conic-gradient(${heroTarget.Color1} ${heroTarget.porcentajeColor1}%,${heroTarget.Color2} ${heroTarget.porcentajeColor1}%) `,
+    radial: `radial-gradient(${heroTarget.Color1} ${heroTarget.porcentajeColor1}%,${heroTarget.Color2}  ${heroTarget.porcentajeColor2}%) `,
+    linear: `linear-gradient(90deg, ${heroTarget.Color1}  ${heroTarget.porcentajeColor1}%,${heroTarget.Color2}  ${heroTarget.porcentajeColor2}%) `,
   };
 
 const width=useWidth("contenedorSelector")
-console.log(7/width*100)
 
 
   return (
@@ -22,13 +21,13 @@ console.log(7/width*100)
         className="relative w-full overflow-hidden h-10">
           <ContenedorBotonesSelectoresColores
           width={width}
-          name={"color1"}
+          name={"Color1"}
           porcentajeColor={heroTarget.porcentajeColor1}
           key={1}
           />
           <ContenedorBotonesSelectoresColores
           width={width}
-            name={"color2"}
+            name={"Color2"}
             porcentajeColor={heroTarget.porcentajeColor2}
             key={2}
           />
