@@ -8,9 +8,8 @@ export default function HeroTarjeta() {
   const styles = {
     conic: `conic-gradient(${heroTarget.color1} 0%,${heroTarget.color2} 80%) `,
     radial: `radial-gradient(${heroTarget.color1} 0%,${heroTarget.color2} 80%) `,
-    lineal: `linear-gradient(90deg, ${heroTarget.color1} 0%,${heroTarget.color2} 80%) `,
+    linear: `linear-gradient(90deg, ${heroTarget.color1} 0%,${heroTarget.color2} 80%) `,
   };
-  console.log(heroTarget.degradado)
   return (
     <>
    

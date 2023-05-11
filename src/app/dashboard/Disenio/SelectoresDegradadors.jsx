@@ -1,4 +1,3 @@
-// import {  } from "../../../../public/conic.jpg";
 
 import BotonesSelectoresDegradado from "./BotonesSelectoresDegradado";
 import { useStoraStyle } from '@/context/DiseñoUser/contextStyles'

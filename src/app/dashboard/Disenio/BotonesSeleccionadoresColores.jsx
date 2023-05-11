@@ -12,10 +12,12 @@ export default function BotonesSeleccionadoresColores({name}) {
   const {heroTarget}=useStoraStyle((state)=>({
     heroTarget:state.heroTarget
   }))
+  
 
   const handleChangeComplete = (background) => {
     guardarColores(name,background.hex)
   };
+
   return (
     <button
       name={name}
@@ -23,11 +25,11 @@ export default function BotonesSeleccionadoresColores({name}) {
       style={{
         backgroundColor: heroTarget[name],
       }}
-      className={`w-8 h-8 border shadow-md rounded-lg cursor-pointer group  `}
+      className={`w-8 h-8 border  shadow-md rounded-lg cursor-pointer group  `}
     >
       {open && (
         <SketchPicker
-          className="mt-10 ml-10 animate-[aparecer_.5s]"
+          className="mt-10 ml-10 z-50 animate-[aparecer_.5s]"
         
           onChange={handleChangeComplete}
         //   onChangeComplete={handleChangeComplete}
