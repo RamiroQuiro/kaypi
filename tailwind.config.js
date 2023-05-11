@@ -29,6 +29,9 @@ module.exports = {
         borderRounded:'23% 77% 0% 100% / 0% 67% 33% 100%'
       },
       backgroundImage:{
+        gradient: "linear-gradient(95deg, #5555de,#323479)",
+        radial:"radial-gradient(#5555de, #323479)",
+        conic:"conic-gradient(#5555de , #323479 )",
         sidebar: "linear-gradient(-52deg,#FF6B7599 22%,transparent 20%),linear-gradient(65deg,#5555de 35%,transparent 30%),linear-gradient(to bottom, #323479 60%,#132230 100%)",
         ruido1:'url(http://api.thumbr.it/whitenoise-361x370.png?) ',
         ruido2:'ffffffff&noise=a3d3e6&density=100&opacity=19',

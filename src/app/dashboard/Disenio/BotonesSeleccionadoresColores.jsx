@@ -9,8 +9,8 @@ export default function BotonesSeleccionadoresColores({name}) {
   const [open, setOpen] = useState(false);
   const guardarColores=useStoraStyle((state)=>state.guardarColores)
 
-  const {color}=useStoraStyle((state)=>({
-color:state.color
+  const {heroTarget}=useStoraStyle((state)=>({
+    heroTarget:state.heroTarget
   }))
 
   const handleChangeComplete = (background) => {
@@ -21,14 +21,14 @@ color:state.color
       name={name}
       onClick={() => setOpen(!open)}
       style={{
-        backgroundColor: color[name],
+        backgroundColor: heroTarget[name],
       }}
       className={`w-8 h-8 border shadow-md rounded-lg cursor-pointer group  `}
     >
       {open && (
         <SketchPicker
           className="mt-10 ml-10 animate-[aparecer_.5s]"
-          color={color}
+        
           onChange={handleChangeComplete}
         //   onChangeComplete={handleChangeComplete}
         />

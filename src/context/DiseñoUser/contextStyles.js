@@ -1,18 +1,23 @@
 import { create } from "zustand";
 
 export const useStoraStyle = create((set) => ({
-  color: {
+  heroTarget: {
+    degradado:"linear",
     color1: "#323479",
     porcentajeColor1:0,
     color2: "#5353DA",
-    porcentajeColor2:100,
+    porcentajeColor2:50,
   },
+  
   fontFamily: "comicSans",
   sizeFont: "16px",
   imagen: "perfil",
   //funciones de actualizacion
   guardarColores:(name,hex)=> set(state=>({
-   color:{...state.color,[name]:hex}
+    heroTarget:{...state.heroTarget,[name]:hex}
+  })),
+  guardarDegradado:(degrad)=>set(state=>({
+    heroTarget:{...state.heroTarget,degradado:degrad}
   }))
   
 }));

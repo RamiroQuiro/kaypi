@@ -2,9 +2,15 @@
 import { useStoraStyle } from "@/context/DiseñoUser/contextStyles";
 
 export default function HeroTarjeta() {
-  const { color } = useStoraStyle((state) => ({
-    color: state.color,
+  const { heroTarget } = useStoraStyle((state) => ({
+    heroTarget: state.heroTarget,
   }));
+  const styles = {
+    conic: `conic-gradient(${heroTarget.color1} 0%,${heroTarget.color2} 80%) `,
+    radial: `radial-gradient(${heroTarget.color1} 0%,${heroTarget.color2} 80%) `,
+    lineal: `linear-gradient(90deg, ${heroTarget.color1} 0%,${heroTarget.color2} 80%) `,
+  };
+  console.log(heroTarget.degradado)
   return (
     <>
    
@@ -20,7 +26,7 @@ export default function HeroTarjeta() {
       </svg>
       <div
         style={{
-          backgroundImage: `linear-gradient(0deg,${color.color1} 0%,${color.color2} 80%) `,
+          backgroundImage: styles[heroTarget.degradado],
         }}
         className="absolute top-0 mix-blend-screen   left-0 w-full h-full bg-gradient-to-t  from-primary-100 to-primary-500 "
       ></div>
