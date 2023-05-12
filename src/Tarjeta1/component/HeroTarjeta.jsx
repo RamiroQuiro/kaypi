@@ -1,14 +1,15 @@
 "use client";
 import { useStoraStyle } from "@/context/DiseñoUser/contextStyles";
+import { shallow } from "zustand/shallow";
 
 export default function HeroTarjeta() {
   const { heroTarget } = useStoraStyle((state) => ({
     heroTarget: state.heroTarget,
-  }));
+  }),shallow);
   const styles = {
     conic: `conic-gradient(${heroTarget.Color1} ${heroTarget.porcentajeColor1}%,${heroTarget.Color2} ${heroTarget.porcentajeColor1}%) `,
     radial: `radial-gradient(${heroTarget.Color1} ${heroTarget.porcentajeColor1}%,${heroTarget.Color2}  ${heroTarget.porcentajeColor2}%) `,
-    linear: `linear-gradient(90deg, ${heroTarget.Color1}  ${heroTarget.porcentajeColor1}%,${heroTarget.Color2}  ${heroTarget.porcentajeColor2}%) `,
+    linear: `linear-gradient(${heroTarget.deg}deg, ${heroTarget.Color1}  ${heroTarget.porcentajeColor1}%,${heroTarget.Color2}  ${heroTarget.porcentajeColor2}%) `,
   };
   return (
     <>

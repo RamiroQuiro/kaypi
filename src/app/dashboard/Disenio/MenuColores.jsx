@@ -1,6 +1,7 @@
 import { useStoraStyle } from "@/context/DiseñoUser/contextStyles";
 import SelectorColores from "./SelectorColores";
 import SelectoresDegradadors from "./SelectoresDegradadors";
+import SelectorDeg from "./SelectorDeg";
 export default function MenuColores() {
     const { heroTarget } = useStoraStyle((state) => ({
       heroTarget: state.heroTarget,

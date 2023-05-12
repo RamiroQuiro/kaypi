@@ -7,6 +7,7 @@ export const useStoraStyle = create((set) => ({
     porcentajeColor1:0,
     Color2: "#5353DA",
     porcentajeColor2:50,
+    deg:90
   },
   
   fontFamily: "comicSans",
@@ -21,6 +22,9 @@ export const useStoraStyle = create((set) => ({
   })),
   guardarDegradado:(degrad)=>set(state=>({
     heroTarget:{...state.heroTarget,degradado:degrad}
+  })),
+  guardarDeg:(deg)=>set(state=>({
+    heroTarget:{...state.heroTarget,deg:deg}
   }))
   
 }));
