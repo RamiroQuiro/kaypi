@@ -15,10 +15,9 @@ const width=useWidth("contenedorSelector")
   return (
     <div className="relative  bg-gray-100 w-1/2 p-4 rounded shadow">
       <div className="mx-5">
-        <h2 className="font-bold text-xs">Elige los colores </h2>
         <div 
         id="contenedorSelector"
-        className="relative w-full overflow-hidden h-10">
+        className="relative w-full  h-10">
            <BotonInputColor
           width={width}
           name={"Color1"}

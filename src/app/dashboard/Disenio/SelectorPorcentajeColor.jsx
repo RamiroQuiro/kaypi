@@ -1,9 +1,10 @@
 import React from 'react'
 
-export default function SelectorPorcentajesColor({heroTarget,name}) {
+export default function SelectorPorcentajesColor({porcentajeMarcador,name}) {
+    console.log(porcentajeMarcador)
   return (
-    <div 
+    <span
      
-    className="mt-0 w-1 absolute bottom-5 cursor-nwse-resize h-20 bg-gray-500 z-[80] "></div>
+    className="mt-0 w mx-auto text-center absolute p-1 -top-7  h-5 bg-gray-600/80 backdrop-blur-sm rounded text-xs font-bold text-gray-100 z-[80] ">{porcentajeMarcador}%</span>
   )
 }
