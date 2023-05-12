@@ -13,11 +13,10 @@ const width=useWidth("contenedorSelector")
 
 
   return (
-    <div className="relative  bg-gray-100 w-1/2 p-4 rounded shadow">
-      <div className="mx-5">
+    <div className="relative  bg-gray-100 overflow-x-hidden w-1/2 p-4 rounded shadow">
         <div 
         id="contenedorSelector"
-        className="relative w-full  h-10">
+        className="relative w-full overflow- h-10">
            <BotonInputColor
           width={width}
           name={"Color1"}
@@ -35,7 +34,6 @@ const width=useWidth("contenedorSelector")
           }}
           className="h-10 w-full z-10 rounded-lg bg-gradient-to-r from-primary-100 to-primary-200"
         ></div>
-      </div>
     </div>
   );
 }
