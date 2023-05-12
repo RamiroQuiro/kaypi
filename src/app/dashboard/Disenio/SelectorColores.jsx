@@ -1,4 +1,4 @@
-"use client"
+import BotonInputColor from "./BotonInputColor";
 import ContenedorBotonesSelectoresColores from "./ContenedorBotonesSelectoresColores";
 import useWidth from "@/hook/useWidth";
 
@@ -19,16 +19,14 @@ const width=useWidth("contenedorSelector")
         <div 
         id="contenedorSelector"
         className="relative w-full overflow-hidden h-10">
-          <ContenedorBotonesSelectoresColores
+           <BotonInputColor
           width={width}
           name={"Color1"}
-          porcentajeColor={heroTarget.porcentajeColor1}
           key={1}
           />
-          <ContenedorBotonesSelectoresColores
+            <BotonInputColor
           width={width}
             name={"Color2"}
-            porcentajeColor={heroTarget.porcentajeColor2}
             key={2}
           />
         </div>
@@ -36,7 +34,7 @@ const width=useWidth("contenedorSelector")
           style={{
             backgroundImage: styles[heroTarget.degradado],
           }}
-          className="h-10 w-full rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500"
+          className="h-10 w-full z-10 rounded-lg bg-gradient-to-r from-primary-100 to-primary-200"
         ></div>
       </div>
     </div>
