@@ -10,7 +10,7 @@ export default function SelectorPaletaColores() {
   { Color1: "#FCA68A", Color2: "#FB3773" },
   { Color1: "#83D8FB", Color2: "#E1B4A1" },
   { Color1: "#F6A1FC", Color2: "#FD64FC" },
-  { Color1: "#061931", Color2: "#041936" },
+  { Color1: "#1C2928", Color2: "#194F2B" },
   { Color1: "#151112", Color2: "#251504" }
 ];
   return (

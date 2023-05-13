@@ -11,10 +11,16 @@ export default function HeroTarjeta() {
     radial: `radial-gradient(${heroTarget.Color1} ${heroTarget.porcentajeColor1}%,${heroTarget.Color2}  ${heroTarget.porcentajeColor2}%) `,
     linear: `linear-gradient(${heroTarget.deg}deg, ${heroTarget.Color1}  ${heroTarget.porcentajeColor1}%,${heroTarget.Color2}  ${heroTarget.porcentajeColor2}%) `,
   };
+  const handlemoyse=(e)=>{
+    e.target.setCapture();
+    console.log(e.target)
+  }
   return (
     <>
    
       <svg
+      onSelectCapture={handlemoyse}
+        onMouseDownCapture={handlemoyse}
         className={`absolute top-0   left-0 w-full drop-shadow-lg h-full`}
         version="1.2"
         xmlns="http://www.w3.org/2000/svg"
