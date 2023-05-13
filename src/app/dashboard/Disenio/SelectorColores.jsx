@@ -13,7 +13,7 @@ const width=useWidth("contenedorSelector")
 
 
   return (
-    <div className="relative  bg-gray-100 overflow-x-hidden w-1/2 p-4 rounded shadow">
+    <div className="relative  bg-gray-100 overflow-x-hidden w-1/3 p-4 rounded shadow">
         <div 
         id="contenedorSelector"
         className="relative w-full overflow- h-10">

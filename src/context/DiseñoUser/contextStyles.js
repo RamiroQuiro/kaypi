@@ -16,6 +16,9 @@ export const useStoraStyle = create((set) => ({
   guardarColores:(name,hex)=> set(state=>({
     heroTarget:{...state.heroTarget,[name]:hex}
   })),
+  guardarPaleta:({Color1,Color2})=> set(state=>({
+    heroTarget:{...state.heroTarget,Color1,Color2}
+  })),
   guardarPorcentajes:(name,deg)=> set(state=>({
     heroTarget:{...state.heroTarget,[name]:deg}
   })),
