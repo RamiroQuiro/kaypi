@@ -34,7 +34,7 @@ export default function SelectoresDegradadors({ heroTarget }) {
           key={3}
         />
       </div>
-      <SelectorDeg/>
+     {heroTarget?.degradado=="linear" && <SelectorDeg heroTarget={heroTarget}/>}
     </div>
   );
 }

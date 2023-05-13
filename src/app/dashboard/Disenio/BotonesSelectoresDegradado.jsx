@@ -1,6 +1,5 @@
 "use client"
 
-import useDragger from "@/hook/useDragger"
 
 export default function BotonesSelectoresDegradado({styles,onClick}) {
   return (

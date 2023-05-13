@@ -4,12 +4,11 @@ export const useStoraStyle = create((set) => ({
   heroTarget: {
     degradado:"linear",
     Color1: "#323479",
-    porcentajeColor1:0,
+    porcentajeColor1:10,
     Color2: "#5353DA",
-    porcentajeColor2:50,
+    porcentajeColor2:80,
     deg:90
   },
-  
   fontFamily: "comicSans",
   sizeFont: "16px",
   imagen: "perfil",
@@ -25,6 +24,7 @@ export const useStoraStyle = create((set) => ({
   })),
   guardarDeg:(deg)=>set(state=>({
     heroTarget:{...state.heroTarget,deg:deg}
-  }))
+  })),
+  
   
 }));
