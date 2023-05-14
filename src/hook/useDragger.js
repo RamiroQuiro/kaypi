@@ -3,7 +3,10 @@ import React, { useEffect, useRef,useState } from "react";
 function useDragger(id) {
 
   const isClicked = useRef(false);
-const [cordenadas, setCordenadas] = useState()
+const [cordenadas, setCordenadas] = useState({
+  nextX: 0,
+  nextY:0
+})
   const coords = useRef({
     startX: 0,
     startY: 0,
@@ -40,7 +43,7 @@ const [cordenadas, setCordenadas] = useState()
         const nextY = e.clientY - coords.current.startY + coords.current.lastY;
         //   target.style.top = `${nextY}px`;
         target.style.left = `${nextX}px`;
-        setCordenadas(nextX)
+        setCordenadas({nextX:nextX,nextY:nextY})
     }
     
     target.addEventListener('mousedown', onMouseDown);
