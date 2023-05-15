@@ -20,12 +20,7 @@ export default function DatosPerfil({userData}) {
       descripcion: userData?.direccion,
       icon: ubicacionIcon,
     },
-    {
-      id: 3,
-      type: "ciudad",
-      descripcion: userData?.ciudad,
-      icon: ubicacionIcon,
-    },
+  
   ];
 
   return (
