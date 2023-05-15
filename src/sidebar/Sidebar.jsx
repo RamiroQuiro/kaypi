@@ -37,7 +37,7 @@ export default function Sidebar() {
       <div
         className={`${
           !toggle && "hidden md:flex"
-        }  mx-auto flex flex-col py-2 duration-300 items-center md:items-start h-full justify-center gap-8  relative z-30 `}
+        }  mx-auto flex flex-col py-2 text-gray-100 duration-300 items-center md:items-start h-full justify-center gap-8  relative z-30 `}
       >
         <Link
           target="_blank"

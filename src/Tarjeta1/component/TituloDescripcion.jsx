@@ -8,7 +8,7 @@ export default function TituloDescripcion({ userData }) {
   }),shallow)
   console.log(heroTarget)
   return (
-    <>
+    <div>
       <h1
       style={{
         backgroundImage:`linear-gradient(75deg,${heroTarget.Color1}  70%,${heroTarget.Color2}  90%) `
@@ -16,9 +16,9 @@ export default function TituloDescripcion({ userData }) {
       className=" text-3xl font-bold text-transparent text-center bg-clip-text bg-gradient-to-r to-cyan-600 from-teal-800 animate-[sliceUp_1.5s] delay-100">
         {userData?.nombre} {userData?.apellido}
       </h1>
-      <h3 className=" text-base font-thin mt-2 text-center animate-[sliceUp_2s] delay-200">
+      <h3 className=" text-base font-medium mt-2 px-5 text-center animate-[sliceUp_2s] delay-200">
         {userData?.descripcion}
       </h3>
-    </>
+    </div>
   );
 }

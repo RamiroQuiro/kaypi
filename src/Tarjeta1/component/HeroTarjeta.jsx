@@ -16,11 +16,10 @@ export default function HeroTarjeta() {
 
 
   return (
-    <>
+    <div className="absolute top-0 left-0 w-full h-full">
    
       <svg
-          
-        className={`absolute top-0   left-0 w-full drop-shadow-lg h-full`}
+        className={` w-full drop-shadow-lg h-auto`}
         version="1.2"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1080 720"
@@ -37,6 +36,6 @@ export default function HeroTarjeta() {
         
         className="absolute top-0 mix-blend-screen   left-0 w-full h-full bg-gradient-to-t  from-primary-100 to-primary-500 "
       ></div>
-    </>
+    </div>
   );
 }

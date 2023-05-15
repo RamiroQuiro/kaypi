@@ -29,7 +29,7 @@ export default function DatosPerfil({userData}) {
   ];
 
   return (
-    <div className="w-full mx-auto  h-full mt-24">
+    <div className="w-full mx-auto flex flex-col items-center justify-evenly   h-full ">
       <TituloDescripcion userData={userData} />
       <ContactosComponente contactos={contactos} />
     </div>
