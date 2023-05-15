@@ -1,5 +1,5 @@
-import MiEmpresa from "./MiEmpresa/page";
+import ProductoServicio from "./ProductoServicio/ProductoServicio";
 
 export default function Secciones() {
-  return <MiEmpresa />;
+  return <ProductoServicio />;
 }
