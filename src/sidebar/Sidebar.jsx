@@ -30,6 +30,8 @@ export default function Sidebar() {
         onClick={() => setToggle(!toggle)}
       >
         <FontAwesomeIcon
+        width={"20"}
+        height={"20"}
           className="duration-200 animate-aparecer"
           icon={!toggle ? faBars : faBarsStaggered}
         />
