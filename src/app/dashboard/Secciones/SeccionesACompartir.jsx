@@ -14,7 +14,7 @@ export default function SeccionesACompartir() {
         <BackgroundDorm>
           <CabeceraContenedor>
             <h2 className="text-blueGray-700 text-xl font-bold">
-              Secciones a integrar en tu Tarjeta
+              Secciones de tu Tarjeta
             </h2>
           </CabeceraContenedor>
           <div className="flex-auto md:px-4 lg:px-4  pt-0">

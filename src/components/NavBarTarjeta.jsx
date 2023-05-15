@@ -17,12 +17,12 @@ export default function NavBarTarjeta() {
       icon: faUserTag,
       className: "",
     },
-    // {
-    //   id: 2,
-    //   link: "/:userName/servicios",
-    //   icon: faBriefcase,
-    //   className: "",
-    // },
+    {
+      id: 2,
+      link: "/:userName/servicios",
+      icon: faBriefcase,
+      className: "",
+    },
     {
       id: 3,
       link: "/:userName/ubicacion",
