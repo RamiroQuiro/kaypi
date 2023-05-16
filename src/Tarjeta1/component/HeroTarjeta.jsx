@@ -7,6 +7,7 @@ export default function HeroTarjeta() {
   const { heroTarget } = useStoraStyle((state) => ({
     heroTarget: state.heroTarget,
   }),shallow);
+  const activarSeccion=useStoraStyle(state=>state.activarSeccion)
   const styles = {
     conic: `conic-gradient(${heroTarget.Color1} ${heroTarget.porcentajeColor1}%,${heroTarget.Color2} ${heroTarget.porcentajeColor1}%) `,
     radial: `radial-gradient(${heroTarget.Color1} ${heroTarget.porcentajeColor1}%,${heroTarget.Color2}  ${heroTarget.porcentajeColor2}%) `,
@@ -16,7 +17,9 @@ export default function HeroTarjeta() {
 
 
   return (
-    <div className="absolute top-0 left-0 w-full h-full">
+    <div 
+    id="heroTarget"
+    className=" absolute top-0 left-0 w-full h-full">
    
       <svg
         className={` w-full drop-shadow-lg h-auto`}

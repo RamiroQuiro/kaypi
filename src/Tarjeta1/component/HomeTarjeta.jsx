@@ -1,9 +1,18 @@
-import React from "react";
+"use client"
 import DatosPerfil from "./DatosPerfil";
 import ImagenPerfil from "./ImagenPerfil";
 import LinksSquare from "./LinksSquare";
+import { useStoraStyle } from "@/context/DiseñoUser/contextStyles";
 
 export default function HomeTarjeta() {
+  const activarSeccion=useStoraStyle(state=>state.activarSeccion)
+
+
+  const selectID=(id)=>{
+    activarSeccion(id)
+  
+  }
+  
 
 const userData={
   nombre:"Ramiro",
@@ -16,13 +25,17 @@ const userData={
 }
 
   return (
-    <>
+    <div
+    onMouseDown={()=>selectID("bodyTarget")}
+    id="bodyTarget"
+    className="  z-0"
+    >
       {" "}
       <ImagenPerfil />
-      <div className="h-2/3 flex py-5 flex-col items-center justify-evenly">
+      <div className="h-full flex py-5 flex-col items-center justify-evenly">
       <DatosPerfil userData={userData}/>
       <LinksSquare />
       </div>
-    </>
+    </div>
   );
 }

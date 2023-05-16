@@ -14,9 +14,9 @@ export default function SelectorPaletaColores() {
   { Color1: "#151112", Color2: "#251504" }
 ];
   return (
-    <div className="relative  bg-gray-100 overflow-x-hidden w-2/12  p-4 rounded shadow">
+    <div className="relative  bg-gray-200 overflow-x-hidden w-full mx-auto p-4 rounded shadow">
       <h3 className="text-sm font-medium mb-4">Tipo de degradado</h3>
-      <div className="flex flex-wrap gap-2 items-center ">
+      <div className="flex flex-wrap gap-2 items-center mx-auto ">
         {
             paletaColores?.map((paleta,i)=>(
                 <PaletasColores paleta={paleta} key={i} />
