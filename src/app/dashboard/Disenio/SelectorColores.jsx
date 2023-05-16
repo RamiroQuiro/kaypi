@@ -32,7 +32,7 @@ const width=useWidth("contenedorSelector")
           style={{
             backgroundImage: styles[heroTarget.degradado],
           }}
-          className="h-10 w-full z-10 rounded-lg bg-gradient-to-r from-primary-100 to-primary-200"
+          className="h-7 w-full z-10 rounded-lg bg-gradient-to-r from-primary-100 to-primary-200"
         ></div>
     </div>
   );
