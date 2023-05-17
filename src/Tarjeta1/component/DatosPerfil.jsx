@@ -4,6 +4,7 @@ import ubicacionIcon from "./../../../public//ubicaionIcon.svg";
 import ContactosComponente from "./ContactosComponente";
 
 import TituloDescripcion from "./TituloDescripcion";
+import ContenedorLinks from "./ContenedorLinks";
 
 export default function DatosPerfil({userData}) {
   const contactos = [
@@ -21,12 +22,28 @@ export default function DatosPerfil({userData}) {
       icon: ubicacionIcon,
     },
   
+
   ];
 
+
+  const enlaces=[
+    {id:1,
+    name:"Facebook",
+      link:"facebook.com/ramirochangomoreno"
+  },
+    {id:2,
+    name:"Instagram",
+      link:"instagram.com/ramirochangomoreno"
+  },
+    {id:3,
+    name:"webSite",
+      link:"ramiroquiroga.vercel.app"
+  },
+  ]
   return (
     <div className="w-full mx-auto flex flex-col items-center justify-evenly   h-full ">
       <TituloDescripcion userData={userData} />
-      <ContactosComponente contactos={contactos} />
+      <ContenedorLinks links={enlaces}/>
     </div>
   );
 }
