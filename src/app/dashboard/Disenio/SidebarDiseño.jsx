@@ -16,9 +16,9 @@ export default function SidebarDiseño() {
     shallow
   );
 
-  console.log(activo);
   return (
-    <aside className="absolute right-0 py-5 bg-white top-20 w-1/6  shadow-lg flex flex-col items-center  justify-between">
+    <aside className="absolute right-0 py-5 bg-white top-5 pt-20 z-0 w-1/6 h-full shadow-lg ">
+     <div className="h- flex flex-col items-center  justify-between">
      <div className="w-11/12 flex items-center justify-evenly  bg-gray-200 overflow-x-hidden p-4 rounded shadow">
       <h2 htmlFor="colorSelect" className="font-bold  ">
         Colores
@@ -40,7 +40,7 @@ export default function SidebarDiseño() {
         <SelectorColores heroTarget={heroTarget} />
         <SelectoresDegradadors heroTarget={heroTarget} />
         <SelectorPaletaColores />
-      </div>
+      </div></div>
     </aside>
   );
 }

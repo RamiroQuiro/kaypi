@@ -16,8 +16,8 @@ guardarDeg(grados)
 
   return (
                <label
-                for="default-range"
-                className="flex  my-2 text-sm font-medium uppercase mx-auto items-center text-center w-full justify-center    "
+                htmlFor='porcentaje'
+                className="flex  my-2  animate-aparecerCostado  text-sm font-medium uppercase mx-auto items-center text-center w-full justify-center    "
               >
                 <span>{grados}°</span>
                 <input
