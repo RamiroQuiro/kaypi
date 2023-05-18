@@ -22,7 +22,10 @@ export const useContextDatosUser = create((set) => ({
   addEnlaces: (obj) =>
     set((state) => ({
       ...state,
-      enlaces: [...state.enlaces, ...obj],
+      enlaces: [...state.enlaces, obj],
     })),
+    removeEnlace:()=>set((state)=>({
+        ...state, enlaces: state.enlaces.slice(0, -1) 
+    }))
 }));
 
