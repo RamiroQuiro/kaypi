@@ -2,7 +2,7 @@ import React from "react";
 
 export default function BotonesLink({children}) {
   return (
-    <li className="flex  mx-auto gap-5 bg-gray-200 px-2 py-1 rounded shadow-md items-center justify-evenly ">
+    <li className="flex  mx-auto gap-5 cursor-pointer bg-gray-200 px-2 py-1 rounded shadow-md items-center justify-evenly ">
       <div className="w-6 h-6">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>

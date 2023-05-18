@@ -14,7 +14,7 @@ export default function DashboardHome() {
         <BackgroundDorm>
           <CabeceraContenedor>
             <h2 className="text-blueGray-700 md:text-xl font-bold">
-              Link a compartir en primer plano
+              Ingresa tus datos de contacto
             </h2>
           </CabeceraContenedor>
           <div className="flex-auto md:px-4 lg:px-4  pt-0">
