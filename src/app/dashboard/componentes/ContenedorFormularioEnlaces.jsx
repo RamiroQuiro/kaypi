@@ -2,6 +2,7 @@ import BackgroundDorm from '@/components/BackgroundDorm'
 import CabeceraContenedor from '@/components/CabeceraContenedor'
 import React from 'react'
 import ContenedorInputEnlaces from './ContenedorInputEnlaces'
+import ContenedoresEnlacesExistentes from './ContenedoresEnlacesExistentes'
 
 export default function ContenedorFormularioEnlaces() {
   return (
@@ -15,9 +16,7 @@ export default function ContenedorFormularioEnlaces() {
        <ContenedorInputEnlaces/>
     </div>
     <br/>
-    <div className="flex-auto md:px-4 lg:px-4  pt-10">
-
-    </div>
+    <ContenedoresEnlacesExistentes/>
   </BackgroundDorm>
   )
 }

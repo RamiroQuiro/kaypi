@@ -1,12 +1,11 @@
 import { faAdd } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
 
 export default function ContenedorInputEnlaces() {
   return (
     <div className="relative flex group pb-5 flex-col items-start justify-betwwwen w-full bg-gray-200 border-2 gap-y-3 rounded-2xl p-3 my-2">
       <div className="bg-white px-2 py-1 rounded-lg absolute hidden group-hover:flex items-center justify-between right-2 top-1 animate-[aparecer_.2s]">
-        <div className="rounded-full w-5 bg-gray-200 h-5 p-1 cursor-pointer felx items-center justify-center animate-[aparecer_.5s]">
+        <div className="rounded-full w-5 bg-gray-200 h-5 p-1 cursor-pointer flex items-center justify-center animate-[aparecer_.5s]">
           <FontAwesomeIcon
           className=" w-3 h-3 "
           icon={faAdd}
