@@ -7,7 +7,7 @@ const infoCard = [
   {
     svg: (
       <svg
-        className="w-full h-full fill-primary-200 "
+        className="w-full h-full fill-gray-200 "
         width="36"
         height="36px"
         viewBox="0 0 24 24"
@@ -25,7 +25,7 @@ const infoCard = [
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
-        className="w-full h-full fill-primary-200"
+        className="w-full h-full fill-gray-200"
         width="36"
         height="36"
       >
@@ -38,7 +38,7 @@ const infoCard = [
   {
     svg: (
       <svg
-        className="w-full h-full fill-primary-200"
+        className="w-full h-full fill-gray-200"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -53,7 +53,7 @@ const infoCard = [
   {
     svg: (
       <svg
-        className="w-full h-full fill-primary-200"
+        className="w-full h-full fill-gray-200"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -70,9 +70,9 @@ const infoCard = [
 export default function CardsDasboard({ children }) {
   return (
     <BackgroundDorm>
-          <CabeceraContenedor>
-          <h2 className="text-blueGray-700 md:text-xl font-bold">  Click a Enlaces</h2>
-        </CabeceraContenedor>
+      <CabeceraContenedor>
+        <h2 className=" md:text-xl "> Click a Enlaces</h2>
+      </CabeceraContenedor>
       <div className="flex gap-2 flex-wrap px-2 items-center m-auto h-full justify-envely my-4 w-full">
         {infoCard?.map((card, i) => (
           <CardDashboard

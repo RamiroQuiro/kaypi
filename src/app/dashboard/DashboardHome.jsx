@@ -1,27 +1,16 @@
 import SectionOutlet from "@/components/SectionOutlet";
 import InfoDasboard from "./componentes/InfoDasboard";
-import FormularioPrimerosLink from "./componentes/FormularioPrimerosLink";
-import BackgroundDorm from "@/components/BackgroundDorm";
-import CabeceraContenedor from "@/components/CabeceraContenedor";
+import ContenedorFormularioLinksCuadrados from "./componentes/ContenedorFormularioLinksCuadrados";
+import ContenedorFormularioEnlaces from "./componentes/ContenedorFormularioEnlaces";
 
 export default function DashboardHome() {
   return (
-   <SectionOutlet>
-    <div className="flex justify-between items-stretch gap-5">
-
+    <SectionOutlet>
         <InfoDasboard />
-
-        <BackgroundDorm>
-          <CabeceraContenedor>
-            <h2 className="text-blueGray-700 md:text-xl font-bold">
-              Ingresa tus datos de contacto
-            </h2>
-          </CabeceraContenedor>
-          <div className="flex-auto md:px-4 lg:px-4  pt-0">
-            <FormularioPrimerosLink />
-          </div>
-        </BackgroundDorm>
-    </div>
+        <div className="w-full flex gap-5 items-start justify-between">
+          <ContenedorFormularioEnlaces />
+          <ContenedorFormularioLinksCuadrados />
+        </div>
     </SectionOutlet>
-    );
+  );
 }
