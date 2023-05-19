@@ -1,3 +1,4 @@
+"use client"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function Input({handleChange,icon,children,type,name}) {

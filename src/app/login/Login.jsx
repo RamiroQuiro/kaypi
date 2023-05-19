@@ -1,17 +1,7 @@
-"use client";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faUser,
-  faKey,
-  faLock,
-  faQuestion,
-  faUserPlus,
-} from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-import FormularioLogin from "./componentes/FormularioLogin";
+
+import TarjetaLoginRegister from "./componentes/TarjetaLoginRegister";
 
 export default function Login() {
-  const [formulario, setFormulario] = useState({});
 
 
   return (
@@ -38,7 +28,7 @@ export default function Login() {
         ></div>
         {/* fondo formulario */}
         <div className="w-full relative h-full bg-gradient-to-t to-gray-50 via-gray-300 from-gray-400 shadow-xxxl flex items-center justify-center">
-          <FormularioLogin/>
+        <TarjetaLoginRegister/>
         </div>
       </section>
     </div>
