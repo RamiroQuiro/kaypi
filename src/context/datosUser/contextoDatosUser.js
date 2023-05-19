@@ -24,8 +24,8 @@ export const useContextDatosUser = create((set) => ({
       ...state,
       enlaces: [...state.enlaces, obj],
     })),
-    removeEnlace:()=>set((state)=>({
-        ...state, enlaces: state.enlaces.slice(0, -1) 
+    removeEnlace:(id)=>set((state)=>({
+        enlaces:state.enlaces.filter(link=>link.id!==id)
     }))
 }));
 

@@ -1,16 +1,22 @@
-import { faArchive, faRecordVinyl } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {  faTrash } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
+import BotonDeLosEnlaces from "./BotonDeLosEnlaces";
+import { useContextDatosUser } from "@/context/datosUser/contextoDatosUser";
 
 export default function ContenedorEnlace({ link }) {
+
+
+const removeEnlace=useContextDatosUser(state=>state.removeEnlace)
+
 
 
   return (
     <div className="relative flex group pb-5 flex-col items-start justify-betwwwen w-full bg-gray-200 border-2 gap-y-3 rounded-2xl p-3 my-2 animate-[aparecer_.5s]">
       <div className="bg-white px-2 py-1 rounded-lg absolute hidden group-hover:flex items-center justify-between right-2 top-1 animate-[aparecer_.2s]">
-        <div className="rounded-full w-5 bg-gray-200 h-5 p-1 cursor-pointer flex items-center justify-center animate-[aparecer_.5s]">
-          <FontAwesomeIcon className=" w-3 h-3 " icon={faArchive} />
-        </div>
+        <BotonDeLosEnlaces
+        faIcon={faTrash}
+        onClick={()=>removeEnlace(link.id)}
+        />
       </div>
       <div className="flex flex-col items-start text-sm  justify-betwwwen w-full ">
         <span className="font-bold uppercase ">{link.name}</span>
