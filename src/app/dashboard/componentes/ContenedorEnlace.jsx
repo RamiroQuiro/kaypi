@@ -24,8 +24,8 @@ const removeEnlace=useContextDatosUser(state=>state.removeEnlace)
           id="titlo"
           className="bg-transparent outline-none focus:outline-none rounded-t-lg focus:bg-white duration-300 border-b-2 w-full py-2 placeholder:px-2 focus:ring-0 border-primary-100 selection:border-none"
         >
-          {link.link}
-        </p>
+          {link.link}</p>
+
       </div>
     </div>
   );

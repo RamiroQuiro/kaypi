@@ -1,5 +1,9 @@
 const { create } = require("zustand");
 
+const uuidRandoom = () => {
+  return Math.floor(Math.random() * (1000 - 1 + 1) + 1);
+};
+
 export const useContextDatosUser = create((set) => ({
   enlaces: [
     { id: 1, name: "facebook", link: "facebook.com/ramirochangomoreno" },
@@ -22,10 +26,10 @@ export const useContextDatosUser = create((set) => ({
   addEnlaces: (obj) =>
     set((state) => ({
       ...state,
-      enlaces: [...state.enlaces, obj],
+      enlaces: [...state.enlaces, {...obj,id:uuidRandoom()}],
     })),
-    removeEnlace:(id)=>set((state)=>({
-        enlaces:state.enlaces.filter(link=>link.id!==id)
-    }))
+  removeEnlace: (id) =>
+    set((state) => ({
+      enlaces: state.enlaces.filter((link) => link.id !== id),
+    })),
 }));
-

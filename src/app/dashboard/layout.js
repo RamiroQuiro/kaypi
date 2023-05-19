@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className="overflow-x-hidden">
+      <body className="overflow-x-hidden selection:bg-primary-400">
         <main className="relative  w-screen overflow-x-hidden">
 
           {/* <NavBar /> */}
