@@ -26,7 +26,7 @@ export default function InputLogin({ handleChange }) {
       <InputFormularioDatos
       id={label.id}
         key={label.id}
-        onChange={label.handleChange}
+        onChange={label.onChange}
         type={label.type}
         name={label.name}
         faIcon={label.faIcon}

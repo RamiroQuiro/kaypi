@@ -10,9 +10,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import InputLogin from "./InputLogin";
 import InputRegister from "./InputRegister";
+import { loginEmail, registerEmail } from "@/app/api/hello/auth";
+import { toast } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export default function FormularioLogin() {
+  const router =useRouter()
   const [register, setRegister] = useState(false);
+  const [formulario, setFormulario] = useState({})
   const toogleRegister = () => {
     setRegister(!register);
   };
@@ -23,17 +28,26 @@ export default function FormularioLogin() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // const resultado=await supabaseClient.auth.signUp(formulario)
-      // navigate('/dashboard')
+      loginEmail(formulario.email,formulario.password)
+      toast.success('Bienvenido Nuevamente')
+      router.push('/dashboard')
+      
     } catch (error) {
-      console.log(error);
+      
     }
   };
 
  
 
- const handleRegister=()=>{
-
+ const handleRegister=async (e)=>{
+  e.preventDefault();
+  try {
+    await registerEmail(formulario.nombreFantasia,formulario.name,formulario.email,formulario.password)
+    router.push('/dashboard')
+    toast.success('Usuario Creado Exitosamente')
+  } catch (error) {
+    
+  }
  }
 
   return (
@@ -59,13 +73,13 @@ export default function FormularioLogin() {
             <p className="font-semibold text-sm ">Resetear clave</p>{" "}
             <FontAwesomeIcon icon={faQuestion} className="text-gray-700 h-3" />
           </div>
-          <button
+          <span
             onClick={toogleRegister}
             className="w-1/2 flex  justify-center items-center gap-1 cursor-pointer"
           >
             <p className="font-semibold text-sm"> {register?"Ingresar":"Registrarse"}</p>{" "}
             <FontAwesomeIcon icon={faUserPlus} className="text-gray-700 h-3" />
-          </button>
+          </span>
         </div>
         <button
           onClick={!register?handleSubmit:handleRegister}

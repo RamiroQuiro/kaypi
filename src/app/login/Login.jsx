@@ -1,4 +1,5 @@
 
+import { Toaster } from "react-hot-toast";
 import TarjetaLoginRegister from "./componentes/TarjetaLoginRegister";
 
 export default function Login() {
@@ -6,6 +7,7 @@ export default function Login() {
 
   return (
     <div className="w-screen h-screen bg-primary-600 flex items-center justify-center overflow-hidden ">
+      <Toaster/>
       {/* border y conbtenedor */}
       <div
         style={{
