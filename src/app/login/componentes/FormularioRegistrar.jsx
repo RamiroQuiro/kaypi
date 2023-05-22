@@ -5,12 +5,12 @@ import { faKey, faLock, faQuestion, faUser } from '@fortawesome/free-solid-svg-i
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
-export default function FormularioRegistrar() {
+export default function FormularioRegistrar({toogleRegister}) {
 
   const handleChange=(e)=>{
 
   }
-    const inputLabel = [
+    const inputRegister = [
         {
           id: 1,
           name: "userName",
@@ -47,7 +47,7 @@ export default function FormularioRegistrar() {
 
      
   return (
-    <form className="px-10 py-5  w-10/12 flex flex-col justify-between items-center h-full  ">
+    <form className="px-10 py-5  w-10/12 flex flex-col justify-between items-center h-full animate-[aparecer_.5s] ">
     <div className="bg-gray-700 rounded-full w-20  left-0 bottom-3 h-20  flex items-center justify-center mx-auto">
       <FontAwesomeIcon
         icon={faKey}
@@ -55,7 +55,7 @@ export default function FormularioRegistrar() {
       />
     </div>
     <h2>Bienvenidos a Kaypi</h2>
-    {inputLabel?.map((label) => (
+    {inputRegister?.map((label) => (
       <InputFormularioDatos
         key={label.id}
         onChange={label.handleChange}
@@ -73,9 +73,7 @@ export default function FormularioRegistrar() {
         <FontAwesomeIcon icon={faQuestion} className="text-gray-700 h-3" />
       </div>
       <div
-        onClick={() => {
-          //   navigate("/registrar");
-        }}
+        onClick={toogleRegister}
         className="w-1/2 flex  justify-center items-center gap-1 cursor-pointer"
       >
         <p className="font-semibold text-sm">Login</p>{" "}

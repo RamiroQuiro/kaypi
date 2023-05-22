@@ -9,10 +9,11 @@ export default function InputFormularioDatos({
   name,
   onChange,
   faIcon,
+  id
 }) {
   return (
    
-    <div className="flex flex-col  items-start justify-between w-full relative my-2">
+    <div className={`flex flex-col  items-start justify-between w-full relative my-2 animate-[aparecer_${id/2}s]`}>
 
       
        <input 

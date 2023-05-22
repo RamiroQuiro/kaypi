@@ -1,11 +1,8 @@
-"use client"
 import FormularioLogin from './FormularioLogin'
-import { useState } from "react";
-import FormularioRegistrar from './FormularioRegistrar';
 
 
 export default function TarjetaLoginRegister() {
-const [register,setRegister]=useState(true)
+
   return (
     <section
     className="bg-white h-[480px] w-[400px]  relative flex items-center justify-center before:content-[' '] before:absolute before:top-0 before:left-0 before:w-6 before:h-full before:bg-gradient-to-t before:to-gray-50 before:from-gray-500 before:backdrop-blur-sm before:z-10
@@ -22,12 +19,10 @@ const [register,setRegister]=useState(true)
     ></div>
     {/* fondo formulario */}
     <div className="w-full relative h-full bg-gradient-to-t to-gray-50 via-gray-300 from-gray-400 shadow-xxxl flex items-center justify-center">
-      {
-        !register?
-        <FormularioLogin/>
-      :
-      <FormularioRegistrar/>
-      }
+      
+        <FormularioLogin />
+    
+      
     </div>
   </section>
   )
