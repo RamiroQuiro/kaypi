@@ -4,7 +4,6 @@ import { usePathname } from 'next/navigation'
 
 export default function BotonesTabsSecciones({path,children,link}) {
     const pathname=usePathname()
-console.log(pathname , link)
 
   return (
 <li className="flex-1">

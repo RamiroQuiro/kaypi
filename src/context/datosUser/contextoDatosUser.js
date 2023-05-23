@@ -1,7 +1,6 @@
-import { auth } from "@/app/api/hello/firabase";
-import { onAuthStateChanged } from "firebase/auth";
 
-const { create } = require("zustand");
+import { create } from "zustand";
+
 
 const uuidRandoom = () => {
   return Math.floor(Math.random() * (1000 - 1 + 1) + 1);
