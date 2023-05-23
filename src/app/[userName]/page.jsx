@@ -1,8 +1,8 @@
-import SectionTarjetaSola from '@/Tarjeta1/component/SectionTarjetaSola'
+import Home from '@/Tarjeta1/Home'
 
 export default function UserName() {
  
   return (
-    <div><SectionTarjetaSola/></div>
+    <Home/>
   )
 }

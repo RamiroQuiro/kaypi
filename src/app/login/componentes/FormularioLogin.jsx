@@ -1,25 +1,23 @@
 "use client";
 import {
   faKey,
-  faLock,
   faQuestion,
-  faUser,
   faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import InputLogin from "./InputLogin";
 import InputRegister from "./InputRegister";
-import { loginEmail, registerEmail } from "@/app/api/hello/auth";
+import { loginEmail, registerEmail } from "@/api/hello/auth";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { useContextDatosUser } from "@/context/datosUser/contextoDatosUser";
 
 export default function FormularioLogin() {
-  const activarUser=useContextDatosUser(state=>state.activarUser)
-  const router =useRouter()
+  const activarUser = useContextDatosUser((state) => state.activarUser);
+  const router = useRouter();
   const [register, setRegister] = useState(false);
-  const [formulario, setFormulario] = useState({})
+  const [formulario, setFormulario] = useState({});
   const toogleRegister = () => {
     setRegister(!register);
   };
@@ -29,29 +27,31 @@ export default function FormularioLogin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-      loginEmail(formulario.email,formulario.password).then((user)=>{
-        activarUser(user)
-      }).then(()=>{
-        toast.success('Bienvenido Nuevamente')
-        router.push('/dashboard')
-
+    loginEmail(formulario.email, formulario.password)
+      .then((user) => {
+        activarUser(user);
       })
-      
+      .then(() => {
+        toast.success("Bienvenido Nuevamente");
+        router.push("/dashboard");
+      });
   };
 
-  
-
-  const handleRegister=async (e)=>{
-  e.preventDefault();
-  try {
-    await registerEmail(formulario.nombreFantasia,formulario.name,formulario.email,formulario.password)
-    router.push('/dashboard')
-    toast.success('Usuario Creado Exitosamente')
-  } catch (error) {
-    
-   console.log(error)
-  }
- }
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    try {
+      await registerEmail(
+        formulario.nombreFantasia,
+        formulario.name,
+        formulario.email,
+        formulario.password
+      );
+      router.push("/dashboard");
+      toast.success("Usuario Creado Exitosamente");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -62,14 +62,15 @@ export default function FormularioLogin() {
             className="text-stone-50 w-10 h-10 flex items-center justify-center mx-auto"
           />
         </div>
-        <h2 className="text-lg w-full text-center font-medium my-2">Bienvenidos a Kaipy!</h2>
+        <h2 className="text-lg w-full text-center font-medium my-2">
+          Bienvenidos a Kaipy!
+        </h2>
         <div className=" h-full flex-grow">
-        {!register
-          ? 
-          <InputLogin handleChange={handleChange}/>
-          :
-          <InputRegister handleChange={handleChange}/>
-        }
+          {!register ? (
+            <InputLogin handleChange={handleChange} />
+          ) : (
+            <InputRegister handleChange={handleChange} />
+          )}
         </div>
         <div className="flex w-full  justify-center items-center gap-4">
           <div className="w-1/2 flex justify-center items-center gap-1 cursor-pointer">
@@ -80,15 +81,18 @@ export default function FormularioLogin() {
             onClick={toogleRegister}
             className="w-1/2 flex  justify-center items-center gap-1 cursor-pointer"
           >
-            <p className="font-semibold text-sm"> {register?"Ingresar":"Registrarse"}</p>{" "}
+            <p className="font-semibold text-sm">
+              {" "}
+              {register ? "Ingresar" : "Registrarse"}
+            </p>{" "}
             <FontAwesomeIcon icon={faUserPlus} className="text-gray-700 h-3" />
           </span>
         </div>
         <button
-          onClick={!register?handleSubmit:handleRegister}
+          onClick={!register ? handleSubmit : handleRegister}
           className="bg-gray-700 rounded-sm px-3 mt-5 py-1.5 text-gray-50 font-semibold"
         >
-          {!register?"Ingresar":"Registrar"}
+          {!register ? "Ingresar" : "Registrar"}
         </button>
       </form>
     </>

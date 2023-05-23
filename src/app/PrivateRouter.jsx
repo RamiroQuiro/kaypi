@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 
 export default function PrivateRouter({ children }) {
   const router = useRouter();
-  const activarUser = useContextDatosUser((state) => state.activarUser);
   const { userActivo } = useContextDatosUser((state) => ({
     userActivo: state.userActivo,
   }));

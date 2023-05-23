@@ -1,4 +1,4 @@
-import { logout } from '@/app/api/hello/auth'
+import { logout } from '@/api/hello/auth'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 
