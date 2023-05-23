@@ -4,6 +4,7 @@ import ContenedorFormularioLinksCuadrados from "./componentes/ContenedorFormular
 import ContenedorFormularioEnlaces from "./componentes/ContenedorFormularioEnlaces";
 
 export default function DashboardHome() {
+ 
   return (
     <SectionOutlet>
         <InfoDasboard />

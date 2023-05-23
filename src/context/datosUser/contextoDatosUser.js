@@ -1,10 +1,16 @@
+import { auth } from "@/app/api/hello/firabase";
+import { onAuthStateChanged } from "firebase/auth";
+
 const { create } = require("zustand");
 
 const uuidRandoom = () => {
   return Math.floor(Math.random() * (1000 - 1 + 1) + 1);
 };
 
-export const useContextDatosUser = create((set) => ({
+
+
+export const useContextDatosUser = create((set) => ({ 
+userActivo:false,
   enlaces: [
     { id: 1, name: "facebook", link: "facebook.com/ramirochangomoreno" },
   ],
@@ -31,5 +37,10 @@ export const useContextDatosUser = create((set) => ({
   removeEnlace: (id) =>
     set((state) => ({
       enlaces: state.enlaces.filter((link) => link.id !== id),
+    })),
+  activarUser: (id) =>
+    set((state) => ({
+      ...state,
+    userActivo:id,
     })),
 }));

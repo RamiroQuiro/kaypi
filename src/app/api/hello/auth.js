@@ -1,6 +1,6 @@
 import { doc, setDoc } from "firebase/firestore";
 
-const { signInWithEmailAndPassword, createUserWithEmailAndPassword } = require("firebase/auth");
+const { signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut } = require("firebase/auth");
 const { auth, db } = require("./firabase");
 
 const registerEmail= async (nombreFantasia, name,email, pass)=>{
@@ -25,15 +25,19 @@ const registerEmail= async (nombreFantasia, name,email, pass)=>{
 }
 
 const loginEmail=async (email,pass)=>{
-     signInWithEmailAndPassword(auth,email,pass)
+const userUID=await signInWithEmailAndPassword(auth,email,pass)
     .then((userCredential)=>{
         const user=userCredential.user
-        console.log(user)
+        return user
     })
     .catch((error)=>{
         const errorCode=error.code
         const eroorMessenge=error.message
     })
+    return userUID
 }
 
-export {loginEmail,registerEmail}
+const logout=async()=>{
+    await signOut(auth)
+}
+export {loginEmail,registerEmail,logout}

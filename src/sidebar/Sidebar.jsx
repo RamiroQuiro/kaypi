@@ -20,6 +20,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import ButtonSidebar from "./componentes/ButtonSidebar";
 import Link from "next/link";
+import BotonLogOut from "./componentes/BotonLogOut";
 export default function Sidebar() {
   const [toggle, setToggle] = useState(false);
 
@@ -30,8 +31,8 @@ export default function Sidebar() {
         onClick={() => setToggle(!toggle)}
       >
         <FontAwesomeIcon
-        width={"20"}
-        height={"20"}
+          width={"20"}
+          height={"20"}
           className="duration-200 animate-aparecer"
           icon={!toggle ? faBars : faBarsStaggered}
         />
@@ -39,14 +40,16 @@ export default function Sidebar() {
       <div
         className={`${
           !toggle && "hidden md:flex"
-        }  mx-auto flex flex-col py-2 text-gray-100 duration-300 items-center md:items-start h-full justify-center gap-8  relative z-30 `}
+        }  mx-auto flex flex-col py-2 text-gray-100 duration-300 items-center md:items-start h-full justify-center gap-6  relative z-30 `}
       >
         <Link
           target="_blank"
           href={`#`}
-          className="flex flex-col items-center mx-auto text-center absolute top-10 w-full px-2 justify-center gap-4 cursor-pointer"
+          className="flex flex-col items-center mx-auto text-center absolute top-10 w-full px-2 justify-center gap-2 cursor-pointer"
         >
-          <span className="w-full mx-auto text-xs text-center font-thin">KAYPI DESIGN</span>
+          <span className="w-full mx-auto text-xs text-center font-thin">
+            KAYPI DESIGN
+          </span>
           <FontAwesomeIcon icon={faIdCard} className=" text-3xl" />
         </Link>
         <ButtonSidebar
@@ -77,11 +80,14 @@ export default function Sidebar() {
         >
           Diseños
         </ButtonSidebar>
-        <ButtonSidebar link={"dashboard/Qr"} icon={faQrcode} setToggle={setToggle}>
+        <ButtonSidebar
+          link={"dashboard/Qr"}
+          icon={faQrcode}
+          setToggle={setToggle}
+        >
           QR
         </ButtonSidebar>
-        <button onClick={"logOut"}  className="flex flex-col items-center mx-auto text-center absolute bottom-14 w-full px-2 justify-center gap-4 cursor-pointer"
-        >LogOut</button>
+       <BotonLogOut/>
       </div>
     </div>
   );

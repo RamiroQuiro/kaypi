@@ -13,8 +13,10 @@ import InputRegister from "./InputRegister";
 import { loginEmail, registerEmail } from "@/app/api/hello/auth";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { useContextDatosUser } from "@/context/datosUser/contextoDatosUser";
 
 export default function FormularioLogin() {
+  const activarUser=useContextDatosUser(state=>state.activarUser)
   const router =useRouter()
   const [register, setRegister] = useState(false);
   const [formulario, setFormulario] = useState({})
@@ -27,19 +29,19 @@ export default function FormularioLogin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      loginEmail(formulario.email,formulario.password)
-      toast.success('Bienvenido Nuevamente')
-      router.push('/dashboard')
+      loginEmail(formulario.email,formulario.password).then((user)=>{
+        activarUser(user)
+      }).then(()=>{
+        toast.success('Bienvenido Nuevamente')
+        router.push('/dashboard')
+
+      })
       
-    } catch (error) {
-      
-    }
   };
 
- 
+  
 
- const handleRegister=async (e)=>{
+  const handleRegister=async (e)=>{
   e.preventDefault();
   try {
     await registerEmail(formulario.nombreFantasia,formulario.name,formulario.email,formulario.password)
@@ -47,6 +49,7 @@ export default function FormularioLogin() {
     toast.success('Usuario Creado Exitosamente')
   } catch (error) {
     
+   console.log(error)
   }
  }
 
