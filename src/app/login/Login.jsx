@@ -6,7 +6,7 @@ export default function Login() {
 
 
   return (
-    <div className="w-screen h-screen bg-primary-600 flex items-center justify-center overflow-hidden ">
+    <div className="w-screen h-screen bg-primary-100/80 flex items-center justify-center overflow-hidden ">
       <Toaster/>
       {/* border y conbtenedor */}
       <div

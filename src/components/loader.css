@@ -1,0 +1,29 @@
+.custom-loader {
+  width: 50px;
+  height: 100px;
+  display: grid;
+  background:
+    linear-gradient(#323479 0 0) top/100% 4px,
+    radial-gradient(farthest-side at  top, #0000 calc(100% - 4px),#323479 calc(100% - 2px) ,#0000) top,
+    linear-gradient(#323479 0 0) bottom/100% 2px,
+    radial-gradient(farthest-side at  bottom, #0000 calc(100% - 4px),#323479 calc(100% - 2px) ,#0000) bottom;
+  background-size: 100% 2px,100% 50%; 
+  background-repeat: no-repeat;
+  animation: h8 8s infinite linear;
+}
+.custom-loader::before,
+.custom-loader::after {
+  content: "";
+  grid-area: 1/1;
+  background: inherit;
+  border:inherit;
+  animation: inherit;
+}
+
+.custom-loader::after {
+  animation-duration: 4s;
+}
+
+@keyframes h8 {
+  100% {transform: rotate(1turn)}
+}

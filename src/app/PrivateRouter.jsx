@@ -1,4 +1,5 @@
 "use client";
+import LoaderCss from "@/components/LoaderCss";
 import { useContextDatosUser } from "@/context/datosUser/contextoDatosUser";
 import { useRouter } from "next/navigation";
 
@@ -26,7 +27,6 @@ const PrivateRouter = ({ children }) => {
          userActivo: state.userActivo,
        }));
   const router = useRouter();
-  const isAuthenticated = // check if the user is authenticated
 
   useEffect(() => {
     if (!userActivo) {
@@ -34,7 +34,9 @@ const PrivateRouter = ({ children }) => {
     }
   }, [userActivo]);
 
-  return userActivo ? children : null;
+  return userActivo ? children : (
+       <LoaderCss/>
+       );
 };
 
 export default PrivateRouter;
