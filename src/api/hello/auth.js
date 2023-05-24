@@ -1,4 +1,5 @@
 import { doc, setDoc } from "firebase/firestore";
+import { toast } from "react-hot-toast";
 
 const { signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut } = require("firebase/auth");
 const { auth, db } = require("./firabase");
@@ -25,16 +26,19 @@ const registerEmail= async (nombreFantasia, name,email, pass)=>{
 }
 
 const loginEmail=async (email,pass)=>{
-const userUID=await signInWithEmailAndPassword(auth,email,pass)
+const userUID= signInWithEmailAndPassword(auth,email,pass)
     .then((userCredential)=>{
         const user=userCredential.user
+        toast.success('Bienvenido Nuevamente')
         return user
     })
     .catch((error)=>{
+        toast.error('Intentalo Nuevamente')
         const errorCode=error.code
+        console.log(errorCode)
         const eroorMessenge=error.message
     })
-    return userUID
+   return  userUID
 }
 
 const logout=async()=>{

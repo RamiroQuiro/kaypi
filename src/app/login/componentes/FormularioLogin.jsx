@@ -27,14 +27,14 @@ export default function FormularioLogin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    loginEmail(formulario.email, formulario.password)
-      .then((user) => {
-        activarUser(user);
-      })
-      .then(() => {
-        toast.success("Bienvenido Nuevamente");
-        router.push("/dashboard");
-      });
+    await loginEmail(formulario.email, formulario.password).then((user) => {
+      if(!user)return
+      if(user){
+
+        activarUser(user)
+        router.replace("/dashboard");
+      }
+    });
   };
 
   const handleRegister = async (e) => {
@@ -65,7 +65,7 @@ export default function FormularioLogin() {
         <h2 className="text-lg w-full text-center font-medium my-2">
           Bienvenidos a Kaipy!
         </h2>
-        <div className=" h-full flex-grow">
+        <div className=" h-full flex-grow flex flex-col gap-2">
           {!register ? (
             <InputLogin handleChange={handleChange} />
           ) : (

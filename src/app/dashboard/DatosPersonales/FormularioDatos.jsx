@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { toast, Toaster } from "react-hot-toast";
 import ButtonGuardar from "../../../components/ButtonGuardar";
-import InputFormularioDatos from "./InputFormularioDatos";
+import InputFormularioDatos from "../../../components/InputFormularioDatos";
 
 export default function FormularioDatos({dateUser}) {
   const [formEntry, setFormEntry] = useState(dateUser);
@@ -27,7 +27,7 @@ export default function FormularioDatos({dateUser}) {
           type={"text"}
           placeholder="Ramiro Code"
         >
-          Nombre de Negocio | Razón Social | Nombre de Fantasía
+          Nombre de Usuario | Nombre de Fantasía
         </InputFormularioDatos>
         <InputFormularioDatos
           value={formEntry?.name}

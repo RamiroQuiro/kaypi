@@ -1,5 +1,5 @@
-import InputFormularioDatos from "@/app/dashboard/DatosPersonales/InputFormularioDatos";
-import { faLock, faUser } from "@fortawesome/free-solid-svg-icons";
+import InputFormularioDatos from "@/components/InputFormularioDatos";
+import { faLock, faMailBulk, faUser } from "@fortawesome/free-solid-svg-icons";
 
 export default function InputLogin({ handleChange }) {
   const inputLogin = [
@@ -8,7 +8,7 @@ export default function InputLogin({ handleChange }) {
       name: "email",
       type: "email",
       onChange: handleChange,
-      faIcon: faUser,
+      faIcon: faMailBulk,
       children: "userMail@email.com",
     },
     {

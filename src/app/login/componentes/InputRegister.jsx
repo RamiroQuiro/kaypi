@@ -1,5 +1,5 @@
-import InputFormularioDatos from '@/app/dashboard/DatosPersonales/InputFormularioDatos';
-import { faLock, faUser } from '@fortawesome/free-solid-svg-icons';
+import InputFormularioDatos from '@/components/InputFormularioDatos';
+import { faLock, faMailBulk, faUser, faUserAlt, faUserAltSlash, faUserAstronaut, faUserCheck, faUserCog } from '@fortawesome/free-solid-svg-icons';
 import React from 'react'
 
 export default function InputRegister({handleChange}) {
@@ -17,7 +17,7 @@ export default function InputRegister({handleChange}) {
           name: "nombreFantasia",
           type: "text",
           onChange: handleChange,
-          faIcon: faUser,
+          faIcon: faUserAstronaut,
           children: "Razon Social o Nombre de Fantasia",
         },
         {
@@ -25,7 +25,7 @@ export default function InputRegister({handleChange}) {
           name: "email",
           type: "email",
           onChange: handleChange,
-          faIcon: faUser,
+          faIcon: faMailBulk,
           children: "userMail@email.com",
         },
         {

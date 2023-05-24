@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { faArrowsAltH, faMailBulk, faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
-import InputFormularioDatos from "../DatosPersonales/InputFormularioDatos";
+import InputFormularioDatos from "../../../components/InputFormularioDatos";
 
 export default function FormularioPrimerosLink({ dataUser }) {
   const [formEntry, setFormEntry] = useState(dataUser);
