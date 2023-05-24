@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body className="overflow-x-hidden selection:bg-primary-400">
-        {/* <PrivateRouter> */}
+        <PrivateRouter>
         <main className="relative  w-screen overflow-x-hidden">
 
 
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
         </main>
-        {/* </PrivateRouter> */}
+         </PrivateRouter> 
       </body>
     </html>
   );

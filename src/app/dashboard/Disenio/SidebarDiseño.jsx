@@ -24,7 +24,7 @@ export default function SidebarDiseño() {
         Colores
       </h2>
       <svg
-          class="w-6 h-6 fill-current"
+          className="w-6 h-6 "
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
