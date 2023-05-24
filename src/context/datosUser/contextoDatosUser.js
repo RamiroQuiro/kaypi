@@ -10,6 +10,7 @@ const uuidRandoom = () => {
 
 export const useContextDatosUser = create((set) => ({ 
 userActivo:false,
+userData:false,
   enlaces: [
     { id: 1, name: "facebook", link: "facebook.com/ramirochangomoreno" },
   ],
@@ -41,5 +42,10 @@ userActivo:false,
     set((state) => ({
       ...state,
     userActivo:id,
+    })),
+  userDataContext: (data) =>
+    set((state) => ({
+      ...state,
+      userData:data,
     })),
 }));

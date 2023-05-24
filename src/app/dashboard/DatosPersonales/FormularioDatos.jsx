@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from "react";
-import { toast, Toaster } from "react-hot-toast";
+import {  Toaster } from "react-hot-toast";
 import ButtonGuardar from "../../../components/ButtonGuardar";
 import InputFormularioDatos from "../../../components/InputFormularioDatos";
 

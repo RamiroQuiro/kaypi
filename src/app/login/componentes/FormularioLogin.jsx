@@ -12,9 +12,11 @@ import { loginEmail, registerEmail } from "@/api/hello/auth";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { useContextDatosUser } from "@/context/datosUser/contextoDatosUser";
+import { traerDataUser } from "@/api/hello/firestore";
 
 export default function FormularioLogin() {
   const activarUser = useContextDatosUser((state) => state.activarUser);
+  const userDataContext = useContextDatosUser((state) => state.userDataContext);
   const router = useRouter();
   const [register, setRegister] = useState(false);
   const [formulario, setFormulario] = useState({});
@@ -30,10 +32,15 @@ export default function FormularioLogin() {
     await loginEmail(formulario.email, formulario.password).then((user) => {
       if(!user)return
       if(user){
-
         activarUser(user)
         router.replace("/dashboard");
+        return user.uid
       }
+    }).then(async(uid)=>{
+      const resp=await traerDataUser(uid)
+      return resp
+    }).then((resp)=>{
+      userDataContext(resp)
     });
   };
 
