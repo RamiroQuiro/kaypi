@@ -44,7 +44,6 @@ export default function FormularioLogin() {
         const docRef = doc(db, `usuarios/${uid}`);
         const docData = await getDoc(docRef);
         console.log(docData.data());
-
         return docData.data();
       })
       .then((resp) => {

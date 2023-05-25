@@ -1,13 +1,28 @@
-const { setDoc, collection, doc, getDoc } = require("firebase/firestore");
-const { db, auth } = require("./firabase");
 
+import { arrayRemove, arrayUnion, doc,getDoc, setDoc, updateDoc } from "firebase/firestore";
+import { db } from "./firabase";
 
 const traerDataUser=async(uid)=>{
     const docRef=doc(db,`usuarios/${uid}`)
     const docData=await getDoc(docRef);
-
+    
     return docData.data()
 }
 
 
-export {traerDataUser}
+// enlaces
+//cargar enlaces
+
+const addEnlacesFirestore=async (uid,link)=>{
+    const docRef=doc(db,`usuarios/${uid}`)
+    await updateDoc(docRef, {
+        enlaces: arrayUnion(link)
+})}
+const removeEnlacesFirestore=async (uid,link)=>{
+    const docRef=doc(db,`usuarios/${uid}`)
+    await updateDoc(docRef, {
+        enlaces: arrayRemove(link)
+})}
+
+
+export {traerDataUser,addEnlacesFirestore,removeEnlacesFirestore}

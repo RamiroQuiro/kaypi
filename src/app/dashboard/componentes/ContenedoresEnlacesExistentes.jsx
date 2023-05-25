@@ -9,7 +9,7 @@ export default function ContenedoresEnlacesExistentes() {
     enlaces: state.enlaces,
   }),shallow);
   return (
-    <div className="flex-auto md:px-4 lg:px-4  pt-10">
+    <div className="flex-auto md:px-4 lg:px-4  mx-auto w-full flex flex-col items-center justify-between pt-10">
       {enlaces.map((link) => (
         <ContenedorEnlace
         key={link.id}

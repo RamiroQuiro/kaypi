@@ -8,11 +8,11 @@ export default function ContenedorFormularioEnlaces() {
   return (
     <BackgroundDorm>
       <CabeceraContenedor>
-        <h2 className="text-blueGray-700 md:text-xl ">
-          Ingresa tus datos de contacto
+        <h2 className=" ">
+         Tus Enlaces Directos
         </h2>
       </CabeceraContenedor>
-      <div className="flex-auto md:px-4 lg:px-4  pt-10">
+      <div className="flex-auto w-11/12 md:w-full md:px-4 lg:px-4 mx-auto  pt-12">
         <ContenedorInputEnlaces />
       </div>
       <br />

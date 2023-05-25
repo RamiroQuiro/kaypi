@@ -71,7 +71,7 @@ export default function CardsDasboard({ children }) {
   return (
     <BackgroundDorm>
       <CabeceraContenedor>
-        <h2 className=" md:text-xl "> Click a Enlaces</h2>
+        <h2 className=" "> Click a Enlaces</h2>
       </CabeceraContenedor>
       <div className="flex gap-2 flex-wrap px-2 items-center m-auto h-full justify-envely my-4 w-full">
         {infoCard?.map((card, i) => (
