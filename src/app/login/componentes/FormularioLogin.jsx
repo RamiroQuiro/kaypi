@@ -13,6 +13,8 @@ import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { useContextDatosUser } from "@/context/datosUser/contextoDatosUser";
 import { traerDataUser } from "@/api/hello/firestore";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "@/api/hello/firabase";
 
 export default function FormularioLogin() {
   const activarUser = useContextDatosUser((state) => state.activarUser);
@@ -29,19 +31,25 @@ export default function FormularioLogin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await loginEmail(formulario.email, formulario.password).then((user) => {
-      if(!user)return
-      if(user){
-        activarUser(user)
-        router.replace("/dashboard");
-        return user.uid
-      }
-    }).then(async(uid)=>{
-      const resp=await traerDataUser(uid)
-      return resp
-    }).then((resp)=>{
-      userDataContext(resp)
-    });
+    await loginEmail(formulario.email, formulario.password)
+      .then((user) => {
+        if (!user) return;
+        if (user) {
+          activarUser(user);
+          router.replace("/dashboard");
+          return user.uid;
+        }
+      })
+      .then(async (uid) => {
+        const docRef = doc(db, `usuarios/${uid}`);
+        const docData = await getDoc(docRef);
+        console.log(docData.data());
+
+        return docData.data();
+      })
+      .then((resp) => {
+        userDataContext(resp);
+      });
   };
 
   const handleRegister = async (e) => {

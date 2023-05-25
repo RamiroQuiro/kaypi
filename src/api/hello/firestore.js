@@ -3,8 +3,10 @@ const { db, auth } = require("./firabase");
 
 
 const traerDataUser=async(uid)=>{
-const resp=await getDoc(doc(db,`usuarios/${uid}`))
-return resp.data()
+    const docRef=doc(db,`usuarios/${uid}`)
+    const docData=await getDoc(docRef);
+
+    return docData.data()
 }
 
 
