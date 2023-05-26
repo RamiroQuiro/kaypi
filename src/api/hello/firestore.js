@@ -18,10 +18,10 @@ const addEnlacesFirestore=async (uid,link)=>{
     await updateDoc(docRef, {
         enlaces: arrayUnion(link)
 })}
-const removeEnlacesFirestore=async (uid,link)=>{
+const removeEnlacesFirestore=async (uid,newArray)=>{
     const docRef=doc(db,`usuarios/${uid}`)
     await updateDoc(docRef, {
-        enlaces: arrayRemove(link)
+        enlaces: newArray
 })}
 
 

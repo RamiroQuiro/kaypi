@@ -1,21 +1,18 @@
-
-import { addEnlacesFirestore } from "@/api/hello/firestore";
-import uuid from "react-uuid";
+import {
+  addEnlacesFirestore,
+  removeEnlacesFirestore,
+} from "@/api/hello/firestore";
 import { create } from "zustand";
-
+import { v4 as uuidv4 } from "uuid";
 
 const uuidRandoom = () => {
   return Math.floor(Math.random() * (1000 - 1 + 1) + 1);
 };
 
-const uid= uuid()
-
-export const useContextDatosUser = create((set,get) => ({ 
-userActivo:false,
-userData:false,
-  enlaces: [
-    { id: 1, name: "facebook", link: "facebook.com/ramirochangomoreno" },
-  ],
+export const useContextDatosUser = create((set, get) => ({
+  userActivo: false,
+  userData: false,
+  enlaces: [],
   link: [
     {
       id: 1,
@@ -31,27 +28,44 @@ userData:false,
   ],
   // funciones
 
-  addEnlaces: (obj) =>{
-    const objNew={...obj,id:uid}
-    const {userActivo}=get()
-        set((state) => ({
+  addEnlaces: (obj) => {
+    const objNew = { ...obj, id: uuidv4().slice(0, 8) };
+    const { userActivo } = get();
+    set((state) => ({
       ...state,
       enlaces: [...state.enlaces, objNew],
-    }))
-    addEnlacesFirestore(userActivo.uid,objNew)
+    }));
+    addEnlacesFirestore(userActivo.uid, objNew);
   },
-  removeEnlace: (id) =>
+  removeEnlace: (id) => {
+    const { userActivo, enlaces } = get();
+    let newArray = enlaces.filter((enlace) => enlace.id != id);
+
     set((state) => ({
-      enlaces: state.enlaces.filter((link) => link.id !== id),
-    })),
+      ...state,
+      enlaces: newArray,
+    }));
+
+    removeEnlacesFirestore(userActivo.uid, newArray);
+  },
   activarUser: (id) =>
     set((state) => ({
       ...state,
-    userActivo:id,
+      userActivo: id,
     })),
-  userDataContext: (data) =>
+  actualizarEnlaces: () => {
+    const { userData } = get();
     set((state) => ({
       ...state,
-      userData:data,
-    })),
+      enlaces: userData.enlaces,
+    }));
+  },
+  userDataContext: (data) => {
+    const{actualizarEnlaces}=get()
+    set((state) => ({
+      ...state,
+      userData: data,
+    }));
+    actualizarEnlaces();
+  },
 }));
