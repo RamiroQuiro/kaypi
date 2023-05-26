@@ -12,6 +12,7 @@ export const useStoraStyle = create((set) => ({
   fontFamily: "comicSans",
   sizeFont: "16px",
   imagen: "perfil",
+  activo:"vaio",
   //funciones de actualizacion
   guardarColores:(name,hex)=> set(state=>({
     heroTarget:{...state.heroTarget,[name]:hex}
@@ -28,6 +29,8 @@ export const useStoraStyle = create((set) => ({
   guardarDeg:(deg)=>set(state=>({
     heroTarget:{...state.heroTarget,deg:deg}
   })),
-  
+  activarSeccion:(id)=>set(state=>({
+   activo:id
+  }))
   
 }));

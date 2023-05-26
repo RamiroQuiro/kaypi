@@ -5,7 +5,7 @@ import useWidth from "@/hook/useWidth";
 export default function SelectorColores({ heroTarget }) {
   const styles = {
     conic: `conic-gradient(${heroTarget.Color1} ${heroTarget.porcentajeColor1}%,${heroTarget.Color2} ${heroTarget.porcentajeColor1}%) `,
-    radial: `radial-gradient(${heroTarget.Color1} ${heroTarget.porcentajeColor1}%,${heroTarget.Color2}  ${heroTarget.porcentajeColor2}%) `,
+    radial: `radial-gradient(circle at bottom, ${heroTarget.Color1} ${heroTarget.porcentajeColor1}%,${heroTarget.Color2}  ${heroTarget.porcentajeColor2}%) `,
     linear: `linear-gradient(${heroTarget.deg}deg, ${heroTarget.Color1}  ${heroTarget.porcentajeColor1}%,${heroTarget.Color2}  ${heroTarget.porcentajeColor2}%) `,
   };
 
@@ -13,7 +13,7 @@ const width=useWidth("contenedorSelector")
 
 
   return (
-    <div className="relative h-full  bg-gray-100 overflow-x-hidden w-1/3 p-4 rounded shadow">
+    <div className="relative h-1/4  bg-gray-200 overflow-x-hidden w-full p-4 rounded shadow">
         <div 
         id="contenedorSelector"
         className="relative w-full overflow- h-10">
@@ -32,7 +32,7 @@ const width=useWidth("contenedorSelector")
           style={{
             backgroundImage: styles[heroTarget.degradado],
           }}
-          className="h-10 w-full z-10 rounded-lg bg-gradient-to-r from-primary-100 to-primary-200"
+          className="h-7 w-full z-10 rounded-lg bg-gradient-to-r from-primary-100 to-primary-200"
         ></div>
     </div>
   );

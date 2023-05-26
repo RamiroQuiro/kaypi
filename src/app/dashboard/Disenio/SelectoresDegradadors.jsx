@@ -7,7 +7,7 @@ export default function SelectoresDegradadors({ heroTarget }) {
   const  guardarDegradado  = useStoraStyle((state) => state.guardarDegradado);
   const styles = {
     conic: `conic-gradient(${heroTarget.Color1} ${heroTarget.porcentajeColor1}%,${heroTarget.Color2} ${heroTarget.porcentajeColor1}%) `,
-    radial: `radial-gradient(${heroTarget.Color1} ${heroTarget.porcentajeColor1}%,${heroTarget.Color2}  ${heroTarget.porcentajeColor2}%) `,
+     radial: `radial-gradient(circle at bottom, ${heroTarget.Color1} ${heroTarget.porcentajeColor1}%,${heroTarget.Color2}  ${heroTarget.porcentajeColor2}%) `,
     linear: `linear-gradient(${heroTarget.deg}deg, ${heroTarget.Color1}  ${heroTarget.porcentajeColor1}%,${heroTarget.Color2}  ${heroTarget.porcentajeColor2}%) `,
   };
 
@@ -15,8 +15,8 @@ export default function SelectoresDegradadors({ heroTarget }) {
     guardarDegradado(degrad);
   };
   return (
-    <div className="flex flex-col items-center bg-gray-100 p-4 rounded shadow">
-      <h3 className="text-sm font-medium mb-4">Tipo de degradado</h3>
+    <div className="flex flex-col w-full h-28 items-center juc bg-gray-200 p-2 rounded shadow">
+      <h3 className="text-sm font-medium  mb-4">Tipo de degradado</h3>
       <div className="flex gap-2 items-center ">
         <BotonesSelectoresDegradado
           styles={styles.conic}

@@ -40,7 +40,7 @@ export default function BotonInputColor({ name, width }) {
         }}
         htmlFor={name}
         id={name + "dragg"}
-        className="rounded-t-lg border border-gray-500/70 active:shadow-md active:shadow-primary-400 cursor-pointer rounded-b-3xl w-8 mx-auto absolute h-8 items-center flex justify-center bg-red-500"
+        className="rounded-t-lg border border-gray-500/70 active:shadow-md active:shadow-primary-400 cursor-pointer rounded-b-3xl w-7 mx-auto absolute h-7 items-center flex justify-center"
       >
           <SelectorPorcentajesColor porcentajeMarcador={nextX? Math.trunc((nextX / width) * 100):heroTarget["porcentaje" + name]}/>
         <input

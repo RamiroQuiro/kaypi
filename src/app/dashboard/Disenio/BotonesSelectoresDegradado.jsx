@@ -7,6 +7,6 @@ export default function BotonesSelectoresDegradado({styles,onClick}) {
     onClick={onClick}
     style={{
         backgroundImage:styles}}
-    className="bg-conic rounded-full w-10 h-10 shadow"></button>
+    className="bg-conic rounded-full w-8 h-8 shadow"></button>
   )
 }

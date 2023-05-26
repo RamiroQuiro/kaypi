@@ -1,5 +1,3 @@
-import React from 'react'
-import BotonesSeleccionadoresColores from './BotonesSeleccionadoresColores'
 import useDragger from '@/hook/useDragger'
 import BotonInputColor from './BotonInputColor'
 

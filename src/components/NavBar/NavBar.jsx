@@ -1,25 +1,20 @@
 "use client"
-import { faCar, faIdCard } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
+import { useContextDatosUser } from "@/context/datosUser/contextoDatosUser";
 import React from "react";
+import LoaderCss from "../LoaderCss";
 
-export default function NavBar({userData}) {
-  const logOut = () => {
-    navigate("/login");
-  };
+export default function NavBar() {
+const{userData}=useContextDatosUser(state=>({userData:state.userData}))
 
-  return (
-    <nav className=" sticky bg-gradient-to-l from-primary-200 via-primary-200 to-primary-100  text-sky-50 flex w-screen z-30 items-center md:justify-between justify-around md:px-16 mx-auto py-4">
-      <Link
-      
-      target="_blank"
-      href={`#`} 
-      className="flex items-center justify-evenly gap-4 cursor-pointer">
-        <FontAwesomeIcon icon={faIdCard} className=" text-3xl"/>
-        <span className="  font-thin" >KAYPI DESIGN</span>
-      </Link>
-      <button onClick={logOut}>LogOut</button>
+
+!userData?
+<LoaderCss/>
+:
+ (
+    <nav className=" absolute top-0 left-0   text-gray-700 flex w-screen z-30 items-center md:justify-center justify-around md:px-16 mx-auto py-4">
+      <div>
+        <p className="text-sm font-medium">{userData?.datos?.nombreApellido || userData?.datos?.email}</p>
+      </div>
     </nav>
   );
 }

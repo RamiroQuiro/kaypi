@@ -13,6 +13,6 @@ function useWidth(id) {
   }, [id])
  
 
-  return width
+  return width-25
 }
 export default useWidth

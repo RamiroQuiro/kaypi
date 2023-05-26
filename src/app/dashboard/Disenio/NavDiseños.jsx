@@ -7,9 +7,9 @@ export default function NavDiseños() {
   const [size, setSize] = useState("text-base");
 
   return (
-        <nav className="absolute left-0 top-0 w-full bg-white p-4  shadow-md">
+    <nav className="absolute left-0 top-0 w-full z-10 bg-white p-4  shadow-md">
       <div className="flex px-10 justify-center gap-10 items-center">
-        <SelecionColores/>
+        <SelecionColores />
 
         <div className="flex items-center space-x-4">
           <label htmlFor="font-select" className="font-bold">

@@ -1,7 +1,7 @@
 import SectionTarjetaSola from "@/Tarjeta1/component/SectionTarjetaSola";
 import SectionOutlet from "@/components/SectionOutlet";
-import React from "react";
 import NavDiseños from "./NavDiseños";
+import SidebarDiseño from "./SidebarDiseño";
 
 export default function Disenio() {
   return (
@@ -9,6 +9,7 @@ export default function Disenio() {
       <NavDiseños/>
     
       <SectionTarjetaSola/>
+     <SidebarDiseño/>
     </SectionOutlet>
   );
 }
