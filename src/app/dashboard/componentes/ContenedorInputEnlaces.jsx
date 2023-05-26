@@ -3,11 +3,10 @@ import { useContextDatosUser } from "@/context/datosUser/contextoDatosUser";
 import { faAdd } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import BotonDeLosEnlaces from "./BotonDeLosEnlaces";
-import { addEnlacesFirestore } from "@/api/hello/firestore";
 
 export default function ContenedorInputEnlaces() {
   const addEnlaces = useContextDatosUser((state) => state.addEnlaces);
-  const{userActivo}=useContextDatosUser(state=>({userActivo:state.userActivo}))
+  // const{userActivo}=useContextDatosUser(state=>({userActivo:state.userActivo}))
   const [inputForm, setInputForm] = useState({});
 
 
@@ -20,7 +19,6 @@ export default function ContenedorInputEnlaces() {
   const addInput = (e) => {
     e.preventDefault();
     addEnlaces(inputForm)
-    addEnlacesFirestore(userActivo.uid,inputForm);
   };
   return (
     <form className="relative   flex group pb-5 flex-col items-start justify-betwwwen w-full bg-gray-200 border-2 gap-y-3 rounded-2xl p-3 my-2">

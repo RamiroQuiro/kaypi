@@ -1,4 +1,6 @@
 
+import { addEnlacesFirestore } from "@/api/hello/firestore";
+import uuid from "react-uuid";
 import { create } from "zustand";
 
 
@@ -6,9 +8,9 @@ const uuidRandoom = () => {
   return Math.floor(Math.random() * (1000 - 1 + 1) + 1);
 };
 
+const uid= uuid()
 
-
-export const useContextDatosUser = create((set) => ({ 
+export const useContextDatosUser = create((set,get) => ({ 
 userActivo:false,
 userData:false,
   enlaces: [
@@ -29,11 +31,15 @@ userData:false,
   ],
   // funciones
 
-  addEnlaces: (obj) =>
-    set((state) => ({
+  addEnlaces: (obj) =>{
+    const objNew={...obj,id:uid}
+    const {userActivo}=get()
+        set((state) => ({
       ...state,
-      enlaces: [...state.enlaces, {...obj,id:uuidRandoom()}],
-    })),
+      enlaces: [...state.enlaces, objNew],
+    }))
+    addEnlacesFirestore(userActivo.uid,objNew)
+  },
   removeEnlace: (id) =>
     set((state) => ({
       enlaces: state.enlaces.filter((link) => link.id !== id),

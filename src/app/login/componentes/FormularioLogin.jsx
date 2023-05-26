@@ -13,8 +13,6 @@ import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { useContextDatosUser } from "@/context/datosUser/contextoDatosUser";
 import { traerDataUser } from "@/api/hello/firestore";
-import { doc, getDoc } from "firebase/firestore";
-import { db } from "@/api/hello/firabase";
 
 export default function FormularioLogin() {
   const activarUser = useContextDatosUser((state) => state.activarUser);
@@ -41,10 +39,7 @@ export default function FormularioLogin() {
         }
       })
       .then(async (uid) => {
-        const docRef = doc(db, `usuarios/${uid}`);
-        const docData = await getDoc(docRef);
-        console.log(docData.data());
-        return docData.data();
+         return await traerDataUser(uid)
       })
       .then((resp) => {
         userDataContext(resp);
