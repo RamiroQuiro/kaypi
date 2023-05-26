@@ -34,18 +34,9 @@ export default function FormularioDatos({dateUser}) {
           onChange={handleOnChange}
           name={"name"}
           type={"text"}
-          placeholder="Ramiro"
+          placeholder="Ramiro Quiroga"
         >
-          Nombre
-        </InputFormularioDatos>
-        <InputFormularioDatos
-         value={formEntry?.apellido}
-          onChange={handleOnChange}
-          name={"apellido"}
-          type={"text"}
-          placeholder="Quiroga"
-        >
-          Apellido
+          Titulo o Nombre Apellido
         </InputFormularioDatos>
         <InputFormularioDatos
          value={formEntry?.email}
