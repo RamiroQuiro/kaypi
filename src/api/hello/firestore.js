@@ -22,7 +22,15 @@ const removeEnlacesFirestore=async (uid,newArray)=>{
     const docRef=doc(db,`usuarios/${uid}`)
     await updateDoc(docRef, {
         enlaces: newArray
-})}
+    })}
+    
+    // guardar datosPersonales
+    
+    const guardarUserDataDatos=async(uid,obj)=>{
+    const docRef=doc(db,`usuarios/${uid}`)
+            await updateDoc(docRef,{
+                datos:obj
+            })
+}
 
-
-export {traerDataUser,addEnlacesFirestore,removeEnlacesFirestore}
+export {traerDataUser,addEnlacesFirestore,removeEnlacesFirestore,guardarUserDataDatos}

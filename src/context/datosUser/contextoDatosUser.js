@@ -1,5 +1,6 @@
 import {
   addEnlacesFirestore,
+  guardarUserDataDatos,
   removeEnlacesFirestore,
 } from "@/api/hello/firestore";
 import { create } from "zustand";
@@ -68,4 +69,12 @@ export const useContextDatosUser = create((set, get) => ({
     }));
     actualizarEnlaces();
   },
+guardarDatosContacto:(obj)=>{
+  set((state)=>({
+    userData:{...state.userData,datos:obj}
+  }))
+const {userData,userActivo}=get()
+guardarUserDataDatos(userActivo.uid,userData.datos)
+}
+
 }));

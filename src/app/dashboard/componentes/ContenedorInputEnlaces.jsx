@@ -19,6 +19,7 @@ export default function ContenedorInputEnlaces() {
   const addInput = (e) => {
     e.preventDefault();
     addEnlaces(inputForm)
+    setInputForm({})
   };
   return (
     <form className="relative   flex group pb-5 flex-col items-start justify-betwwwen w-full bg-gray-200 border-2 gap-y-3 rounded-2xl p-3 my-2">
