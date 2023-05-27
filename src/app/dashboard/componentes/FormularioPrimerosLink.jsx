@@ -30,11 +30,10 @@ export default function FormularioPrimerosLink({ dataUser }) {
     e.preventDefault();
     guardarDatosContacto(formEntry);
   };
-  console.log(formEntry);
   const links = [
     {
       id: 1,
-      name: "llamada",
+      name: "celular",
       valor: 3856771992,
       faicon: faPhone,
       number: "number",

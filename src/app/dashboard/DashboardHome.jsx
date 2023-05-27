@@ -2,6 +2,7 @@ import SectionOutlet from "@/components/SectionOutlet";
 import InfoDasboard from "./componentes/InfoDasboard";
 import ContenedorFormularioLinksCuadrados from "./componentes/ContenedorFormularioLinksCuadrados";
 import ContenedorFormularioEnlaces from "./componentes/ContenedorFormularioEnlaces";
+import { Toaster } from "react-hot-toast";
 
 export default function DashboardHome() {
  
@@ -12,6 +13,7 @@ export default function DashboardHome() {
           <ContenedorFormularioEnlaces />
           <ContenedorFormularioLinksCuadrados />
         </div>
+        <Toaster />
     </SectionOutlet>
   );
 }
