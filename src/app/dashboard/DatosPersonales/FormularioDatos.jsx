@@ -1,11 +1,23 @@
-"use client"
-import React, { useState } from "react";
-import {  Toaster } from "react-hot-toast";
-import ButtonGuardar from "../../../components/ButtonGuardar";
+"use client";
+import React, { useState,useEffect } from "react";
+import { Toaster } from "react-hot-toast";
 import InputFormularioDatos from "../../../components/InputFormularioDatos";
+import { useContextDatosUser } from "@/context/datosUser/contextoDatosUser";
+import BotonGuardar from "../componentes/BotonGuardar";
 
-export default function FormularioDatos({dateUser}) {
+export default function FormularioDatos({ dateUser }) {
   const [formEntry, setFormEntry] = useState(dateUser);
+
+  const guardarDatosContacto = useContextDatosUser(
+    (state) => state.guardarDatosContacto
+  );
+  const { userData } = useContextDatosUser((state) => ({
+    userData: state.userData,
+  }));
+
+  useEffect(() => {
+    setFormEntry(userData.datos);
+  }, [userData]);
 
   const handleOnChange = (e) => {
     setFormEntry({ ...formEntry, [e.target.name]: e.target.value });
@@ -13,15 +25,19 @@ export default function FormularioDatos({dateUser}) {
 
   const handleGaurdarDatos = async (e) => {
     e.preventDefault();
+    guardarDatosContacto(formEntry);
   };
 
   return (
-    <form onSubmit={handleGaurdarDatos} className="py-10 flex flex-col item-centar justify-between">
-      <Toaster />
+    <form
+      onSubmit={handleGaurdarDatos}
+      className="py-10 flex flex-col item-centar justify-between"
+    >
+      
       {/* info personal */}
       <div className="flex md:flex-row flex-col items-center justify-evenly md:text-center">
         <InputFormularioDatos
-        value={formEntry?.razonSocial}
+          value={formEntry?.razonSocial}
           onChange={handleOnChange}
           name={"razonSocial"}
           type={"text"}
@@ -39,7 +55,7 @@ export default function FormularioDatos({dateUser}) {
           Titulo o Nombre Apellido
         </InputFormularioDatos>
         <InputFormularioDatos
-         value={formEntry?.email}
+          value={formEntry?.email}
           onChange={handleOnChange}
           name={"email"}
           type={"email"}
@@ -56,7 +72,7 @@ export default function FormularioDatos({dateUser}) {
       </h3>
       <div className="flex md:flex-row flex-col items-center justify-evenly md:text-center">
         <InputFormularioDatos
-         value={formEntry?.celular}
+          value={formEntry?.celular}
           onChange={handleOnChange}
           name={"celular"}
           type={"number"}
@@ -65,7 +81,7 @@ export default function FormularioDatos({dateUser}) {
           Celular o Tel
         </InputFormularioDatos>
         <InputFormularioDatos
-         value={formEntry?.direccion}
+          value={formEntry?.direccion}
           onChange={handleOnChange}
           name={"direccion"}
           type={"text"}
@@ -74,7 +90,7 @@ export default function FormularioDatos({dateUser}) {
           Dirección
         </InputFormularioDatos>
         <InputFormularioDatos
-         value={formEntry?.ciudad}
+          value={formEntry?.ciudad}
           onChange={handleOnChange}
           name={"ciudad"}
           type={"text"}
@@ -84,7 +100,7 @@ export default function FormularioDatos({dateUser}) {
         </InputFormularioDatos>
 
         <InputFormularioDatos
-         value={formEntry?.pais}
+          value={formEntry?.pais}
           onChange={handleOnChange}
           name={"pais"}
           type={"text"}
@@ -109,7 +125,7 @@ export default function FormularioDatos({dateUser}) {
               Sobre Mi
             </label>
             <textarea
-             value={formEntry?.descripcion}
+              value={formEntry?.descripcion}
               onChange={handleOnChange}
               name="descripcion"
               type="text"
@@ -120,7 +136,11 @@ export default function FormularioDatos({dateUser}) {
           </div>
         </div>
       </div>
-     <ButtonGuardar/>
+      <BotonGuardar
+      onClick={handleGaurdarDatos}
+      >
+        Guardar Datos
+      </BotonGuardar>
     </form>
   );
 }

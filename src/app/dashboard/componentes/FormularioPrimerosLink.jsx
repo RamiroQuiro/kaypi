@@ -33,7 +33,7 @@ export default function FormularioPrimerosLink({ dataUser }) {
   const links = [
     {
       id: 1,
-      name: "llamada",
+      name: "celular",
       valor: 3856771992,
       faicon: faPhone,
       number: "number",

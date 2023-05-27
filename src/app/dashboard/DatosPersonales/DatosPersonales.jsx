@@ -1,6 +1,3 @@
-"use client"
-import {useEffect} from "react";
-import {shallow  } from "zustand/shallow";
 import BackgroundDorm from "../../../components/BackgroundDorm";
 import SectionOutlet from "../../../components/SectionOutlet";
 import FormularioDatos from "./FormularioDatos";
