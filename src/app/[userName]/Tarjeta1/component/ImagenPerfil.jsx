@@ -1,6 +1,6 @@
 
 import Image from "next/image";
-import perfil from "../../../public/perfil.png";
+// import perfil from "../../../public/perfil.png";
 import HeroTarjeta from "./HeroTarjeta";
 
 export default function ImagenPerfil() {
@@ -11,7 +11,7 @@ export default function ImagenPerfil() {
       id="imagenDrag"
       className="md:w-[175px] w-[175px] p-0.5 bg-transparent h-[175px] md:h-[175px] rounded-full overflow-hidden translate-y-10 border-4 border-gray-100/80">
         <Image
-          src={perfil}
+          src={"perfil"}
           alt="perfil"
           className="h-auto max-w-full object-cover  rounded-full justify-center "
         />

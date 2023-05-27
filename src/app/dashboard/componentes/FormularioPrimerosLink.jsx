@@ -30,7 +30,6 @@ export default function FormularioPrimerosLink({ dataUser }) {
     e.preventDefault();
     guardarDatosContacto(formEntry);
   };
-  console.log(formEntry);
   const links = [
     {
       id: 1,

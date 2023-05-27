@@ -1,5 +1,4 @@
-import NavBarTarjeta from "../../components/NavBarTarjeta";
-import HomeTarjeta from "./HomeTarjeta";
+import NavBarTarjeta from "@/components/NavBarTarjeta";
 
 export default function SectionTarjetaSola() {
   return (
