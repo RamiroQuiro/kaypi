@@ -12,10 +12,9 @@ export default function ContenedorFormularioEnlaces() {
          Tus Enlaces Directos
         </h2>
       </CabeceraContenedor>
-      <div className="flex-auto w-11/12 md:w-full md:px-4 lg:px-4 mx-auto  pt-12">
+      <div className="flex-auto w-11/12 md:w-full md:px-4 lg:px-4 mx-auto  pt-5">
         <ContenedorInputEnlaces />
       </div>
-      <br />
       <ContenedoresEnlacesExistentes />
     </BackgroundDorm>
   );

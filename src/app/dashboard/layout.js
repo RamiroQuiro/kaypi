@@ -7,7 +7,7 @@ import PrivateRouter from "../PrivateRouter";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'Kaipy Design',
+  title: 'Kaipy Design | Tu Sesion',
   description: 'Tarjetas de presentacion digital',
 }
 
