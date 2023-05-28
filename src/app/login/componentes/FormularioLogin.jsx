@@ -64,7 +64,7 @@ export default function FormularioLogin() {
 
   return (
     <>
-      <form className="px-10 py-2  w-10/12 flex flex-col justify-between items-stretch h-  animate-[aparecer_.5s]  ">
+      <form className="px-10 py-2  w-10/12 flex flex-col justify-between items-stretch text-gray-700  animate-[aparecer_.5s]  ">
         <div className="bg-gray-700 rounded-full w-20 h-20  flex items-center justify-center mx-auto">
           <FontAwesomeIcon
             icon={faKey}

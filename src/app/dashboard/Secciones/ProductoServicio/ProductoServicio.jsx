@@ -13,9 +13,9 @@ export default function ProductoServicio() {
     }));
     const [formEntry, setFormEntry] = useState(secciones?.productoServicio)
 
-  // useEffect(() => {
-  //   setFormEntry(userData.datos);
-  // }, [userData]);
+   useEffect(() => {
+     setFormEntry(secciones?.productoServicio);
+   }, [secciones]);
 
   const handleOnChange = (e) => {
   setFormEntry(e.target.value );
