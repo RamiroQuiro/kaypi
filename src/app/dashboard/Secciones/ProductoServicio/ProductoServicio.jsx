@@ -8,15 +8,15 @@ export default function ProductoServicio() {
   const guardarSecciones = useContextDatosUser(
     (state) => state.guardarSecciones
     );
-    const { secciones } = useContextDatosUser((state) => ({
-      secciones: state.secciones,
+    const { userData } = useContextDatosUser((state) => ({
+      userData: state.userData,
     }));
-    const [formEntry, setFormEntry] = useState(secciones?.productoServicio)
+    const [formEntry, setFormEntry] = useState(userData?.secciones?.productoServicio)
 
-   useEffect(() => {
-     setFormEntry(secciones?.productoServicio);
-   }, [secciones]);
-
+    useEffect(() => {
+      setFormEntry(userData?.secciones?.productoServicio);
+    }, [userData]);
+ 
   const handleOnChange = (e) => {
   setFormEntry(e.target.value );
   };

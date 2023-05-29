@@ -7,9 +7,6 @@ import {
 import { create } from "zustand";
 import { v4 as uuidv4 } from "uuid";
 
-const uuidRandoom = () => {
-  return Math.floor(Math.random() * (1000 - 1 + 1) + 1);
-};
 
 export const useContextDatosUser = create((set, get) => ({
   userActivo: false,

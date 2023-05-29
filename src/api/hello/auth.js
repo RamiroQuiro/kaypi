@@ -9,15 +9,21 @@ const registerEmail= async (nombreFantasia, name,email, pass)=>{
     .then((userCredential)=>{
         setDoc(doc(db,`usuarios/${userCredential.user.uid}`),{
             datos:{
-                nombreFantasia:nombreFantasia,
+                razonSocial:nombreFantasia,
                 nombreApellido:name,
                 email:email,
 
             },
             style:{},
             enlaces:[],
-            secciones:[]
-        }) 
+            secciones:{
+                productoServicio:"",
+                ubicacion:"",
+                multimedia:[{}],
+              }
+        }).then(()=>{
+            toast.success('Usuario Creado Correctamente')
+        })
          .catch((error)=>{
             const errorCode=error.code
             const eroorMessenge=error.message

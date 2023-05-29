@@ -6,7 +6,7 @@ export default function InputRegister({handleChange}) {
     const inputRegister = [
         {
           id: 1,
-          name: "name",
+          name: "nombreApellido",
           type: "text",
           onChange: handleChange,
           faIcon: faUser,
@@ -14,7 +14,7 @@ export default function InputRegister({handleChange}) {
         },
         {
           id: 2,
-          name: "nombreFantasia",
+          name: "razonSocial",
           type: "text",
           onChange: handleChange,
           faIcon: faUserAstronaut,

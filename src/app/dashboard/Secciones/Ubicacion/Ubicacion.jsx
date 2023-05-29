@@ -9,14 +9,14 @@ export default function Ubicacion() {
   const guardarSecciones = useContextDatosUser(
     (state) => state.guardarSecciones
     );
-    const { secciones } = useContextDatosUser((state) => ({
-      secciones: state.secciones,
+    const { userData } = useContextDatosUser((state) => ({
+      userData: state.userData,
     }));
-    const [formEntry, setFormEntry] = useState(secciones?.ubicacion)
+    const [formEntry, setFormEntry] = useState(userData?.secciones?.ubicacion)
 
    useEffect(() => {
-     setFormEntry(secciones?.ubicacion);
-   }, [secciones]);
+     setFormEntry(userData?.secciones?.ubicacion);
+   }, [userData]);
 
   const handleOnChange = (e) => {
   setFormEntry(e.target.value );
@@ -30,6 +30,7 @@ export default function Ubicacion() {
     <div className="flex  flex-col w-full mx-auto py-10 px-5">
       <section className="text-gray-700 rounded  relative">
         <InputFormularioDatos
+        value={formEntry}
         faIcon={faLocationCrosshairs}
         onChange={handleOnChange}
         >

@@ -47,7 +47,7 @@ export default function FormularioDatos({ dateUser }) {
           Nombre de Usuario | Nombre de Fantasía
         </InputFormularioDatos>
         <InputFormularioDatos
-          value={formEntry?.name}
+          value={formEntry?.nombreApellido}
           onChange={handleOnChange}
           name={"name"}
           type={"text"}

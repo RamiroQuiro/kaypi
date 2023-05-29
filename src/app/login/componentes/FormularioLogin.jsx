@@ -50,13 +50,26 @@ export default function FormularioLogin() {
     e.preventDefault();
     try {
       await registerEmail(
-        formulario.nombreFantasia,
-        formulario.name,
+        formulario.razonSocial,
+        formulario.nombreApellido,
         formulario.email,
         formulario.password
-      );
+      ).then((user) => {
+        if (!user) return;
+        if (user) {
+          activarUser(user);
+          router.replace("/dashboard");
+          return user.uid;
+        }
+      })
+      .then(async (uid) => {
+         return await traerDataUser(uid)
+      })
+      .then((resp) => {
+        userDataContext(resp);
+      });
+      
       router.push("/dashboard");
-      toast.success("Usuario Creado Exitosamente");
     } catch (error) {
       console.log(error);
     }
