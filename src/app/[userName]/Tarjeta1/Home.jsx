@@ -1,6 +1,14 @@
+import { llamarRutas } from "@/api/hello/firestore";
 import SectionTarjetaSola from "./component/SectionTarjetaSola";
 
 export default function Home() {
+
+const traer=async()=>{
+ await llamarRutas().then((data)=>{
+    console.log(data)
+  })
+}
+ traer()
   return (
     <div className="w-screen overflow-x-hidden  min-h-screen h-screen md:rounded-lg bg-white relative flex items-center justify-center">
       

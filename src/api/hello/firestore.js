@@ -1,6 +1,7 @@
 import {
   arrayRemove,
   arrayUnion,
+  collection,
   doc,
   getDoc,
   setDoc,
@@ -55,10 +56,17 @@ const guardarSeccionesFirestore = async (uid,seccion, obj) => {
 
 
 
+const llamarRutas=async ()=>{
+  const docRef = doc(db, `rutas/cZwzUWzNeTGekoDUeit2`);
+  const resp= await getDoc(docRef)
+  return resp.data()
+}
+
 export {
   traerDataUser,
   addEnlacesFirestore,
   removeEnlacesFirestore,
   guardarUserDataDatos,
-  guardarSeccionesFirestore
+  guardarSeccionesFirestore,
+  llamarRutas
 };
