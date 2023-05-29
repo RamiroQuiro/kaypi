@@ -1,6 +1,6 @@
 
 import Image from "next/image";
-import perfil from "../../../public/perfil.png";
+import perfil from "../../../../../public/perfil.png";
 import HeroTarjeta from "./HeroTarjeta";
 
 export default function ImagenPerfil() {

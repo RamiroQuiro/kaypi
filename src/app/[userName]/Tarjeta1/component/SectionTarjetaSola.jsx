@@ -1,4 +1,4 @@
-import NavBarTarjeta from "../../components/NavBarTarjeta";
+import NavBarTarjeta from "@/components/NavBarTarjeta";
 import HomeTarjeta from "./HomeTarjeta";
 
 export default function SectionTarjetaSola() {
@@ -7,7 +7,7 @@ export default function SectionTarjetaSola() {
       <div className="absolute top-0 lef-0 text-xs text-gray-600 capitalize z-50 font-semibold py-2 ">
         <span> RamiroCode | Web Developer </span>
       </div>
-      {/* <HomeTarjeta /> */}
+      <HomeTarjeta />
       <NavBarTarjeta />
     </section>
   );
