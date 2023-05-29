@@ -54,6 +54,15 @@ const guardarSeccionesFirestore = async (uid,seccion, obj) => {
   });
 };
 
+const guardarStyles=async(uid,obj)=>{
+  const docRef = doc(db, `usuarios/${uid}`);
+  
+  await updateDoc(docRef, {
+    style: obj,
+  }).then(() => {
+    toast.success("Guadado");
+  });
+}
 
 
 const llamarRutas=async ()=>{
@@ -68,5 +77,6 @@ export {
   removeEnlacesFirestore,
   guardarUserDataDatos,
   guardarSeccionesFirestore,
-  llamarRutas
+  llamarRutas,
+  guardarStyles
 };

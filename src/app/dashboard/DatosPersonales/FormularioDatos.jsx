@@ -1,20 +1,19 @@
 "use client";
 import React, { useState,useEffect } from "react";
-import { Toaster } from "react-hot-toast";
 import InputFormularioDatos from "../../../components/InputFormularioDatos";
 import { useContextDatosUser } from "@/context/datosUser/contextoDatosUser";
 import BotonGuardar from "../componentes/BotonGuardar";
 import InputArea from "../componentes/InputArea";
 
-export default function FormularioDatos({ dateUser }) {
-  const [formEntry, setFormEntry] = useState(dateUser);
-
+export default function FormularioDatos({  }) {
+  
   const guardarDatosContacto = useContextDatosUser(
     (state) => state.guardarDatosContacto
-  );
-  const { userData } = useContextDatosUser((state) => ({
-    userData: state.userData,
-  }));
+    );
+    const { userData } = useContextDatosUser((state) => ({
+      userData: state.userData,
+    }));
+    const [formEntry, setFormEntry] = useState(userData);
 
   useEffect(() => {
     setFormEntry(userData.datos);
@@ -29,6 +28,7 @@ export default function FormularioDatos({ dateUser }) {
     guardarDatosContacto(formEntry);
   };
 
+  console.log(formEntry)
   return (
     <form
       onSubmit={handleGaurdarDatos}
@@ -38,22 +38,31 @@ export default function FormularioDatos({ dateUser }) {
       {/* info personal */}
       <div className="flex md:flex-row flex-col items-center justify-evenly md:text-center">
         <InputFormularioDatos
-          value={formEntry?.razonSocial}
+          value={formEntry?.userName}
           onChange={handleOnChange}
-          name={"razonSocial"}
+          name={"userName"}
           type={"text"}
           placeholder="Ramiro Code"
         >
-          Nombre de Usuario | Nombre de Fantasía
+          Nombre de Usuario
         </InputFormularioDatos>
         <InputFormularioDatos
           value={formEntry?.nombreApellido}
           onChange={handleOnChange}
-          name={"name"}
+          name={"nombreApellido"}
           type={"text"}
           placeholder="Ramiro Quiroga"
         >
-          Titulo o Nombre Apellido
+        Nombre y Apellido
+        </InputFormularioDatos>
+        <InputFormularioDatos
+          value={formEntry?.profesion}
+          onChange={handleOnChange}
+          name={"profesion"}
+          type={"text"}
+          placeholder="Ramiro Quiroga"
+        >
+        Profesion
         </InputFormularioDatos>
         <InputFormularioDatos
           value={formEntry?.email}
@@ -120,12 +129,11 @@ export default function FormularioDatos({ dateUser }) {
         <div className="w-full lg:w-12/12 px-4">
           <InputArea
           placeholder={"Has una breve descripcion para mostrar en la presentación de tu tarjeta"}
-          key={123}
+          name="descripcion"
           onChange={handleOnChange}
           value={formEntry?.descripcion}
           >
           
-          Sobre Mi
           </InputArea>
         </div>
       </div>

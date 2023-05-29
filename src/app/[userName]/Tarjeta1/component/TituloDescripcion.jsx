@@ -1,26 +1,35 @@
 "use client"
 import { useStoraStyle } from "@/context/DiseñoUser/contextStyles";
+import { useContextVisitas } from "@/context/contextoVisita/contextoVistas";
 import { useParams } from "next/navigation";
 import { shallow } from "zustand/shallow";
 
-export default function TituloDescripcion({ userData }) {
+export default function TituloDescripcion({  }) {
 
-  const params=useParams()
   const {heroTarget}=useStoraStyle(state=>({
     heroTarget:state.heroTarget
   }),shallow)
+  const{userData}=useContextVisitas(state=>({
+    userData:state.userData
+  }))
+  console.log(userData.datos)
+
   return (
-    <div>
+    <div className="w-full flex flex-col items-center justify-between">
       <h1
       style={{
         backgroundImage:`linear-gradient(75deg,${heroTarget.Color1}  70%,${heroTarget.Color2}  90%) `
       }}
-      className=" text-3xl font-bold text-transparent text-center bg-clip-text bg-gradient-to-r to-cyan-600 from-teal-800 animate-[sliceUp_1.5s] delay-100">
-        {userData?.nombre} {userData?.apellido}
+      className=" text-xl font-bold capitalize text-transparent text-center bg-clip-text bg-gradient-to-r to-cyan-600 from-teal-800 animate-[sliceUp_1.5s] delay-100">
+        {userData?.datos?.nombreApellido}
       </h1>
-      <h3 className=" text-md font-medium mt-2 px-5 text-center animate-[sliceUp_2s] delay-200">
-        {userData?.descripcion}
-      </h3>
+      <h2 className="text-lg font-light">
+        {userData?.datos?.profesion}
+
+      </h2>
+      <span className=" text-sm font-thin mt-2 px-5 text-center animate-[sliceUp_2s] delay-200">
+        {userData?.datos?.descripcion}
+      </span>
     </div>
   );
 }

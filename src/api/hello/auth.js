@@ -4,15 +4,15 @@ import { toast } from "react-hot-toast";
 const { signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut } = require("firebase/auth");
 const { auth, db } = require("./firabase");
 
-const registerEmail= async (nombreFantasia, name,email, pass)=>{
+const registerEmail= async (userName, name,email, pass)=>{
     await createUserWithEmailAndPassword(auth,email,pass)
     .then((userCredential)=>{
         setDoc(doc(db,`usuarios/${userCredential.user.uid}`),{
             datos:{
-                razonSocial:nombreFantasia,
+                userName:userName,
                 nombreApellido:name,
                 email:email,
-
+                
             },
             style:{},
             enlaces:[],
