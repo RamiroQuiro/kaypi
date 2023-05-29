@@ -1,6 +1,7 @@
 
 import Image from "next/image";
 // import perfil from "../../../public/perfil.png";
+import perfil from "../../../../../public/perfil.png";
 import HeroTarjeta from "./HeroTarjeta";
 
 export default function ImagenPerfil() {
@@ -9,9 +10,10 @@ export default function ImagenPerfil() {
      <HeroTarjeta/>
       <div
       id="imagenDrag"
-      className="md:w-[175px] w-[175px] p-0.5 bg-transparent h-[175px] md:h-[175px] rounded-full overflow-hidden translate-y-10 border-4 border-gray-100/80">
+      className="md:w-[175px] relative w-[175px] p-0.5 bg-transparent h-[175px] md:h-[175px] rounded-full overflow-hidden translate-y-10 border-4 border-gray-100/80">
         <Image
-          src={"perfil"}
+        fill
+          src={perfil}
           alt="perfil"
           className="h-auto max-w-full object-cover  rounded-full justify-center "
         />
@@ -19,3 +21,4 @@ export default function ImagenPerfil() {
     </div>
   );
 }
+

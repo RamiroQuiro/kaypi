@@ -1,8 +1,12 @@
 "use client"
 import { useStoraStyle } from "@/context/DiseñoUser/contextStyles";
+import { useParams } from "next/navigation";
 import { shallow } from "zustand/shallow";
 
 export default function TituloDescripcion({ userData }) {
+
+  const params=useParams()
+  console.log(params)
   const {heroTarget}=useStoraStyle(state=>({
     heroTarget:state.heroTarget
   }),shallow)

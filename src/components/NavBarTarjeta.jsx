@@ -39,7 +39,7 @@ export default function NavBarTarjeta() {
 
   return (
     <div className="w-full bg-neutral-100 py-2 absolute bottom-0 left-0">
-      <ul className="w-full flex items-center text-xl justify-evenly text-neutral-600">
+      <ul className="w-full flex items-center py-2 text-xl justify-evenly text-gray-600">
         {linkDeMenu.map((link) => (
           <li 
           className="hover:text-sky-900 hover:-translate-y-1 duration-200"
