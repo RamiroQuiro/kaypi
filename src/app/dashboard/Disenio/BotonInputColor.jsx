@@ -10,9 +10,9 @@ export default function BotonInputColor({ name, width }) {
   const {nextX} = useDragger(name + "dragg");
   const guardarColores = useStoraStyle((state) => state.guardarColores);
   const guardarPorcentajes = useStoraStyle((state) => state.guardarPorcentajes);
-  const { heroTarget } = useStoraStyle(
+  const { styles } = useStoraStyle(
     (state) => ({
-      heroTarget: state.heroTarget,
+      styles: state.styles,
     }),
     shallow
   );
@@ -35,14 +35,14 @@ export default function BotonInputColor({ name, width }) {
     <>
       <label
         style={{
-          background: heroTarget[name],
-          left: heroTarget["porcentaje" + name] + "%",
+          background: styles?.heroTarget[name],
+          left: styles?.heroTarget["porcentaje" + name] + "%",
         }}
         htmlFor={name}
         id={name + "dragg"}
         className="rounded-t-lg border border-gray-500/70 active:shadow-md active:shadow-primary-400 cursor-pointer rounded-b-3xl w-7 mx-auto absolute h-7 items-center flex justify-center"
       >
-          <SelectorPorcentajesColor porcentajeMarcador={nextX? Math.trunc((nextX / width) * 100):heroTarget["porcentaje" + name]}/>
+          <SelectorPorcentajesColor porcentajeMarcador={nextX? Math.trunc((nextX / width) * 100):styles?.heroTarget["porcentaje" + name]}/>
         <input
           type="color"
           onClick={handlePorcentaje}

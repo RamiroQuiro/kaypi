@@ -53,10 +53,12 @@ export const useContextDatosUser = create((set, get) => ({
     removeEnlacesFirestore(userActivo.uid, newArray);
   },
   activarUser: (id) =>
-    set((state) => ({
+   { set((state) => ({
       ...state,
       userActivo: id,
-    })),
+    }))
+    
+  },
   actualizarEnlaces: () => {
     const { userData } = get();
     set((state) => ({

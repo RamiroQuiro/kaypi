@@ -3,7 +3,7 @@ import { useStoraStyle } from '@/context/DiseñoUser/contextStyles'
 import React, { useState } from 'react'
 
 export default function SelectorDeg({heroTarget}) {
-    const [grados, setGrados] = useState(heroTarget.deg || 90)
+    const [grados, setGrados] = useState(heroTarget?.deg || 90)
     const guardarDeg=useStoraStyle(state=>state.guardarDeg)
 
     const handleChange=(e)=>{

@@ -6,6 +6,7 @@ import TituloDescripcion from "./TituloDescripcion";
 import ContenedorLinks from "./ContenedorLinks";
 
 export default function DatosPerfil({userData}) {
+  
   const contactos = [
     { id: 1, type: "cel", descripcion: userData?.celular, icon: "celu" },
     {

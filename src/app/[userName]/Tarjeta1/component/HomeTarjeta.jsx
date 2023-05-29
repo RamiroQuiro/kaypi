@@ -1,7 +1,6 @@
 import DatosPerfil from "./DatosPerfil";
 import ImagenPerfil from "./ImagenPerfil";
 import LinksSquare from "./LinksSquare";
-import { useStoraStyle } from "@/context/DiseñoUser/contextStyles";
 
 export default function HomeTarjeta() {
   // const activarSeccion=useStoraStyle(state=>state.activarSeccion)

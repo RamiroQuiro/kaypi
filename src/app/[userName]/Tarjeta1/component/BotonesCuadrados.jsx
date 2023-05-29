@@ -8,17 +8,17 @@ export default function BotonesCuadrados({
 }) {
 
 
-    const {heroTarget}=useStoraStyle((state)=>({heroTarget:state.heroTarget}))
+    const {styles}=useStoraStyle((state)=>({styles:state.styles}))
   return (
     <Link 
     style={{
-fill:heroTarget.Color1
+fill:styles?.heroTarget.Color1
     }}
     href={"#"}
     className="w-10 h-10 rounded-lg bg-gray-100 p-2 shadow-md delay-200 animate-[aparecer_3s]">
     <svg
      style={{
-        fill:heroTarget.Color1
+        fill:styles?.heroTarget.Color1
      }}
      className="w-full h-full fill-primary-100 "
      width="36"

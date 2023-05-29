@@ -6,19 +6,18 @@ import { shallow } from "zustand/shallow";
 
 export default function TituloDescripcion({  }) {
 
-  const {heroTarget}=useStoraStyle(state=>({
-    heroTarget:state.heroTarget
+  const {styles}=useStoraStyle(state=>({
+    styles:state.styles
   }),shallow)
   const{userData}=useContextVisitas(state=>({
     userData:state.userData
   }))
-  console.log(userData.datos)
 
   return (
     <div className="w-full flex flex-col items-center justify-between">
       <h1
       style={{
-        backgroundImage:`linear-gradient(75deg,${heroTarget.Color1}  70%,${heroTarget.Color2}  90%) `
+        backgroundImage:`linear-gradient(75deg,${styles?.heroTarget.Color1}  70%,${styles?.heroTarget.Color2}  90%) `
       }}
       className=" text-xl font-bold capitalize text-transparent text-center bg-clip-text bg-gradient-to-r to-cyan-600 from-teal-800 animate-[sliceUp_1.5s] delay-100">
         {userData?.datos?.nombreApellido}
