@@ -6,12 +6,11 @@ import { shallow } from "zustand/shallow";
 
 export default function TituloDescripcion({  }) {
 
-  const {styles}=useStoraStyle(state=>({
-    styles:state.styles
-  }),shallow)
-  const{userData}=useContextVisitas(state=>({
+  const {userData}=useContextVisitas(state=>({
     userData:state.userData
-  }))
+  }),shallow)
+ 
+  const styles=userData?.style
 
   return (
     <div className="w-full flex flex-col items-center justify-between">

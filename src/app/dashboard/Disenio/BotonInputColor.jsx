@@ -2,7 +2,6 @@
 
 import { useStoraStyle } from "@/context/DiseñoUser/contextStyles";
 import useDragger from "@/hook/useDragger";
-import { useState } from "react";
 import { shallow } from "zustand/shallow";
 import SelectorPorcentajesColor from "./SelectorPorcentajeColor";
 

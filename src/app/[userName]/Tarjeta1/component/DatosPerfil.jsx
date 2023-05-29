@@ -5,25 +5,8 @@ import ubicacionIcon from "../../../../../public/ubicaionIcon.svg";
 import TituloDescripcion from "./TituloDescripcion";
 import ContenedorLinks from "./ContenedorLinks";
 
-export default function DatosPerfil({userData}) {
-  
-  const contactos = [
-    { id: 1, type: "cel", descripcion: userData?.celular, icon: "celu" },
-    {
-      id: 2,
-      type: "email",
-      descripcion: userData?.email,
-      icon: "mailIcon",
-    },
-    {
-      id: 3,
-      type: "ubicacion",
-      descripcion: userData?.direccion,
-      icon: "ubicacionIcon",
-    },
-  
+export default function DatosPerfil() {
 
-  ];
 
 
   const enlaces=[
@@ -42,8 +25,8 @@ export default function DatosPerfil({userData}) {
   ]
   return (
     <div className="w-full mx-auto flex flex-col items-center justify-evenly   h-full ">
-      <TituloDescripcion userData={userData} />
-      <ContenedorLinks links={enlaces}/>
+      <TituloDescripcion  />
+      <ContenedorLinks />
     </div>
   );
 }
