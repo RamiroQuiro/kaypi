@@ -2,18 +2,14 @@ import { llamarRutas } from "@/api/hello/firestore";
 import SectionTarjetaSola from "./component/SectionTarjetaSola";
 import RutaVerificada from "./RutaVerificada";
 
-export default function Home() {
-  const traer = async () => {
-  return await llamarRutas().then((obj) => {
+export default async function Home() {
+
+  const array=await  llamarRutas().then((obj) => {
       const users = Object.values(obj);
-
       // const key = Object.keys(obj).find(key => obj[key] === 'RamiroChangoMoreno');
-      console.log(users);
-      return users.map(user=>user.toLowerCase())
-    });
-  };
+      return users.map((user) => user.toLowerCase());
+  })
 
-  const array = traer();
   return (
     <RutaVerificada array={array}>
       <div className="w-screen overflow-x-hidden  min-h-screen h-screen md:rounded-lg bg-white relative flex items-center justify-center">
