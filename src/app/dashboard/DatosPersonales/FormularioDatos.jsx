@@ -4,6 +4,7 @@ import { Toaster } from "react-hot-toast";
 import InputFormularioDatos from "../../../components/InputFormularioDatos";
 import { useContextDatosUser } from "@/context/datosUser/contextoDatosUser";
 import BotonGuardar from "../componentes/BotonGuardar";
+import InputArea from "../componentes/InputArea";
 
 export default function FormularioDatos({ dateUser }) {
   const [formEntry, setFormEntry] = useState(dateUser);
@@ -46,7 +47,7 @@ export default function FormularioDatos({ dateUser }) {
           Nombre de Usuario | Nombre de Fantasía
         </InputFormularioDatos>
         <InputFormularioDatos
-          value={formEntry?.name}
+          value={formEntry?.nombreApellido}
           onChange={handleOnChange}
           name={"name"}
           type={"text"}
@@ -117,23 +118,15 @@ export default function FormularioDatos({ dateUser }) {
       </h3>
       <div className="flex flex-wrap">
         <div className="w-full lg:w-12/12 px-4">
-          <div className="relative w-full mb-3">
-            <label
-              className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-              htmlFor="grid-password"
-            >
-              Sobre Mi
-            </label>
-            <textarea
-              value={formEntry?.descripcion}
-              onChange={handleOnChange}
-              name="descripcion"
-              type="text"
-              className="border-0  font-semibold px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-              rows="4"
-              placeholder="Has una breve descripcion para mostrar en la presentación de tu tarjeta"
-            />{" "}
-          </div>
+          <InputArea
+          placeholder={"Has una breve descripcion para mostrar en la presentación de tu tarjeta"}
+          key={123}
+          onChange={handleOnChange}
+          value={formEntry?.descripcion}
+          >
+          
+          Sobre Mi
+          </InputArea>
         </div>
       </div>
       <BotonGuardar

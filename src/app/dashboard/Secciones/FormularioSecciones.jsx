@@ -1,12 +1,13 @@
+import BotonGuardar from "../componentes/BotonGuardar";
 import TabsSeccion from "./Component/TabsSeccion";
 
 export default function FormularioSecciones({children}) {
   return (
-    <form className="py-10 flex flex-col item-centar justify-between">
+    <div className="flex-auto md:px-4 lg:px-4  pt-0">
+    <div className="py-10 flex flex-col item-centar justify-between">
       <TabsSeccion />
-      <div>
-     {children}
-      </div>
-    </form>
+        {children}
+    </div>
+  </div>
   );
 }

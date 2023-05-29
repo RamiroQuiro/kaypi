@@ -23,7 +23,8 @@ export default function FormularioPrimerosLink({ dataUser }) {
     setFormEntry({ ...formEntry, [e.target.name]: e.target.value });
   };
   useEffect(() => {
-    setFormEntry(userData.datos);
+    if (!userData) return
+    setFormEntry(userData?.datos);
   }, [userData]);
 
   const handleSubmit = async (e) => {

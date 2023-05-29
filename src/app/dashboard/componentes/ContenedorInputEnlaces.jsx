@@ -22,7 +22,7 @@ export default function ContenedorInputEnlaces() {
     setInputForm({})
   };
   return (
-    <form className="relative   flex group pb-5 flex-col items-start justify-betwwwen w-full bg-gray-200 border-2 gap-y-3 rounded-2xl p-3 my-2">
+    <form className="relative   flex group pb-5 flex-col items-start justify-between w-full bg-gray-200 border-2 gap-y-3 rounded-2xl p-3 my-2">
       <div className="bg-white px-2 py-1 rounded-lg absolute hidden group-hover:flex items-center justify-between right-2 top-1 animate-[aparecer_.2s]">
         <BotonDeLosEnlaces onClick={addInput} faIcon={faAdd} />
       </div>

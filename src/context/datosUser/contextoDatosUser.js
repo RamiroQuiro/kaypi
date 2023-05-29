@@ -1,19 +1,22 @@
 import {
   addEnlacesFirestore,
+  guardarSeccionesFirestore,
   guardarUserDataDatos,
   removeEnlacesFirestore,
 } from "@/api/hello/firestore";
 import { create } from "zustand";
 import { v4 as uuidv4 } from "uuid";
 
-const uuidRandoom = () => {
-  return Math.floor(Math.random() * (1000 - 1 + 1) + 1);
-};
 
 export const useContextDatosUser = create((set, get) => ({
   userActivo: false,
   userData: false,
   enlaces: [],
+  secciones:{
+    productoServicio:"",
+    ubicacion:"",
+    multimedia:[{}],
+  },
   link: [
     {
       id: 1,
@@ -75,6 +78,14 @@ guardarDatosContacto:(obj)=>{
   }))
 const {userData,userActivo}=get()
 guardarUserDataDatos(userActivo.uid,userData.datos)
+},
+guardarSecciones:(seccion,value)=>{
+  const {userActivo}=get()
+  set((state)=>({
+    ...state,
+secciones:{...state.secciones,[seccion]:value}
+  }))
+  guardarSeccionesFirestore(userActivo.uid,seccion,value)
 }
 
 }));
