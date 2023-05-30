@@ -1,18 +1,15 @@
-"use client"
+"use client";
 
 import { useContextVisitas } from "@/context/contextoVisita/contextoVistas";
 import BotonesCuadrados from "./BotonesCuadrados";
 import { useEffect, useState } from "react";
 
 export default function LinksSquare() {
-
-const [loading, setLoading] = useState(false)
-  const { userData } = useContextVisitas(
-    (state) => ({
-      userData: state.userData,
-    }));
-
-  console.log(userData.datos);
+  const [loader, setLoader] = useState(false);
+  const [datosCargados, setDatosCargados] = useState([]);
+  const { userData } = useContextVisitas((state) => ({
+    userData: state.userData,
+  }));
 
   const infoBotones = [
     {
@@ -58,37 +55,33 @@ const [loading, setLoading] = useState(false)
     },
   ];
 
+  const cargarData = (obj) => {
+    setLoader(true);
+    const newArray = [];
+    Object.keys(obj).forEach((propiedad) => {
+      // console.log('La propiedad ' + propiedad + ' tiene el valor ' + obj[propiedad]);
+      const newObj = infoBotones.find((element) => element.name == propiedad);
+      if (newObj) {
+        newObj.link = newObj.link + obj[propiedad];
+        newArray.push(newObj);
+      } else null;
+    });
+    setDatosCargados(newArray);
+    setLoader(false);
+  };
   useEffect(() => {
-     cargarData(userData?.datos)
-    
-  }, [loading])
-  
-  
-  const cargarData=(obj)=>{
-  
-Object.keys(obj).forEach(propiedad=> {
-  // console.log('La propiedad ' + propiedad + ' tiene el valor ' + obj[propiedad]);
-  setLoading(true)
+    if (!userData.datos) return;
+    cargarData(userData?.datos);
+    return () => {};
+  }, [userData.datos]);
 
-  const newObj=infoBotones.find(element=>element.name==propiedad)
-  if(newObj){
-  newObj.link=newObj.link +obj[propiedad] 
-  console.log(newObj)
-  }
-  else null
-});
-setLoading(false)
-}
-
-
- 
   return (
     <div className="gap-5 w-8/12  h-1/3 mx-auto flex items-start py-2 justify-evenly ">
-      {
-     
-      infoBotones.map((boton) => (
-        <BotonesCuadrados link={boton.link} path={boton.svg} key={boton.id} />
-      ))}
+      {datosCargados
+        ?.sort((a, b) => a.id - b.id)
+        .map((boton) => (
+          <BotonesCuadrados link={boton.link} path={boton.svg} key={boton.id} />
+        ))}
     </div>
   );
 }
