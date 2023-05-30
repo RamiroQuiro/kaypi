@@ -8,6 +8,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import React from "react";
+import BotonesDeNavBarTarjeta from "./BotonesDeNavBarTarjeta";
 
 export default function NavBarTarjeta() {
   const linkDeMenu = [
@@ -38,17 +39,14 @@ export default function NavBarTarjeta() {
   ];
 
   return (
-    <div className="w-full bg-neutral-100 py-2 absolute bottom-0 left-0">
-      <ul className="w-full flex items-center py-2 text-xl justify-evenly text-gray-600">
+    <div className="w-full bg-neutral-200 py-2 flex items-center justify-center m-auto absolute bottom-0 left-0 ">
+      <ul className="w-full flex items-center  text- justify-evenly text-gray-600 ">
         {linkDeMenu.map((link) => (
-          <li 
-          className="hover:text-sky-900 hover:-translate-y-1 duration-200"
-          key={link.id}
-          >
-            <Link href={link.link}>
-              <FontAwesomeIcon icon={link.icon} />
-            </Link>
-          </li>
+        <BotonesDeNavBarTarjeta
+        key={link.id}
+        link={link.link}
+icon={link.icon}
+        />
         ))}
       </ul>
     </div>
