@@ -1,10 +1,7 @@
 import {
-  arrayRemove,
   arrayUnion,
-  collection,
   doc,
   getDoc,
-  setDoc,
   updateDoc,
 } from "firebase/firestore";
 import { db } from "./firabase";

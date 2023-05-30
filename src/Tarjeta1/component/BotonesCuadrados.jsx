@@ -1,33 +1,25 @@
-"use client"
-import { useStoraStyle } from '@/context/DiseñoUser/contextStyles'
-import Link from 'next/link'
-import React from 'react'
+"use client";
+import Link from "next/link";
 
-export default function BotonesCuadrados({
-    path
-}) {
+export default function BotonesCuadrados({ path ,link}) {
 
-
-    const {styles}=useStoraStyle((state)=>({styles:state.styles}))
+  console.log(link)
   return (
-    <Link 
-    style={{
-fill:styles?.heroTarget.Color1
-    }}
-    href={"#"}
-    className="w-10 h-10 rounded-lg bg-gray-100 p-2 shadow-md delay-200 animate-[aparecer_3s]">
-    <svg
-     style={{
-        fill:styles?.heroTarget.Color1
-     }}
-     className="w-full h-full fill-primary-100 "
-     width="36"
-     height="36px"
-     viewBox="0 0 24 24"
-     fill="none"
-     xmlns="http://www.w3.org/2000/svg"
-   > 
-     {path}</svg>
-  </Link>
-  )
+    <Link
+    target="_blank"
+      href={link}
+      className="w-10 h-10 rounded-lg bg-gray-100 p-2 shadow-md delay-200 animate-[aparecer_3s]"
+    >
+      <svg
+        className="w-full h-full fill-primary-100 "
+        width="36"
+        height="36px"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        {path}
+      </svg>
+    </Link>
+  );
 }

@@ -13,7 +13,7 @@ export default function ContenedorLinks({}) {
   }),shallow)
  
   const styles=userData?.style
-
+  
   const links=userData?.enlaces
 
   return (

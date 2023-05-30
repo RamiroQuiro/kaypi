@@ -22,7 +22,7 @@ export default function HeroTarjeta() {
   
   return (
     <div id="heroTarget" className=" absolute top-0 left-0 w-full h-full   ">
-      <svg
+      {/* <svg
         className={` w-full drop-shadow-lg h-auto  fill-black `}
         version="1.2"
         xmlns="http://www.w3.org/2000/svg"
@@ -35,13 +35,12 @@ export default function HeroTarjeta() {
             d="m-96 428.9c0 0 96 78 174 51 48-16.6 68-93.3 198-99 56.4-2.5 170.2 22.3 255 48.1 168.9 51.3 313.7 75.4 379.5 67.4 68.6-8.4 250.5-55.2 250.5-112.5 0-241.7-1.5-383.9-1.5-383.9h-1251l-10.5 419.9zm-1 0.1"
           ></path>
         </clipPath>
-      </svg>
+      </svg> */}
       <div
         style={{
           backgroundImage: stylesGradientes[styles?.heroTarget.degradado],
-          clipPath:"url(#heroShape)"
         }}
-        className="absolute top-0 mix-blend-screen clip-path-url left-0 w-full h-full bg-gradient-to-t  from-primary-100 to-primary-500 "
+        className=" top-0 mix-blend-screen w-full  left-0  h-full bg-gradient-to-t  from-primary-100 to-primary-500 "
       ></div>
     </div>
   );

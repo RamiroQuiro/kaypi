@@ -14,7 +14,9 @@ const registerEmail= async (userName, name,email, pass)=>{
                 email:email,
                 
             },
-            style:{},
+            style:{
+                heroTarget,
+            },
             enlaces:[],
             secciones:{
                 productoServicio:"",
