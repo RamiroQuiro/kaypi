@@ -8,7 +8,7 @@ export default function Disenio() {
     <SectionOutlet>
       <NavDiseños/>
     
-      <SectionTarjetaSola/>
+      <SectionTarjetaSola label="editor"/>
      <SidebarDiseño/>
     </SectionOutlet>
   );

@@ -3,13 +3,21 @@
 import { useContextVisitas } from "@/context/contextoVisita/contextoVistas";
 import BotonesCuadrados from "./BotonesCuadrados";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useContextDatosUser } from "@/context/datosUser/contextoDatosUser";
 
 export default function LinksSquare() {
+  const pathURL=usePathname()
+  let regex = /dashboard/;
   const [loader, setLoader] = useState(false);
   const [datosCargados, setDatosCargados] = useState([]);
   const { userData } = useContextVisitas((state) => ({
     userData: state.userData,
   }));
+   
+ const userDatosUser=useContextDatosUser((state)=>(state.userData.datos))
+  
+
 
   const infoBotones = [
     {
@@ -57,6 +65,8 @@ export default function LinksSquare() {
 
   const cargarData = (obj) => {
     setLoader(true);
+
+    
     const newArray = [];
     Object.keys(obj).forEach((propiedad) => {
       // console.log('La propiedad ' + propiedad + ' tiene el valor ' + obj[propiedad]);
@@ -71,7 +81,9 @@ export default function LinksSquare() {
   };
   useEffect(() => {
     if (!userData.datos) return;
-    cargarData(userData?.datos);
+
+    regex.test(pathURL) ? cargarData(userDatosUser) :  cargarData(userData?.datos)
+
     return () => {};
   }, [userData.datos]);
 

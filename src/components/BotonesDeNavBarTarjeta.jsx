@@ -8,7 +8,7 @@ export default function BotonesDeNavBarTarjeta({link,icon}) {
   return (
     <Link 
     href={link}
-    className="hover:text-primary-100 hover:-translate-y-1  duration-200"
+    className="hover:text-primary-100 hover:-translate-y-1 cursor-pointer duration-200"
     >
         <FontAwesomeIcon icon={icon} />
     </Link>

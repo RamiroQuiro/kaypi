@@ -50,6 +50,5 @@ export const useStoraStyle = create((set,get) => ({
   guardarFirestore:async(uid)=>{
     const {styles}=get()
   await guardarStyles(uid,styles)
-    console.log(styles)
   }
 }));

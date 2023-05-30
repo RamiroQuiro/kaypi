@@ -1,18 +1,25 @@
 "use client";
 import { useStoraStyle } from "@/context/DiseñoUser/contextStyles";
 import { useContextVisitas } from "@/context/contextoVisita/contextoVistas";
+import { usePathname } from "next/navigation";
 import { shallow } from "zustand/shallow";
 
 export default function HeroTarjeta() {
+
+  const pathURL=usePathname()
+  let regex = /dashboard/;
   const { userData } = useContextVisitas(
     (state) => ({
       userData: state.userData,
     }),
     shallow
   );
+  const userDatas = useStoraStyle(
+    (state) => (state.styles),
+    shallow
+  );
 
-  const styles=userData?.style
-
+  const styles=regex.test(pathURL) ? userDatas : userData?.style
   const stylesGradientes = {
     conic: `conic-gradient(${styles?.heroTarget.Color1} ${styles?.heroTarget.porcentajeColor1}%,${styles?.heroTarget.Color2} ${styles?.heroTarget.porcentajeColor1}%) `,
     radial: `radial-gradient(circle at bottom, ${styles?.heroTarget.Color1} ${styles?.heroTarget.porcentajeColor1}%,${styles?.heroTarget.Color2}  ${styles?.heroTarget.porcentajeColor2}%) `,

@@ -40,13 +40,13 @@ export default function NavBarTarjeta() {
 
   return (
     <div className="w-full bg-neutral-200 py-2 flex items-center justify-center m-auto absolute bottom-0 left-0 ">
-      <ul className="w-full flex items-center  text- justify-evenly text-gray-600 ">
+      <ul className="w-full flex items-center z-10 text- justify-evenly text-gray-600 ">
         {linkDeMenu.map((link) => (
-        <BotonesDeNavBarTarjeta
-        key={link.id}
-        link={link.link}
-icon={link.icon}
-        />
+          <BotonesDeNavBarTarjeta
+            key={link.id}
+            link={link.link}
+            icon={link.icon}
+          />
         ))}
       </ul>
     </div>
