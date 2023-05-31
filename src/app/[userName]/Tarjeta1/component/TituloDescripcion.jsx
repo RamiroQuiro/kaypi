@@ -22,7 +22,7 @@ export default function TituloDescripcion({  }) {
   const styles=regex.test(pathURL) ? userDatas : userData?.style
 
   return (
-    <div className="w-full flex flex-col items-center justify-between">
+    <div className="w-full flex flex-col  flex-shrink h-1/2 items-center justify-start gap-y-2">
       <h1
       style={{
         backgroundImage:`linear-gradient(75deg,${styles?.heroTarget.Color1}  70%,${styles?.heroTarget.Color2}  90%) `

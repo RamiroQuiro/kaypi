@@ -32,7 +32,7 @@ export default function ContenedorLinks({}) {
   const links=regex.test(pathURL) ?userDatosUser :userData?.enlaces
 
   return (
-    <ul className=" flex  flex-wrap lowercase tex rounded p-2 w-11/12  md:6/12  md:text md:font-semibold mx-auto  items-center justify-between gap-y-4  font-thin  text-left py-2">
+    <ul className=" flex gap-2 flex-grow  flex-wrap lowercase tex rounded p-2 w-11/12  md:6/12  md:text md:font-semibold mx-auto  items-center justify-between gap-y-4  font-thin  text-left py-2">
 
     {
         links?.map((link)=>(
