@@ -18,7 +18,8 @@ export default function HeroTarjeta() {
     (state) => (state.styles),
     shallow
   );
-
+console.log(userData)
+console.log(userDatas)
   const styles=regex.test(pathURL) ? userDatas : userData?.style
   const stylesGradientes = {
     conic: `conic-gradient(${styles?.Color1} ${styles?.porcentajeColor1}%,${styles?.Color2} ${styles?.porcentajeColor1}%) `,

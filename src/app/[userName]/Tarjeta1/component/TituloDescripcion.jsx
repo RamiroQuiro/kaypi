@@ -19,6 +19,9 @@ export default function TituloDescripcion({  }) {
     (state) => (state.styles),
     shallow
   );
+  console.log("trayendo datos de la ruta privada",userDatas)
+  console.log("trayendo datos de la ruta publica",userData)
+
   const styles=regex.test(pathURL) ? userDatas : userData?.style
 
   return (
