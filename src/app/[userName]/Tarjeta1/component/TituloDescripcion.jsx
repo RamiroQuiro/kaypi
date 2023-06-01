@@ -19,16 +19,14 @@ export default function TituloDescripcion({  }) {
     (state) => (state.styles),
     shallow
   );
-  console.log("trayendo datos de la ruta privada",userDatas)
-  console.log("trayendo datos de la ruta publica",userData)
 
-  const styles=regex.test(pathURL) ? userDatas : userData?.style
+  const styles=regex.test(pathURL) ? userDatas?.heroTarget: userData?.style?.heroTarget
 
   return (
     <div className="w-full flex flex-col  flex-shrink h-1/2 items-center justify-start gap-y-2">
       <h1
       style={{
-        backgroundImage:`linear-gradient(75deg,${styles?.heroTarget.Color1}  70%,${styles?.heroTarget.Color2}  90%) `
+        backgroundImage:`linear-gradient(75deg,${styles?.Color1}  70%,${styles?.Color2}  90%) `
       }}
       className=" text-xl font-bold capitalize text-transparent text-center bg-clip-text bg-gradient-to-r to-cyan-600 from-teal-800 animate-[sliceUp_1.5s] delay-100">
         {!regex.test(pathURL)? userData?.datos?.nombreApellido : userDatosUser?.nombreApellido}

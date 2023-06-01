@@ -18,9 +18,7 @@ export default function HeroTarjeta() {
     (state) => (state.styles),
     shallow
   );
-console.log(userData)
-console.log(userDatas)
-  const styles=regex.test(pathURL) ? userDatas : userData?.style
+  const styles=regex.test(pathURL) ? userDatas?.heroTarget: userData?.style?.heroTarget
   const stylesGradientes = {
     conic: `conic-gradient(${styles?.Color1} ${styles?.porcentajeColor1}%,${styles?.Color2} ${styles?.porcentajeColor1}%) `,
     radial: `radial-gradient(circle at bottom, ${styles?.Color1} ${styles?.porcentajeColor1}%,${styles?.Color2}  ${styles?.porcentajeColor2}%) `,
