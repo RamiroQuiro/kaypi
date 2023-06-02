@@ -40,7 +40,7 @@ const guardarUserDataDatos = async (uid, obj) => {
     [uid]:userName
   })
   await updateDoc(docRef, {
-    datos: obj,
+    datos: obj, 
   }).then(() => {
     toast.success("Guadado");
   });

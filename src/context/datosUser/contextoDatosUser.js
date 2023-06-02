@@ -63,7 +63,7 @@ export const useContextDatosUser = create((set, get) => ({
     const { userData } = get();
     set((state) => ({
       ...state,
-      enlaces: userData.enlaces,
+      enlaces: userData?.enlaces,
     }));
   },
   userDataContext: (data) => {
@@ -71,7 +71,7 @@ export const useContextDatosUser = create((set, get) => ({
     set((state) => ({
       ...state,
       userData: data,
-    }));
+    }))
     actualizarEnlaces()
   },
 guardarDatosContacto:(obj)=>{

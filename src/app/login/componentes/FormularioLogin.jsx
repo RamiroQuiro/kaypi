@@ -58,8 +58,7 @@ export default function FormularioLogin() {
       .then((user) => {
         if (!user) return;
         if (user) {
-          activarUser(user);
-          router.replace("/dashboard");
+          activarUser(user)
           return user.uid;
         }
       })
