@@ -10,7 +10,8 @@ const {
 const { auth, db } = require("./firabase");
 
 const registerEmail = async (userName, name, email, pass) => {
-  await createUserWithEmailAndPassword(auth, email, pass)
+
+return  await createUserWithEmailAndPassword(auth, email, pass)
     .then((userCredential) => {
       setDoc(doc(db, `usuarios/${userCredential.user.uid}`), {
         datos: {
@@ -35,8 +36,8 @@ const registerEmail = async (userName, name, email, pass) => {
          await updateDoc(doc(db, `rutas/cZwzUWzNeTGekoDUeit2`), {
         [uid]: userName,
       })
-    }).then(() => {
       toast.success("Usuario Creado Correctamente");
+      return uid
     })
     .catch((error) => {
       const errorCode = error.code;
