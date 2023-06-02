@@ -28,7 +28,6 @@ export default function FormularioDatos({  }) {
     guardarDatosContacto(formEntry);
   };
 
-  console.log(formEntry)
   return (
     <form
       onSubmit={handleGaurdarDatos}

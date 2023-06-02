@@ -34,8 +34,13 @@ const removeEnlacesFirestore = async (uid, newArray) => {
 
 const guardarUserDataDatos = async (uid, obj) => {
   const docRef = doc(db, `usuarios/${uid}`);
+  const docRefRutas = doc(db, `rutas/cZwzUWzNeTGekoDUeit2`);
+  const {userName}=obj
+  await updateDoc(docRefRutas,{
+    [uid]:userName
+  })
   await updateDoc(docRef, {
-    datos: obj,
+    datos: obj, 
   }).then(() => {
     toast.success("Guadado");
   });
