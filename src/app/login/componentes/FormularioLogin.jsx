@@ -39,7 +39,7 @@ export default function FormularioLogin() {
         }
       })
       .then(async (uid) => {
-         return await traerDataUser(uid)
+        return await traerDataUser(uid);
       })
       .then((resp) => {
         userDataContext(resp);
@@ -48,13 +48,14 @@ export default function FormularioLogin() {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    try {
-      await registerEmail(
-        formulario.razonSocial,
-        formulario.nombreApellido,
-        formulario.email,
-        formulario.password
-      ).then((user) => {
+
+    await registerEmail(
+      formulario.userName,
+      formulario.nombreApellido,
+      formulario.email,
+      formulario.password
+    )
+      .then((user) => {
         if (!user) return;
         if (user) {
           activarUser(user);
@@ -63,16 +64,15 @@ export default function FormularioLogin() {
         }
       })
       .then(async (uid) => {
-         return await traerDataUser(uid)
+        return await traerDataUser(uid);
       })
       .then((resp) => {
         userDataContext(resp);
+        router.push("/dashboard");
+      })
+      .catch((error) => {
+        console.log(error);
       });
-      
-      router.push("/dashboard");
-    } catch (error) {
-      console.log(error);
-    }
   };
 
   return (

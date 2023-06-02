@@ -67,12 +67,12 @@ export const useContextDatosUser = create((set, get) => ({
     }));
   },
   userDataContext: (data) => {
-    const{actualizarEnlaces}=get()
+     const{actualizarEnlaces}=get()
     set((state) => ({
       ...state,
       userData: data,
     }));
-    actualizarEnlaces();
+    actualizarEnlaces()
   },
 guardarDatosContacto:(obj)=>{
   set((state)=>({

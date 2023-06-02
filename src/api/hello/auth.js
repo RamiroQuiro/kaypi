@@ -1,4 +1,4 @@
-import { doc, setDoc } from "firebase/firestore";
+import { doc, setDoc, updateDoc } from "firebase/firestore";
 import { toast } from "react-hot-toast";
 
 const {
@@ -19,7 +19,7 @@ const registerEmail = async (userName, name, email, pass) => {
           email: email,
         },
         style: {
-          heroTarget,
+          heroTarget:{},
         },
         enlaces: [],
         secciones: {
@@ -27,19 +27,22 @@ const registerEmail = async (userName, name, email, pass) => {
           ubicacion: "",
           multimedia: [{}],
         },
-      });
-      setDoc(doc(db, `rutas/cZwzUWzNeTGekoDUeit2`), {
-        [userCredential.user.uid]: userName,
-      });
+      })
+      const uid= userCredential.user.uid
+      return uid
     })
-
-    .then(() => {
+    .then(async(uid) => {
+         await updateDoc(doc(db, `rutas/cZwzUWzNeTGekoDUeit2`), {
+        [uid]: userName,
+      })
+    }).then(() => {
       toast.success("Usuario Creado Correctamente");
     })
     .catch((error) => {
       const errorCode = error.code;
       const eroorMessenge = error.message;
     });
+
 };
 
 const loginEmail = async (email, pass) => {

@@ -1,6 +1,5 @@
 "use client";
 
-import LoaderCss from "@/components/LoaderCss";
 import SectionOutlet from "@/components/SectionOutlet";
 import { useContextVisitas } from "@/context/contextoVisita/contextoVistas";
 import { useParams } from "next/navigation";

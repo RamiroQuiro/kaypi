@@ -10,15 +10,15 @@ export default function InputRegister({handleChange}) {
           type: "text",
           onChange: handleChange,
           faIcon: faUser,
-          children: "Nombre de Usuario",
+          children: "Nombre  y Apellido",
         },
         {
           id: 2,
-          name: "razonSocial",
+          name: "userName",
           type: "text",
           onChange: handleChange,
           faIcon: faUserAstronaut,
-          children: "Razon Social o Nombre de Fantasia",
+          children: "Elige un nombre de Usuario",
         },
         {
           id: 3,
