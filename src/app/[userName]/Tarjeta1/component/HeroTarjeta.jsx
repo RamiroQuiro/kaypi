@@ -46,7 +46,7 @@ export default function HeroTarjeta() {
         style={{
           backgroundImage: stylesGradientes[styles?.degradado],
         }}
-        className=" top-0 mix-blend-screen w-full  left-0  h-full bg-gradient-to-t  from-primary-100 to-primary-500 "
+        className=" top-0 mix-blend-screen w-full  left-0  h-full bg-gradient-to-t  from-primary-100 to-primary-200 "
       ></div>
     </div>
   );
