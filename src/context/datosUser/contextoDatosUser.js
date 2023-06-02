@@ -32,14 +32,14 @@ export const useContextDatosUser = create((set, get) => ({
   ],
   // funciones
 
-  addEnlaces: (obj) => {
+  addEnlaces:async (obj) => {
     const objNew = { ...obj, id: uuidv4().slice(0, 8) };
     const { userActivo } = get();
     set((state) => ({
       ...state,
       enlaces: [...state.enlaces, objNew],
     }));
-    addEnlacesFirestore(userActivo.uid, objNew);
+     await addEnlacesFirestore(userActivo.uid, objNew);
   },
   removeEnlace: (id) => {
     const { userActivo, enlaces } = get();

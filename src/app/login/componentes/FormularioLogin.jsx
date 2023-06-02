@@ -55,17 +55,17 @@ export default function FormularioLogin() {
       formulario.email,
       formulario.password
     )
-      .then((user) => {
+      .then(async(user) => {
         if (!user) return;
         if (user) {
           activarUser(user)
-          return user.uid;
+          const data =await traerDataUser(user)
+          return data
         }
       })
-      .then(async (uid) => {
-        return await traerDataUser(uid);
-      })
+    
       .then((resp) => {
+        console.log(resp)
         userDataContext(resp);
         router.push("/dashboard");
       })
