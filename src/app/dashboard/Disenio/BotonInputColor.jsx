@@ -17,12 +17,12 @@ export default function BotonInputColor({ name, width }) {
   );
 
   const handleInput = (e) => {
-    guardarColores(name, e.target.value);
+    guardarColores("heroTarget",name, e.target.value);
     guardarPorcentajes(
       "porcentaje" + name,
       Math.trunc((nextX / width) * 100)
     );
-          guardarColores(name, e.target.value);
+          guardarColores("heroTarget",name, e.target.value);
   };
   const handlePorcentaje = () => {
     guardarPorcentajes(

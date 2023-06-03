@@ -16,6 +16,28 @@ module.exports = {
       myCirclue: "polygon(0% 63%, 8% 63%,11% 68%, 18% 70%, 23% 69%, 29% 67%, 33% 63%, 37% 59%, 41% 56%, 46% 55%, 49% 53%, 54% 53%, 60% 54%, 65% 56%, 70% 58%, 78% 60%, 82% 62%, 86% 64%, 91% 66%, 95% 67%, 99% 69%, 100% 1%, 1% 0%);",
 
   },
+  patterns: {
+    opacities: {
+        100: "1",
+        80: ".80",
+        60: ".60",
+        40: ".40",
+        20: ".20",
+        10: ".10",
+        5: ".05",
+    },
+    sizes: {
+        1: "0.25rem",
+        2: "0.5rem",
+        4: "1rem",
+        6: "1.5rem",
+        8: "2rem",
+        16: "4rem",
+        20: "5rem",
+        24: "6rem",
+        32: "8rem",
+    }
+},
     extend: {
       colors:{
          // for 'primary' and'success'  - use the colorblind-friendly version (blue-grey, cyan-grey, green-grey, orange-grey, purple-grey, red-grey, yellow-grey and violet-grey) and use the hex value.  Also, check out the Color Wheel demo.  Also, check out the Palette demo for the 5 color version.  Also, check out the Paletton demo for the inverse of colors.  Also, check out the Color Wheel demo for the 5 color version.  Also, check out the Paletton demo for the inverse of colors
@@ -98,6 +120,7 @@ module.exports = {
     },
   },
   plugins: [
+    require('tailwindcss-bg-patterns'),
     require('tailwind-clip-path'),
   ],
 }
