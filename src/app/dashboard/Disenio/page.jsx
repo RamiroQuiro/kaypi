@@ -6,7 +6,7 @@ import SectionTarjetaSola from "@/app/[userName]/Tarjeta1/component/SectionTarje
 export default function Disenio() {
   return (
     <SectionOutlet>
-      <NavDiseños/>
+      {/* <NavDiseños/> */}
     
       <SectionTarjetaSola label="editor"/>
      <SidebarDiseño/>

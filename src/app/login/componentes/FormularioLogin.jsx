@@ -65,7 +65,6 @@ export default function FormularioLogin() {
       })
     
       .then((resp) => {
-        console.log(resp)
         userDataContext(resp);
         router.push("/dashboard");
       })
