@@ -5,7 +5,7 @@ import { shallow } from "zustand/shallow";
 import BotonGuardar from "../componentes/BotonGuardar";
 import { useContextDatosUser } from "@/context/datosUser/contextoDatosUser";
 import { useState } from "react";
-import SelectoresDeDiseños from "./selectoresDeDiseños";
+import SelectoresDeDiseños from "./SelectoresDeDiseños";
 
 export default function SidebarDiseño() {
   const [selectBoton, setSelectBoton] = useState("superior");
