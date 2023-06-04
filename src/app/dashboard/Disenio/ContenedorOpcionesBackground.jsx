@@ -3,16 +3,16 @@ import BotonColoresBackgroun from "./BotonColoresBackgroun";
 
 export default function ContenedorOpcionesBackground({ heroTarget }) {
   const coloresBackground = [
-    { Color1: "#E11E4880", Color2: "#f3f3f3" },
-    { Color1: "#77B20B80", Color2: "#f3f3f3" },
-    { Color1: "#C51A7880", Color2: "#f3f3f3" },
-    { Color1: "#FC968980", Color2: "#f3f3f3" },
-    { Color1: "#71A9E680", Color2: "#f3f3f3" },
-    { Color1: "#FCA68A80", Color2: "#f3f3f3" },
-    { Color1: "#83D8FB80", Color2: "#f3f3f3" },
-    { Color1: "#F6A1FC80", Color2: "#f3f3f3" },
-    { Color1: "#1C292880", Color2: "#f3f3f3" },
-    { Color1: "#15111280", Color2: "#f3f3f3" },
+    { Color1: "#F0CECE", Color2: "#f3f3f3" },
+    { Color1: "#C3DEF2", Color2: "#f3f3f3" },
+    { Color1: "#D8F2DB", Color2: "#f3f3f3" },
+    { Color1: "#DBF1EF", Color2: "#f3f3f3" },
+    { Color1: "#F2F2F2", Color2: "#f3f3f3" },
+    { Color1: "#DCCEC0", Color2: "#f3f3f3" },
+    { Color1: "#3A3A3A", Color2: "#f3f3f3" },
+    { Color1: "#202124", Color2: "#f3f3f3" },
+    { Color1: "#3B578B", Color2: "#f3f3f3" },
+    { Color1: "#595341", Color2: "#f3f3f3" },
   ];
   return (
     <div className="flex flex-col h-2/3 px-3 py-5 justify-evenly gap-5 items-center w-full ">

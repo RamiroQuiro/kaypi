@@ -1,28 +1,11 @@
-"use client";
-import { useStoraStyle } from "@/context/DiseñoUser/contextStyles";
-import { useContextVisitas } from "@/context/contextoVisita/contextoVistas";
-import { usePathname } from "next/navigation";
-import { shallow } from "zustand/shallow";
 
-export default function HeroTarjeta() {
 
-  const pathURL=usePathname()
-  let regex = /dashboard/;
-  const { userData } = useContextVisitas(
-    (state) => ({
-      userData: state.userData,
-    }),
-    shallow
-  );
-  const userDatas = useStoraStyle(
-    (state) => (state.styles),
-    shallow
-  );
-  const styles=regex.test(pathURL) ? userDatas?.heroTarget: userData?.style?.heroTarget
+export default function HeroTarjeta({styles}) {
+
   const stylesGradientes = {
-    conic: `conic-gradient(${styles?.Color1} ${styles?.porcentajeColor1}%,${styles?.Color2} ${styles?.porcentajeColor1}%) `,
-    radial: `radial-gradient(circle at bottom, ${styles?.Color1} ${styles?.porcentajeColor1}%,${styles?.Color2}  ${styles?.porcentajeColor2}%) `,
-    linear: `linear-gradient(${styles?.deg}deg, ${styles?.Color1}  ${styles?.porcentajeColor1}%,${styles?.Color2}  ${styles?.porcentajeColor2}%) `,
+    conic: `conic-gradient(${styles?.heroTarget?.Color1} ${styles?.heroTarget?.porcentajeColor1}%,${styles?.heroTarget?.Color2} ${styles?.heroTarget?.porcentajeColor1}%) `,
+    radial: `radial-gradient(circle at bottom, ${styles?.heroTarget?.Color1} ${styles?.heroTarget?.porcentajeColor1}%,${styles?.heroTarget?.Color2}  ${styles?.heroTarget?.porcentajeColor2}%) `,
+    linear: `linear-gradient(${styles?.heroTarget?.deg}deg, ${styles?.heroTarget?.Color1}  ${styles?.heroTarget?.porcentajeColor1}%,${styles?.heroTarget?.Color2}  ${styles?.heroTarget?.porcentajeColor2}%) `,
   };
 
   
@@ -44,7 +27,7 @@ export default function HeroTarjeta() {
       </svg>  */}
       <div
         style={{
-          backgroundImage: stylesGradientes[styles?.degradado],
+          backgroundImage: stylesGradientes[styles?.heroTarget?.degradado],
         }}
         className=" top-0  w-full  left-0  h-full bg-gradient-to-t  from-primary-100 to-primary-200 "
       ></div>

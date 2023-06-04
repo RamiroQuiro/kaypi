@@ -69,7 +69,6 @@ export default function LinksSquare() {
     
     const newArray = [];
     Object.keys(obj).forEach((propiedad) => {
-      // console.log('La propiedad ' + propiedad + ' tiene el valor ' + obj[propiedad]);
       const newObj = infoBotones.find((element) => element.name == propiedad);
       if (newObj) {
         newObj.link = newObj.link + obj[propiedad];
@@ -85,7 +84,7 @@ export default function LinksSquare() {
     regex.test(pathURL) ? cargarData(userDatosUser) :  cargarData(userData?.datos)
 
     return () => {};
-  }, [userData.datos]);
+  }, [userData]);
 
   return (
     <div className="gap-5 w-8/12  h-1/3 mx-auto flex items-start py-2 justify-evenly ">

@@ -21,16 +21,17 @@ export default function HomeTarjeta() {
     (state) => (state.styles),
     shallow
   );
-  const styles=regex.test(pathURL) ? userDatas?.background: userData?.style?.background
+  const styles=regex.test(pathURL) ? userDatas: userData?.style
+  console.log(userDatas)
 
   return (
     <div
     style={{
-    background:`linear-gradient(to bottom,transparent,#F3F4F6) ${styles?.color}`}
+    background:`linear-gradient(to bottom,transparent,#F3F4F6) ${styles?.background?.color}`}
   }
     className=" h-full w-full  z- flex flex-col items-center justify-between">
       {" "}
-      <ImagenPerfil />
+      <ImagenPerfil styles={styles} />
       <div className="h-2/3 w-full flex py-5 flex-col items-center justify-evenly">
         <DatosPerfil />
         <LinksSquare />
