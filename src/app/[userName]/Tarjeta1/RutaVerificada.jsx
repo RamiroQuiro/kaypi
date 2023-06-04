@@ -12,13 +12,11 @@ export default function RutaVerificada({ children, obj }) {
   const cargarUid=useContextVisitas(state=>state.cargarUid)
 
 
-    const users = Object.values(obj).map((user) => user.toLowerCase());
-    const key = Object.keys(obj).find(key => obj[key].toLowerCase() === params.userName);
+    const key = Object.keys(obj).find(key => obj[key].toLowerCase() === params.userName.toLowerCase() );
     
-    
-    cargarUid(key)
+const uid=    cargarUid(key)
   
-    if (users.find(element=>element===params.userName.toLowerCase())) {
+    if (key&& uid) {
       return children;
     } else {
       return (

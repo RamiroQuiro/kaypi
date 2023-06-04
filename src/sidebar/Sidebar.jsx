@@ -21,9 +21,12 @@ import { useState } from "react";
 import ButtonSidebar from "./componentes/ButtonSidebar";
 import Link from "next/link";
 import BotonLogOut from "./componentes/BotonLogOut";
+import { useContextDatosUser } from "@/context/datosUser/contextoDatosUser";
 export default function Sidebar() {
   const [toggle, setToggle] = useState(false);
 
+  const {datos}=useContextDatosUser(state=>state.userData)
+  console.log(datos)
   return (
     <div className="md:w-20 md:border-r border-primary-300/50 w-screen fixed top-0 left-0 md:h-screen duration-300 md:bg-sidebar md:from-primary-300 md:via-primary-200 md:to-primary-100 bg-gradient-to-r from-primary-100/80 via-primary-100/80 to-primary-200/80 backdrop-blur-sm  mx-auto md:items-center    shadow-lg md:shadow-none z-40">
       <div
@@ -44,11 +47,12 @@ export default function Sidebar() {
       >
         <Link
           target="_blank"
-          href={`#`}
+          href={`https://kaypi.vercel.app/${datos?.userName}`}
           className="flex flex-col items-center mx-auto text-center absolute top-10 w-full px-2 justify-center gap-2 cursor-pointer"
         >
           <span className="w-full mx-auto text-xs text-center font-thin">
-            KAYPI DESIGN
+           Ver tu tarjeta 
+           <pre>↓</pre>
           </span>
           <FontAwesomeIcon icon={faIdCard} className=" text-3xl" />
         </Link>

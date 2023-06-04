@@ -8,6 +8,7 @@ import { useStoraStyle } from "@/context/DiseñoUser/contextStyles";
 import { shallow } from "zustand/shallow";
 import { useEffect, useState } from "react";
 import { useContextDatosUser } from "@/context/datosUser/contextoDatosUser";
+import LoaderCss from "@/components/LoaderCss";
 
 export default function HomeTarjeta() {
   const [loading, setLoading] = useState(false);
@@ -40,14 +41,14 @@ export default function HomeTarjeta() {
   }, [userData, userDatas, loading]);
 
 
-  if (!loading) return <div>Cargando...</div>
-
+  if (!loading) return <LoaderCss/>
+if(estilos && loading)
   return (
     <div
       style={{
         background: `linear-gradient(to bottom,transparent,#F3F4F6) ${estilos?.background?.color}`,
       }}
-      className=" h-full w-full  z- flex flex-col items-center justify-between"
+      className=" h-full w-full  z- flex flex-col items-center justify-between animate-[aparecer_.5s]"
     >
         <ImagenPerfil styles={estilos} />
       <div className="h-2/3 w-full flex py-5 flex-col items-center justify-evenly">

@@ -11,6 +11,8 @@ export const useContextVisitas = create((set, get) => ({
     set((state) => ({
       ...state,
       userData: data,
-    }));
+    }))
+    return true
+    
   },
 }));
