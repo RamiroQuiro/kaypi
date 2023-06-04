@@ -1,23 +1,9 @@
-"use client";
-
-import { useContextVisitas } from "@/context/contextoVisita/contextoVistas";
+"use client"
 import BotonesCuadrados from "./BotonesCuadrados";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
-import { useContextDatosUser } from "@/context/datosUser/contextoDatosUser";
 
-export default function LinksSquare() {
-  const pathURL=usePathname()
-  let regex = /dashboard/;
-  const [loader, setLoader] = useState(false);
+export default function LinksSquare({ userData }) {
   const [datosCargados, setDatosCargados] = useState([]);
-  const { userData } = useContextVisitas((state) => ({
-    userData: state.userData,
-  }));
-   
- const userDatosUser=useContextDatosUser((state)=>(state.userData.datos))
-  
-
 
   const infoBotones = [
     {
@@ -64,9 +50,7 @@ export default function LinksSquare() {
   ];
 
   const cargarData = (obj) => {
-    setLoader(true);
 
-    
     const newArray = [];
     Object.keys(obj).forEach((propiedad) => {
       const newObj = infoBotones.find((element) => element.name == propiedad);
@@ -76,16 +60,14 @@ export default function LinksSquare() {
       } else null;
     });
     setDatosCargados(newArray);
-    setLoader(false);
   };
   useEffect(() => {
-    if (!userData.datos) return;
+!userData?null:
 
-    regex.test(pathURL) ? cargarData(userDatosUser) :  cargarData(userData?.datos)
+  cargarData(userData);
 
     return () => {};
   }, [userData]);
-
   return (
     <div className="gap-5 w-8/12  h-1/3 mx-auto flex items-start py-2 justify-evenly ">
       {datosCargados

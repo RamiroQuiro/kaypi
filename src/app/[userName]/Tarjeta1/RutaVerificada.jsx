@@ -18,7 +18,7 @@ export default function RutaVerificada({ children, obj }) {
     
     cargarUid(key)
   
-    if (users.find(element=>element===params.userName)) {
+    if (users.find(element=>element===params.userName.toLowerCase())) {
       return children;
     } else {
       return (
