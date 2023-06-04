@@ -1,15 +1,25 @@
 
+"use client"
+
+import { useEffect, useState } from "react";
 
 export default function HeroTarjeta({styles}) {
-
+  const [estilos, setEstilos] = useState(null)
+  const [isLoading, setIsLoading] = useState(false)
+useEffect(() => {
+const cargarEstilo=()=>{
+  setEstilos(styles)
+  setIsLoading(true)
+}  
+cargarEstilo()
+}, [styles,isLoading,estilos])
   const stylesGradientes = {
-    conic: `conic-gradient(${styles?.heroTarget?.Color1} ${styles?.heroTarget?.porcentajeColor1}%,${styles?.heroTarget?.Color2} ${styles?.heroTarget?.porcentajeColor1}%) `,
-    radial: `radial-gradient(circle at bottom, ${styles?.heroTarget?.Color1} ${styles?.heroTarget?.porcentajeColor1}%,${styles?.heroTarget?.Color2}  ${styles?.heroTarget?.porcentajeColor2}%) `,
-    linear: `linear-gradient(${styles?.heroTarget?.deg}deg, ${styles?.heroTarget?.Color1}  ${styles?.heroTarget?.porcentajeColor1}%,${styles?.heroTarget?.Color2}  ${styles?.heroTarget?.porcentajeColor2}%) `,
+    conic: `conic-gradient(${estilos?.heroTarget?.Color1} ${estilos?.heroTarget?.porcentajeColor1}%,${estilos?.heroTarget?.Color2} ${estilos?.heroTarget?.porcentajeColor1}%) `,
+    radial: `radial-gradient(circle at bottom, ${estilos?.heroTarget?.Color1} ${estilos?.heroTarget?.porcentajeColor1}%,${estilos?.heroTarget?.Color2}  ${estilos?.heroTarget?.porcentajeColor2}%) `,
+    linear: `linear-gradient(${estilos?.heroTarget?.deg}deg, ${estilos?.heroTarget?.Color1}  ${estilos?.heroTarget?.porcentajeColor1}%,${estilos?.heroTarget?.Color2}  ${estilos?.heroTarget?.porcentajeColor2}%) `,
   };
 
-  
-  return (
+  if(isLoading)return (
     <div id="heroTarget" className=" absolute top-0 left-0 w-full h-full   ">
        {/* <svg
         className={` w-full drop-shadow-lg h-auto absolute fill-black mix-blend-`}
@@ -27,7 +37,7 @@ export default function HeroTarjeta({styles}) {
       </svg>  */}
       <div
         style={{
-          backgroundImage: stylesGradientes[styles?.heroTarget?.degradado],
+          backgroundImage: stylesGradientes[estilos?.heroTarget?.degradado],
         }}
         className=" top-0  w-full  left-0  h-full bg-gradient-to-t  from-primary-100 to-primary-200 "
       ></div>

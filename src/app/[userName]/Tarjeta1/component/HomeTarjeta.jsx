@@ -24,6 +24,7 @@ export default function HomeTarjeta() {
   );
   const userDatas = useStoraStyle((state) => state.styles, shallow);
 
+
   const userDatosUser = useContextDatosUser((state) => state.userData.datos);
 
   useEffect(() => {
@@ -38,7 +39,7 @@ export default function HomeTarjeta() {
       setLoading(true);
     };
     cargandoData();
-  }, [userData, userDatas, loading]);
+  }, [userData, userDatas, loading,estilos]);
 
 
   if (!loading) return <LoaderCss/>

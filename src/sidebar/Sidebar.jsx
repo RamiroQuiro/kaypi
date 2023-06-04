@@ -1,19 +1,13 @@
 "use client";
 
 import {
-  faBabyCarriage,
-  faBacon,
   faBars,
   faBarsStaggered,
-  faBurger,
   faDashboard,
   faIdCard,
-  faMarsAndVenus,
-  faMedal,
   faQrcode,
   faSection,
   faSprayCan,
-  faToggleOn,
   faUserPen,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -26,7 +20,6 @@ export default function Sidebar() {
   const [toggle, setToggle] = useState(false);
 
   const {datos}=useContextDatosUser(state=>state.userData)
-  console.log(datos)
   return (
     <div className="md:w-20 md:border-r border-primary-300/50 w-screen fixed top-0 left-0 md:h-screen duration-300 md:bg-sidebar md:from-primary-300 md:via-primary-200 md:to-primary-100 bg-gradient-to-r from-primary-100/80 via-primary-100/80 to-primary-200/80 backdrop-blur-sm  mx-auto md:items-center    shadow-lg md:shadow-none z-40">
       <div
