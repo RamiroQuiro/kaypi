@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { usePathname } from "next/navigation";
 import DatosPerfil from "./DatosPerfil";
 import ImagenPerfil from "./ImagenPerfil";
@@ -10,10 +10,10 @@ import { useEffect, useState } from "react";
 import { useContextDatosUser } from "@/context/datosUser/contextoDatosUser";
 
 export default function HomeTarjeta() {
-const [loading, setLoading] = useState(false)
-  const pathURL=usePathname()
-  const [estilos, setEstilos] = useState(null)
-  const [userDatos, setUserDatos] = useState(null)
+  const [loading, setLoading] = useState(false);
+  const pathURL = usePathname();
+  const [estilos, setEstilos] = useState(null);
+  const [userDatos, setUserDatos] = useState(null);
   let regex = /dashboard/;
   const { userData } = useContextVisitas(
     (state) => ({
@@ -21,37 +21,35 @@ const [loading, setLoading] = useState(false)
     }),
     shallow
   );
-  const userDatas = useStoraStyle(
-    (state) => (state.styles),
-    shallow
-  );
-  
-  const userDatosUser=useContextDatosUser((state)=>(state.userData.datos))
+  const userDatas = useStoraStyle((state) => state.styles, shallow);
+
+  const userDatosUser = useContextDatosUser((state) => state.userData.datos);
 
   useEffect(() => {
-    const userDatosRegex=regex.test(pathURL) ? userDatosUser: userData?.datos
-    const styles=regex.test(pathURL) ? userDatas: userData?.style
+    const userDatosRegex = regex.test(pathURL)
+      ? userDatosUser
+      : userData?.datos;
+    const styles = regex.test(pathURL) ? userDatas : userData?.style;
 
-    const cargandoData=()=>{
-setLoading(true)
-      setEstilos(styles)
-      setUserDatos(userDatosRegex)
-      setLoading(false)
-    }
-  cargandoData()
-  }, [userData,userDatas,loading])
-  
+    const cargandoData = () => {
+      setEstilos(styles);
+      setUserDatos(userDatosRegex);
+      setLoading(true);
+    };
+    cargandoData();
+  }, [userData, userDatas, loading]);
+
+
+  if (!loading) return <div>Cargando...</div>
+
   return (
     <div
-    style={{
-    background:`linear-gradient(to bottom,transparent,#F3F4F6) ${estilos?.background?.color}`}
-  }
-    className=" h-full w-full  z- flex flex-col items-center justify-between">
-      {
-loading?
-<div>Esteperar</div>:
+      style={{
+        background: `linear-gradient(to bottom,transparent,#F3F4F6) ${estilos?.background?.color}`,
+      }}
+      className=" h-full w-full  z- flex flex-col items-center justify-between"
+    >
         <ImagenPerfil styles={estilos} />
-      }
       <div className="h-2/3 w-full flex py-5 flex-col items-center justify-evenly">
         <DatosPerfil />
         <LinksSquare userData={userDatos} />
