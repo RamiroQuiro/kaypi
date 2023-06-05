@@ -40,11 +40,11 @@ const { userData } = useContextVisitas(
 const userDatas = useStoraStyle((state) => state.styles, shallow);
 
 
-const userDatosUser = useContextDatosUser((state) => state.userData.datos);
-
+const userDatosUser = useContextDatosUser((state) => state.userData);
+console.log(userDatosUser)
 useEffect(() => {
   const userDatosRegex = regex.test(pathURL)
-    ? userDatosUser
+    ? userDatosUser?.datos
     : userData?.datos;
   const styles = regex.test(pathURL) ? userDatas : userData?.style;
 
@@ -54,17 +54,17 @@ useEffect(() => {
     setLoading(true);
   };
   cargandoData();
-}, [userData, userDatas, loading,estilos]);
+}, [userData, userDatas,userDatosUser, loading,estilos]);
+
 
 
 if (!loading) return <LoaderCss/>
-if(estilos && loading)
 
-
+if(estilos && loading){
 if (nombreElemento=="") return  <HomeTarjeta  estilos={estilos} userDatos={userDatos}  />
-if (nombreElemento=="servicio") return  <MiEmpresa/>
+if (nombreElemento=="servicio") return  <MiEmpresa userDatos={userDatos} />
 if (nombreElemento=="ubicacion") return   <Ubicacion/>
-if (nombreElemento=="multimedia") return   <Multimedia/>
+if (nombreElemento=="multimedia") return   <Multimedia/>}
 //  return  <ContenedoresOpcionesHero heroTarget={heroTarget}/>
 
 }
