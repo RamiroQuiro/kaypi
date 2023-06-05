@@ -1,49 +1,8 @@
-"use client";
-import { usePathname } from "next/navigation";
 import DatosPerfil from "./DatosPerfil";
 import ImagenPerfil from "./ImagenPerfil";
 import LinksSquare from "./LinksSquare";
-import { useContextVisitas } from "@/context/contextoVisita/contextoVistas";
-import { useStoraStyle } from "@/context/DiseñoUser/contextStyles";
-import { shallow } from "zustand/shallow";
-import { useEffect, useState } from "react";
-import { useContextDatosUser } from "@/context/datosUser/contextoDatosUser";
-import LoaderCss from "@/components/LoaderCss";
 
-export default function HomeTarjeta() {
-  const [loading, setLoading] = useState(false);
-  const pathURL = usePathname();
-  const [estilos, setEstilos] = useState(null);
-  const [userDatos, setUserDatos] = useState(null);
-  let regex = /dashboard/;
-  const { userData } = useContextVisitas(
-    (state) => ({
-      userData: state.userData,
-    }),
-    shallow
-  );
-  const userDatas = useStoraStyle((state) => state.styles, shallow);
-
-
-  const userDatosUser = useContextDatosUser((state) => state.userData.datos);
-
-  useEffect(() => {
-    const userDatosRegex = regex.test(pathURL)
-      ? userDatosUser
-      : userData?.datos;
-    const styles = regex.test(pathURL) ? userDatas : userData?.style;
-
-    const cargandoData = () => {
-      setEstilos(styles);
-      setUserDatos(userDatosRegex);
-      setLoading(true);
-    };
-    cargandoData();
-  }, [userData, userDatas, loading,estilos]);
-
-
-  if (!loading) return <LoaderCss/>
-if(estilos && loading)
+export default function HomeTarjeta({estilos,userDatos}) {
   return (
     <div
       style={{
