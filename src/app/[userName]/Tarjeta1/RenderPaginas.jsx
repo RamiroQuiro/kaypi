@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import ContenedoresOpcionesHero from './ContenedoresOpcionesHero';
-import ContenedorOpcionesBackground from './ContenedorOpcionesBackground';
-import ContenedorOpcionesFont from './ContenedorOpcionesFont';
 import HomeTarjeta from './component/HomeTarjeta';
+import MiEmpresa from './Outlet/MiEmpresa';
+import Ubicacion from './Outlet/Ubicacion';
+import Multimedia from './Outlet/Multimedia';
 
-export default function RenderPaginas({name,heroTarget}) {
+export default function RenderPaginas({name}) {
 
-const [nombreElemento, setNombreElemento] = useState("superior")
+const [nombreElemento, setNombreElemento] = useState("")
 
 useEffect(() => {
     if (!name) {
-        setNombreElemento("superior")
+        setNombreElemento("")
     }else{
 
         setNombreElemento(name)
@@ -20,9 +20,10 @@ useEffect(() => {
 }, [name])
 
 
-if (nombreElemento=="superior") return  <HomeTarjeta heroTarget={heroTarget}/>
-if (nombreElemento=="fondo") return  <ContenedorOpcionesBackground/>
-if (nombreElemento=="letras") return   <ContenedorOpcionesFont/>
+if (nombreElemento=="") return  <HomeTarjeta />
+if (nombreElemento=="servicio") return  <MiEmpresa/>
+if (nombreElemento=="ubicacion") return   <Ubicacion/>
+if (nombreElemento=="multimedia") return   <Multimedia/>
 //  return  <ContenedoresOpcionesHero heroTarget={heroTarget}/>
 
 }

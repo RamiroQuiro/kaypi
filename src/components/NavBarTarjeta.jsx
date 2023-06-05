@@ -5,34 +5,35 @@ import {
   faPhotoVideo,
   faUserTag,
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
-import React from "react";
 import BotonesDeNavBarTarjeta from "./BotonesDeNavBarTarjeta";
 
-export default function NavBarTarjeta() {
+export default function NavBarTarjeta({ selectorBotones }) {
   const linkDeMenu = [
     {
       id: 1,
-      link: ":userName",
+      name: "",
       icon: faUserTag,
       className: "",
+      onClick:selectorBotones
     },
     {
+      onClick:selectorBotones,
       id: 2,
-      link: "/:userName/servicios",
+      name: "servicios",
       icon: faBriefcase,
       className: "",
     },
     {
+      onClick:selectorBotones,
       id: 3,
-      link: "/:userName/ubicacion",
+      name: "ubicacion",
       icon: faMapLocationDot,
       className: "",
     },
     {
+      onClick:selectorBotones,
       id: 4,
-      link: "/:userName/multimedia",
+      name: "multimedia",
       icon: faPhotoVideo,
       className: "",
     },
@@ -43,8 +44,9 @@ export default function NavBarTarjeta() {
       <ul className="w-full flex items-center z-10 text- justify-evenly text-gray-600 ">
         {linkDeMenu.map((link) => (
           <BotonesDeNavBarTarjeta
+            onClick={link.onClick}
             key={link.id}
-            link={link.link}
+            name={link.name}
             icon={link.icon}
           />
         ))}
