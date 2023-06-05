@@ -7,9 +7,9 @@ import RenderPaginas from "../RenderPaginas";
 export default function SectionTarjetaSola({}) {
   
   const [selectBoton, setSelectBoton] = useState("");
-  const selectorBotones = (e) => {
-    e.preventDefault()
-    console.log(e.target);
+  const selectorBotnes = (e) => {
+    e.preventDefault();
+    setSelectBoton(e.target.name);
   };
 
 
@@ -20,7 +20,7 @@ export default function SectionTarjetaSola({}) {
        {/* <HomeTarjeta />  */}
 
        <RenderPaginas name={selectBoton} />
-      <NavBarTarjeta  onClick={selectorBotones}/>
+      <NavBarTarjeta  selectorBotones={selectorBotnes}/>
     </section>
    
   );
