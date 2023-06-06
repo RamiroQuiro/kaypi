@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function Ubicacion() {
+export default function Ubicacion({userDatos}) {
   return (
-    <div>Ubicacion</div>
+    <div>{userDatos}</div>
   )
 }

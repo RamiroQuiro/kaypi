@@ -1,7 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import HomeTarjeta from './component/HomeTarjeta';
-import MiEmpresa from './Outlet/MiEmpresa';
 import Ubicacion from './Outlet/Ubicacion';
 import Multimedia from './Outlet/Multimedia';
 import LoaderCss from '@/components/LoaderCss';
@@ -10,6 +9,7 @@ import { useContextDatosUser } from '@/context/datosUser/contextoDatosUser';
 import { useStoraStyle } from '@/context/DiseñoUser/contextStyles';
 import { useContextVisitas } from '@/context/contextoVisita/contextoVistas';
 import { shallow } from 'zustand/shallow';
+import MiEmpresa from './Outlet/MiEmpresa';
 
 export default function RenderPaginas({name}) {
 
@@ -41,12 +41,11 @@ const userDatas = useStoraStyle((state) => state.styles, shallow);
 
 
 const userDatosUser = useContextDatosUser((state) => state.userData);
-console.log(userDatosUser)
 useEffect(() => {
-  const userDatosRegex = regex.test(pathURL)
-    ? userDatosUser?.datos
-    : userData?.datos;
-  const styles = regex.test(pathURL) ? userDatas : userData?.style;
+    const userDatosRegex = regex.test(pathURL)
+    ? userDatosUser
+    : userData;
+    const styles = regex.test(pathURL) ? userDatas : userData?.style;
 
   const cargandoData = () => {
     setEstilos(styles);
@@ -56,14 +55,15 @@ useEffect(() => {
   cargandoData();
 }, [userData, userDatas,userDatosUser, loading,estilos]);
 
+console.log(userData)
 
 
 if (!loading) return <LoaderCss/>
 
 if(estilos && loading){
-if (nombreElemento=="") return  <HomeTarjeta  estilos={estilos} userDatos={userDatos}  />
-if (nombreElemento=="servicio") return  <MiEmpresa userDatos={userDatos} />
-if (nombreElemento=="ubicacion") return   <Ubicacion/>
+if (nombreElemento=="") return  <HomeTarjeta  estilos={estilos} userDatos={userDatos?.datos}  />
+if (nombreElemento=="servicios") return  <MiEmpresa userDatos={userDatos?.secciones?.productoServicio} />
+if (nombreElemento=="ubicacion") return   <Ubicacion userDatos={userDatos?.secciones?.ubicacion}/>
 if (nombreElemento=="multimedia") return   <Multimedia/>}
 //  return  <ContenedoresOpcionesHero heroTarget={heroTarget}/>
 

@@ -1,10 +1,8 @@
 import React from 'react'
 
 export default function MiEmpresa({userDatos}) {
-
-console.log(userDatos)
-
+    console.log(userDatos)
   return (
-    <div>MiEmpresa</div>
+    <div>{userDatos}</div>
   )
 }
