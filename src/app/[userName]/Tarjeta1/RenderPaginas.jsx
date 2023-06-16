@@ -62,7 +62,7 @@ if (!loading) return <LoaderCss/>
 
 if(estilos && loading){
 if (nombreElemento=="") return  <HomeTarjeta  estilos={estilos} userDatos={userDatos?.datos}  />
-if (nombreElemento=="servicios") return  <MiEmpresa userDatos={userDatos?.secciones?.productoServicio} />
+if (nombreElemento=="servicios") return  <MiEmpresa userDatos={userDatos} />
 if (nombreElemento=="ubicacion") return   <Ubicacion userDatos={userDatos?.secciones?.ubicacion}/>
 if (nombreElemento=="multimedia") return   <Multimedia/>}
 //  return  <ContenedoresOpcionesHero heroTarget={heroTarget}/>
