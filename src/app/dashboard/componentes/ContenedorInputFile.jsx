@@ -8,6 +8,7 @@ import { useContextDatosUser } from "@/context/datosUser/contextoDatosUser";
 export default function ContenedorInputFile() {
   const [file, setFile] = useState(null);
   const [previewURL, setPreviewURL] = useState(null);
+  const [arrayImagenes, setArrayImagenes] = useState([])
   const [fileName, setFileName] = useState(null);
   const { userActivo, userData } = useContextDatosUser((state) => ({
     userActivo: state.userActivo,
@@ -15,8 +16,9 @@ export default function ContenedorInputFile() {
   }));
 
   useEffect(() => {
-    const arrayImages = userData?.images;
-    const imgPerfil = arrayImages?.find((elemt) => elemt.nombre == "perfil");
+    setArrayImagenes(userData?.images)
+
+    const imgPerfil = arrayImagenes?.find((elemt) => elemt.nombre == "perfil");
 
     if (imgPerfil) {
       setPreviewURL(imgPerfil?.url);
@@ -30,7 +32,7 @@ export default function ContenedorInputFile() {
       setPreviewURL(reader.result);
     };
     reader.readAsDataURL(file);
-  }, [file, userData]);
+  }, [file, userData,arrayImagenes]);
 
   const handleImage = (e) => {
     setFileName(e.target.name);
