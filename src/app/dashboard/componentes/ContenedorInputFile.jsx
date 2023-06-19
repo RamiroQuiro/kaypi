@@ -9,11 +9,19 @@ export default function ContenedorInputFile() {
   const [file, setFile] = useState(null);
   const [previewURL, setPreviewURL] = useState(null);
   const [fileName, setFileName] = useState(null);
-  const { userActivo } = useContextDatosUser((state) => ({
+  const { userActivo, userData } = useContextDatosUser((state) => ({
     userActivo: state.userActivo,
+    userData: state.userData,
   }));
 
   useEffect(() => {
+    const arrayImages = userData?.images;
+    const imgPerfil = arrayImages?.find((elemt) => elemt.nombre == "perfil");
+
+    if (imgPerfil) {
+      setPreviewURL(imgPerfil?.url);
+    }
+
     if (!file) {
       return;
     }
@@ -22,7 +30,7 @@ export default function ContenedorInputFile() {
       setPreviewURL(reader.result);
     };
     reader.readAsDataURL(file);
-  }, [file]);
+  }, [file, userData]);
 
   const handleImage = (e) => {
     setFileName(e.target.name);
@@ -37,6 +45,7 @@ export default function ContenedorInputFile() {
     <div className="flex-auto  w-11/12 md:w-full md:px-4 lg:px-4 mx-auto  flex items-center justify-between px-5 pt-5">
       <div className="w-2/3 relative h-full  mx-auto">
         {previewURL ? (
+          <>
           <Image
             alt="Perfil"
             src={previewURL}
@@ -45,6 +54,18 @@ export default function ContenedorInputFile() {
             quality={75}
             className="rounded-full w-36 h-36 bg-gray-100 border-primary-100/50 border-y-2 cursor-pointer flex items-center justify-center mx-auto object-contain p-0.5"
           />
+           <label
+            htmlFor="fotoInput"
+              className="rounded-full absolute  text-center -bottom-3 left-8 text-xs  text-primary-200 cursor-pointer flex items-center justify-center mx-auto"
+            > Click aqui para cargar tu imagen
+            <input
+              onChange={handleImage}
+              type="file"
+              name="perfil"
+              id="fotoInput"
+              className="hidden"
+            /></label>
+          </>
         ) : (
           <label
             htmlFor="fotoInput"
