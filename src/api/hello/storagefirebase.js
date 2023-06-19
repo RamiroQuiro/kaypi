@@ -1,11 +1,12 @@
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { db, storage } from "./firabase";
-import { updateDoc } from "firebase/firestore";
+import { arrayUnion, doc, updateDoc } from "firebase/firestore"
+import { v4 as uuidv4 } from "uuid";;
 import { toast } from "react-hot-toast";
 
-const cargaImagenes = async (uid, file) => {
+const cargaImagenes = async (uid, file,fileName) => {
   const docRef = doc(db, `usuarios/${uid}`);
-  const referencia = `imagenes/${uid}/${file.name}`;
+  const referencia = `imagenes/${uid}/${fileName}`;
   const fileRef = ref(storage, referencia);
   await uploadBytes(fileRef, file).then(async (uploadImg) => {
     await getDownloadURL(fileRef).then(async (url) => {
@@ -13,6 +14,7 @@ const cargaImagenes = async (uid, file) => {
         images: arrayUnion({
           nombre: fileName,
           url: url,
+          uid: uuidv4().slice(0, 8) 
         }),
       })
         .then(() => {
