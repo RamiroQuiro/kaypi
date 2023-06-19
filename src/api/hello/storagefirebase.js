@@ -25,3 +25,6 @@ const cargaImagenes = async (uid, file) => {
     });
   });
 };
+
+
+export {cargaImagenes}

@@ -5,9 +5,8 @@ import SectionTarjetaSola from "@/app/[userName]/Tarjeta1/component/SectionTarje
 export default function Disenio() {
   return (
     <SectionOutlet>
-    
-      <SectionTarjetaSola label="editor"/>
-     <SidebarDiseño/>
+      <SectionTarjetaSola label="editor" />
+      <SidebarDiseño />
     </SectionOutlet>
   );
 }
