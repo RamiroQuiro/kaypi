@@ -3,6 +3,7 @@ import BotonColoresBackgroun from "./BotonColoresBackgroun";
 
 export default function ContenedorOpcionesBackground({ heroTarget }) {
   const coloresBackground = [
+    { Color1: "#F1f1f1", Color2: "#f3f3f3" },
     { Color1: "#F0CECE", Color2: "#f3f3f3" },
     { Color1: "#C3DEF2", Color2: "#f3f3f3" },
     { Color1: "#D8F2DB", Color2: "#f3f3f3" },

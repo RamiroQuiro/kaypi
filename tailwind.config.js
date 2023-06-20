@@ -44,8 +44,8 @@ module.exports = {
       colors: {
         // for 'primary' and'success'  - use the colorblind-friendly version (blue-grey, cyan-grey, green-grey, orange-grey, purple-grey, red-grey, yellow-grey and violet-grey) and use the hex value.  Also, check out the Color Wheel demo.  Also, check out the Palette demo for the 5 color version.  Also, check out the Paletton demo for the inverse of colors.  Also, check out the Color Wheel demo for the 5 color version.  Also, check out the Paletton demo for the inverse of colors
         primary: {
-          100: "#323479",
-          200: "#5555de",
+          100: "#1e40af",
+          200: "#3b82f6",
           300: "#2cd4d9",
           400: "#FFFC85",
           500: "#B33941",
@@ -60,7 +60,7 @@ module.exports = {
         radial: "radial-gradient(#5555de, #323479)",
         conic: "conic-gradient(#5555de , #323479 )",
         sidebar:
-          "linear-gradient(-52deg,#FF6B7599 22%,transparent 20%),linear-gradient(65deg,#5555de 35%,transparent 30%),linear-gradient(to bottom, #323479 60%,#132230 100%)",
+          "linear-gradient(-52deg,#1e40af 22%,transparent 20%),linear-gradient(65deg,#172564 35%,transparent 30%),linear-gradient(to bottom, #172554 60%,#3b82f6 100%)",
         ruido1: "url(http://api.thumbr.it/whitenoise-361x370.png?) ",
         ruido2: "ffffffff&noise=a3d3e6&density=100&opacity=19",
         curva1:
