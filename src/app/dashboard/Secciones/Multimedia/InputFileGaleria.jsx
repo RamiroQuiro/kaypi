@@ -31,7 +31,9 @@ export default function InputFileGaleria() {
 
   const cargarImagen = (e) => {
     e.preventDefault();
-    cargaImagenes(userActivo.uid, file, fileName);
+    cargaImagenes(userActivo.uid, file, fileName).then(()=>{
+      setPreviewURL(null)
+    })
   };
 
   return (

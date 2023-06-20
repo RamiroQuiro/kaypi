@@ -66,6 +66,12 @@ const guardarStyles=async(uid,obj)=>{
   });
 }
 
+const traerImagenes=async(uid)=>{
+  const docRef = doc(db, `usuarios/${uid}`);
+  const docData = await getDoc(docRef);
+
+  return docData.data()?.images;
+}
 
 const llamarRutas=async ()=>{
   const docRef = doc(db, `rutas/cZwzUWzNeTGekoDUeit2`);
@@ -80,5 +86,6 @@ export {
   guardarUserDataDatos,
   guardarSeccionesFirestore,
   llamarRutas,
-  guardarStyles
+  guardarStyles,
+  traerImagenes
 };

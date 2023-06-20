@@ -12,6 +12,7 @@ export const useContextDatosUser = create((set, get) => ({
   userActivo: false,
   userData: false,
   enlaces: [],
+  images:[],
   secciones:{
     productoServicio:"",
     ubicacion:"",
