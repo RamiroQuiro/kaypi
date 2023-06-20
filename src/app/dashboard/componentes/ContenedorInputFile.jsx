@@ -17,7 +17,6 @@ export default function ContenedorInputFile() {
 
   useEffect(() => {
     setArrayImagenes(userData?.images)
-console.log(arrayImagenes)
     const imgPerfil = arrayImagenes?.find((elemt) => elemt.nombre == "perfil");
 
     if (imgPerfil) {

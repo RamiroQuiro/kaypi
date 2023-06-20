@@ -19,7 +19,7 @@ export default function SeccionLayout({ children }) {
       <div className="flex flex-col md:w-10/12 w-full gap-10 items-center justify-between">
           <BackgroundDorm>
             <CabeceraContenedor>
-              <h2 className="text-blueGray-700 text-xl font-bold">
+              <h2 className="text-gray-600 text-xl font-bold">
                 Secciones a integrar en tu Tarjeta
               </h2>
             </CabeceraContenedor>
