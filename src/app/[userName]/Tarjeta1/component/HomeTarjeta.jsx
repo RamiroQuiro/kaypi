@@ -2,7 +2,7 @@ import DatosPerfil from "./DatosPerfil";
 import ImagenPerfil from "./ImagenPerfil";
 import LinksSquare from "./LinksSquare";
 
-export default function HomeTarjeta({estilos,userDatos}) {
+export default function HomeTarjeta({estilos,userDatos,imgPerfil}) {
   return (
     <div
       style={{
@@ -10,7 +10,7 @@ export default function HomeTarjeta({estilos,userDatos}) {
       }}
       className=" h-full w-full  z- flex flex-col items-center justify-between animate-[aparecer_.5s]"
     >
-        <ImagenPerfil styles={estilos} />
+        <ImagenPerfil imgPerfil={imgPerfil} styles={estilos} />
       <div className="h-2/3 w-full flex py-5 flex-col items-center justify-evenly">
         <DatosPerfil />
         <LinksSquare userData={userDatos} />

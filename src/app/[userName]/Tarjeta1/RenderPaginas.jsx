@@ -14,6 +14,7 @@ import MiEmpresa from './Outlet/MiEmpresa';
 export default function RenderPaginas({name}) {
 
 const [nombreElemento, setNombreElemento] = useState("")
+const [imgPerfil, setImgPerfil] = useState(null)
 
 useEffect(() => {
     if (!name) {
@@ -53,15 +54,20 @@ useEffect(() => {
     setLoading(true);
   };
   cargandoData();
-}, [userData, userDatas,userDatosUser, loading,estilos]);
 
-console.log(userData)
+  const imgBuscado = userDatos?.images?.find(
+    (elemet) => elemet.nombre == "perfil"
+  );
+  !imgBuscado ? null : setImgPerfil(imgBuscado);
+  
+}, [userData, userDatas,userDatosUser, loading,estilos,imgPerfil]);
+
 
 
 if (!loading) return <LoaderCss/>
 
 if(estilos && loading){
-if (nombreElemento=="") return  <HomeTarjeta  estilos={estilos} userDatos={userDatos?.datos}  />
+if (nombreElemento=="") return  <HomeTarjeta  estilos={estilos} imgPerfil={imgPerfil} userDatos={userDatos?.datos}  />
 if (nombreElemento=="servicios") return  <MiEmpresa userDatos={userDatos} />
 if (nombreElemento=="ubicacion") return   <Ubicacion userDatos={userDatos?.secciones?.ubicacion}/>
 if (nombreElemento=="multimedia") return   <Multimedia/>}
