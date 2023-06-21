@@ -7,7 +7,7 @@ import {
 } from "@/api/hello/firestore";
 import { create } from "zustand";
 import { v4 as uuidv4 } from "uuid";
-import { cargaImagenes } from "@/api/hello/storagefirebase";
+import { cargaImagenes, removeImage } from "@/api/hello/storagefirebase";
 
 export const useContextDatosUser = create((set, get) => ({
   userActivo: false,
@@ -104,4 +104,9 @@ export const useContextDatosUser = create((set, get) => ({
       },
     }));
   },
+  eliminarImages:(fileName)=>{
+    const { userActivo,userData } = get();
+    let newArray=(userData?.images).filter(img=>img.nombre!==fileName)
+    removeImage(userActivo?.uid,fileName,newArray)
+  }
 }));

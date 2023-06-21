@@ -23,7 +23,7 @@ const onClickRemove=()=>{
       <div className="flex flex-col items-start text-sm  justify-betwwwen w-full ">
         <span className="font-bold uppercase ">{link.name}</span>
         <p
-          id="titlo"
+          id="titulo"
           className="bg-transparent outline-none focus:outline-none rounded-t-lg focus:bg-white duration-300 border-b-2 w-full py-2 placeholder:px-2 focus:ring-0 border-primary-100/50 selection:border-none"
         >
           {link.link}</p>

@@ -1,4 +1,4 @@
-import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { deleteObject, getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { db, storage } from "./firabase";
 import { arrayUnion, doc, updateDoc } from "firebase/firestore"
 import { v4 as uuidv4 } from "uuid";;
@@ -28,5 +28,14 @@ const cargaImagenes = async (uid, file,fileName) => {
   });
 };
 
+const removeImage=async(uid,fileName,newData)=>{
+  const docRef = doc(db, `usuarios/${uid}`);
+  const referencia = ref(storage,`imagenes/${uid}/${fileName}`)
+  deleteObject(referencia).then(()=>{
+    updateDoc(docRef,{
+      images:newData})
+    toast.success('Eliminado')
+  }).catch((err)=>console.log(err))
+}
 
-export {cargaImagenes}
+export {cargaImagenes,removeImage}
