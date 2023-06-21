@@ -3,20 +3,21 @@ import {
   guardarSeccionesFirestore,
   guardarUserDataDatos,
   removeEnlacesFirestore,
+  traerImagenes,
 } from "@/api/hello/firestore";
 import { create } from "zustand";
 import { v4 as uuidv4 } from "uuid";
-
+import { cargaImagenes } from "@/api/hello/storagefirebase";
 
 export const useContextDatosUser = create((set, get) => ({
   userActivo: false,
   userData: false,
   enlaces: [],
-  images:[],
-  secciones:{
-    productoServicio:"",
-    ubicacion:"",
-    multimedia:[{}],
+  images: [],
+  secciones: {
+    productoServicio: "",
+    ubicacion: "",
+    multimedia: [{}],
   },
   link: [
     {
@@ -33,14 +34,14 @@ export const useContextDatosUser = create((set, get) => ({
   ],
   // funciones
 
-  addEnlaces:async (obj) => {
+  addEnlaces: async (obj) => {
     const objNew = { ...obj, id: uuidv4().slice(0, 8) };
     const { userActivo } = get();
     set((state) => ({
       ...state,
       enlaces: [...state.enlaces, objNew],
     }));
-     await addEnlacesFirestore(userActivo.uid, objNew);
+    await addEnlacesFirestore(userActivo.uid, objNew);
   },
   removeEnlace: (id) => {
     const { userActivo, enlaces } = get();
@@ -53,12 +54,11 @@ export const useContextDatosUser = create((set, get) => ({
 
     removeEnlacesFirestore(userActivo.uid, newArray);
   },
-  activarUser: (id) =>
-   { set((state) => ({
+  activarUser: (id) => {
+    set((state) => ({
       ...state,
       userActivo: id,
-    }))
-    
+    }));
   },
   actualizarEnlaces: () => {
     const { userData } = get();
@@ -68,27 +68,40 @@ export const useContextDatosUser = create((set, get) => ({
     }));
   },
   userDataContext: (data) => {
-     const{actualizarEnlaces}=get()
+    const { actualizarEnlaces } = get();
     set((state) => ({
       ...state,
       userData: data,
-    }))
-    actualizarEnlaces()
+    }));
+    actualizarEnlaces();
   },
-guardarDatosContacto:(obj)=>{
-  set((state)=>({
-    userData:{...state.userData,datos:obj}
-  }))
-const {userData,userActivo}=get()
-guardarUserDataDatos(userActivo.uid,userData.datos)
-},
-guardarSecciones:(seccion,value)=>{
-  const {userActivo}=get()
-  set((state)=>({
-    ...state,
-secciones:{...state.secciones,[seccion]:value}
-  }))
-  guardarSeccionesFirestore(userActivo.uid,seccion,value)
-}
-
+  guardarDatosContacto: (obj) => {
+    set((state) => ({
+      userData: { ...state.userData, datos: obj },
+    }));
+    const { userData, userActivo } = get();
+    guardarUserDataDatos(userActivo.uid, userData.datos);
+  },
+  guardarSecciones: (seccion, value) => {
+    const { userActivo } = get();
+    set((state) => ({
+      ...state,
+      secciones: { ...state.secciones, [seccion]: value },
+    }));
+    guardarSeccionesFirestore(userActivo.uid, seccion, value);
+  },
+  guardarImages: async (file, fileName) => {
+    const { userActivo } = get();
+    let arrayImages = [];
+    await cargaImagenes(userActivo.uid, file, fileName).then(async() => {
+       arrayImages=await traerImagenes(userActivo.uid);
+    });
+    set((state) => ({
+      ...state,
+      userData: {
+        ...state.userData,
+        images: [...arrayImages],
+      },
+    }));
+  },
 }));

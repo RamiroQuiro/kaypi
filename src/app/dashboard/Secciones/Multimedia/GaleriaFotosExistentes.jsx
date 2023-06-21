@@ -15,18 +15,9 @@ export default function GaleriaFotosExistentes() {
   );
   const [arrayImagenes, setArrayImagenes] = useState(userData?.images);
 
-  useEffect(() => {
-    const data = async () =>{
-       
-       const datos=await traerImagenes(userActivo?.uid)
-       setArrayImagenes(datos)
-      };
-      data()
-      
-    }, [userActivo]);
-    
-    console.log(arrayImagenes);
-  console.log(arrayImagenes);
+  useEffect(()=>{
+      setArrayImagenes(userData?.images)
+  },[arrayImagenes,userData])
 
   return (
     <div className="flex flex-wrap w-full  items-center   justify-evenly mx-auto gap-4 mt-10">
@@ -36,7 +27,7 @@ export default function GaleriaFotosExistentes() {
         arrayImagenes?.map((img) => (
           <div
             key={img?.uid}
-            className="relative bg-gray-100 flex-grow w-36 min-w-[144px] max-w-[230px] rounded-lg border p-1 shadow-md h-36"
+            className="relative bg-gray-100 flex-grow w-36 animate-[aparecer_1s] min-w-[144px] max-w-[230px] rounded-lg border p-1 shadow-md h-36"
           >
             <Image
               fill

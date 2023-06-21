@@ -9,9 +9,8 @@ export default function InputFileGaleria() {
   const [file, setFile] = useState(null);
   const [previewURL, setPreviewURL] = useState(null);
   const [fileName, setFileName] = useState(null);
-  const { userActivo } = useContextDatosUser((state) => ({
-    userActivo: state.userActivo,
-  }));
+
+  const guardarImages=useContextDatosUser((state)=>state.guardarImages)
 
   useEffect(() => {
     if (!file) {
@@ -31,10 +30,11 @@ export default function InputFileGaleria() {
 
   const cargarImagen = (e) => {
     e.preventDefault();
-    cargaImagenes(userActivo.uid, file, fileName).then(()=>{
-      setPreviewURL(null)
-    })
-  };
+    guardarImages(file, fileName)
+    setPreviewURL(null)
+    setFileName(null)
+    }
+  
 
   return (
     <>
@@ -52,7 +52,7 @@ export default function InputFileGaleria() {
             className="hidden"
           />
         </label>
-        <span>{fileName}</span>
+        <span className="text-sm font-medium">{fileName}</span>
         <button
           onClick={cargarImagen}
           className="cursor-pointer bg-primary-100/50 hover:bg-primary-100 duration-200 p-2 rounded-r-lg text-gray-100 font-semibold text-sm"
@@ -61,7 +61,7 @@ export default function InputFileGaleria() {
         </button>
       </div>
         {previewURL && (
-      <div className="relative h-48 w-48  mx-auto flex items-center p-5">
+      <div className="relative h-48 w-48 mb-5 mx-auto flex items-center p-5">
           <Image
             className="object-cover object-center rounded-lg "
             fill
