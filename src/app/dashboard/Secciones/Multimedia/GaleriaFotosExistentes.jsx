@@ -21,10 +21,10 @@ export default function GaleriaFotosExistentes() {
 
   return (
     <div className="flex flex-wrap w-full  items-center   justify-evenly mx-auto gap-4 mt-10">
-      {!arrayImagenes ? (
+      {!arrayImagenes.filter(img=>img.nombre!=="perfil") ? (
         <span>No hay imagenes cargadas</span>
       ) : (
-        arrayImagenes?.map((img) => (
+        arrayImagenes?.filter(img=>img.nombre!=="perfil").map((img) => (
           <div
             key={img?.uid}
             className="relative bg-gray-100 flex-grow w-36 animate-[aparecer_1s] min-w-[144px] max-w-[230px] rounded-lg border p-1 shadow-md h-36"
