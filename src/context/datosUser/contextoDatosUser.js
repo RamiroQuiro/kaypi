@@ -93,8 +93,8 @@ export const useContextDatosUser = create((set, get) => ({
   guardarImages: async (file, fileName) => {
     const { userActivo } = get();
     let arrayImages = [];
-    await cargaImagenes(userActivo.uid, file, fileName).then(async() => {
-       arrayImages=await traerImagenes(userActivo.uid);
+    await cargaImagenes(userActivo.uid, file, fileName).then(async () => {
+      arrayImages = await traerImagenes(userActivo.uid);
     });
     set((state) => ({
       ...state,
@@ -104,9 +104,19 @@ export const useContextDatosUser = create((set, get) => ({
       },
     }));
   },
-  eliminarImages:(fileName)=>{
-    const { userActivo,userData } = get();
-    let newArray=(userData?.images).filter(img=>img.nombre!==fileName)
-    removeImage(userActivo?.uid,fileName,newArray)
-  }
+  eliminarImages: (fileName) => {
+    const { userActivo, userData } = get();
+    let newArray = (userData?.images).filter((img) => img.nombre !== fileName);
+    removeImage(userActivo?.uid, fileName, newArray).then(async () => {
+      let arrayImages = [];
+      arrayImages = await traerImagenes(userActivo.uid);
+      set((state) => ({
+        ...state,
+        userData: {
+          ...state.userData,
+          images: [...arrayImages],
+        },
+      }));
+    });
+  },
 }));
