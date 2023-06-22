@@ -1,4 +1,3 @@
-import React from "react";
 import ContenedorImg from "./galeria/ContenedorImg";
 
 export default function Multimedia({ userDatos }) {

@@ -8,6 +8,7 @@ import {
 import { create } from "zustand";
 import { v4 as uuidv4 } from "uuid";
 import { cargaImagenes, removeImage } from "@/api/hello/storagefirebase";
+import { toast } from "react-hot-toast";
 
 export const useContextDatosUser = create((set, get) => ({
   userActivo: false,
@@ -91,8 +92,12 @@ export const useContextDatosUser = create((set, get) => ({
     guardarSeccionesFirestore(userActivo.uid, seccion, value);
   },
   guardarImages: async (file, fileName) => {
-    const { userActivo } = get();
+    const { userActivo ,userData} = get();
     let arrayImages = [];
+    if(userData?.images.length>=5){
+      toast.error('no puedes cargar mas de 5 fotos')
+      return
+    }
     await cargaImagenes(userActivo.uid, file, fileName).then(async () => {
       arrayImages = await traerImagenes(userActivo.uid);
     });
