@@ -1,5 +1,6 @@
 "use client";
 import {
+  faIdCard,
   faKey,
   faQuestion,
   faUserPlus,
@@ -75,10 +76,10 @@ export default function FormularioLogin() {
 
   return (
     <>
-      <form className="px-10 py-2  w-10/12 flex flex-col justify-between items-stretch text-gray-700  animate-[aparecer_.5s]  ">
-        <div className="bg-gray-700 rounded-full w-20 h-20  flex items-center justify-center mx-auto">
+      <form className="px-10 py-2  w-10/12 flex flex-col justify-between items-stretch text-gray-100  animate-[aparecer_.5s]  ">
+        <div className="bg-gray-500 rounded-full w-20 h-20  flex items-center justify-center mx-auto">
           <FontAwesomeIcon
-            icon={faKey}
+            icon={faIdCard}
             className="text-stone-50 w-10 h-10 flex items-center justify-center mx-auto"
           />
         </div>
@@ -95,7 +96,7 @@ export default function FormularioLogin() {
         <div className="flex w-full  justify-center items-center gap-4">
           <div className="w-1/2 flex justify-center items-center gap-1 cursor-pointer">
             <p className="font-semibold text-sm ">Resetear clave</p>{" "}
-            <FontAwesomeIcon icon={faQuestion} className="text-gray-700 h-3" />
+            <FontAwesomeIcon icon={faQuestion} className="text-gray-100 h-3" />
           </div>
           <span
             onClick={toogleRegister}
@@ -105,7 +106,7 @@ export default function FormularioLogin() {
               {" "}
               {register ? "Ingresar" : "Registrarse"}
             </p>{" "}
-            <FontAwesomeIcon icon={faUserPlus} className="text-gray-700 h-3" />
+            <FontAwesomeIcon icon={faUserPlus} className="text-gray-100 h-3" />
           </span>
         </div>
         <button
