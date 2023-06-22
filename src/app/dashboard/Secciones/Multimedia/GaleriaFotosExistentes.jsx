@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { shallow } from "zustand/shallow";
 import BotonDeLosEnlaces from "../../componentes/BotonDeLosEnlaces";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import { removeImage } from "@/api/hello/storagefirebase";
 
 export default function GaleriaFotosExistentes() {
   const { userData } = useContextDatosUser(
@@ -39,7 +38,7 @@ export default function GaleriaFotosExistentes() {
             >
               <div className="bg-white px-2 py-1  z-30 rounded-lg absolute hidden group-hover:flex items-center justify-between right-2 top-1 animate-[aparecer_.2s]">
                 <BotonDeLosEnlaces
-                  onClick={() => removeImageFirestore(img.nombre)}
+                  onClick={() => removeImageFirestore(img?.uid)}
                   faIcon={faTrash}
                 />
               </div>

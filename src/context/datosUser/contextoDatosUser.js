@@ -104,19 +104,19 @@ export const useContextDatosUser = create((set, get) => ({
       },
     }));
   },
-  eliminarImages: (fileName) => {
+  eliminarImages: (uidv) => {
     const { userActivo, userData } = get();
-    let newArray = (userData?.images).filter((img) => img.nombre !== fileName);
-    removeImage(userActivo?.uid, fileName, newArray).then(async () => {
-      let arrayImages = [];
-      arrayImages = await traerImagenes(userActivo.uid);
-      set((state) => ({
-        ...state,
-        userData: {
-          ...state.userData,
-          images: [...arrayImages],
-        },
-      }));
+    let newArray = (userData?.images).filter((img) => img.uid != uidv);
+    removeImage(userActivo?.uid, uidv, newArray).then(async () => {
+      await traerImagenes(userActivo.uid).then((arrayImages) => {
+        set((state) => ({
+          ...state,
+          userData: {
+            ...state.userData,
+            images: arrayImages,
+          },
+        }));
+      });
     });
   },
 }));

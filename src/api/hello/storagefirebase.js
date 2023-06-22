@@ -5,8 +5,9 @@ import { v4 as uuidv4 } from "uuid";;
 import { toast } from "react-hot-toast";
 
 const cargaImagenes = async (uid, file,fileName) => {
+  const uuidv=uuidv4().slice(0, 8) 
   const docRef = doc(db, `usuarios/${uid}`);
-  const referencia = `imagenes/${uid}/${fileName}`;
+  const referencia = `imagenes/${uid}/${uuidv}`;
   const fileRef = ref(storage, referencia);
   await uploadBytes(fileRef, file).then(async (uploadImg) => {
     await getDownloadURL(fileRef).then(async (url) => {
@@ -14,7 +15,7 @@ const cargaImagenes = async (uid, file,fileName) => {
         images: arrayUnion({
           nombre: fileName,
           url: url,
-          uid: uuidv4().slice(0, 8) 
+          uid: uuidv,
         }),
       })
         .then(() => {
