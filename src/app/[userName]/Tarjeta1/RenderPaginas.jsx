@@ -70,7 +70,7 @@ if(estilos && loading){
 if (nombreElemento=="") return  <HomeTarjeta  estilos={estilos} imgPerfil={imgPerfil} userDatos={userDatos?.datos}  />
 if (nombreElemento=="servicios") return  <MiEmpresa userDatos={userDatos} />
 if (nombreElemento=="ubicacion") return   <Ubicacion userDatos={userDatos?.secciones?.ubicacion}/>
-if (nombreElemento=="multimedia") return   <Multimedia/>}
+if (nombreElemento=="multimedia") return   <Multimedia userDatos={userDatos}/>}
 //  return  <ContenedoresOpcionesHero heroTarget={heroTarget}/>
 
 }
