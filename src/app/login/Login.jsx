@@ -6,7 +6,7 @@ export default function Login() {
 
 
   return (
-    <div className="w-screen h-screen bg-gradient-to-tr from-primary-100/80 to-primary-200 flex items-center justify-center overflow-hidden ">
+    <div className="w-screen relative h-screen bg-gray-200 flex items-center justify-center overflow-hidden ">
       <Toaster/>
       {/* border y conbtenedor */}
     
@@ -14,6 +14,7 @@ export default function Login() {
         {/* sombra */}
         {/* fondo formulario */}
         <TarjetaLoginRegister/>
+       <div className="absolute top-0 left-0 w-full bg-gradient-to-tr from-primary-300/60 via-primary-200/80 to-primary-100/50 z-10 backdrop-blur-sm h-full"></div>
     </div>
   );
 }

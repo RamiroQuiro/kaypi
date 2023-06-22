@@ -5,7 +5,7 @@ export default function TarjetaLoginRegister() {
 
   return (
     <section
-    className="bg-gray-700 h-[480px] w-[400px] rounded-lg shadow-shadowCaja1 shadow-primary-200 text-gray-100 relative flex items-center justify-center animate-aparecer"
+    className="bg-gray-700 h-[480px] w-[400px] rounded-lg shadow-shadowCaja1 shadow-primary-200 text-gray-100 relative flex items-center z-30 justify-center animate-aparecer"
   >
     {/* sombra */}
     
