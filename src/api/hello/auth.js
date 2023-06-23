@@ -22,6 +22,7 @@ return  await createUserWithEmailAndPassword(auth, email, pass)
         style: {
           heroTarget:{},
         },
+        images:[],
         enlaces: [],
         secciones: {
           productoServicio: "",
