@@ -18,7 +18,6 @@ export default function ContenedorInputFile() {
   useEffect(() => {
     setArrayImagenes(userData?.images)
     const imgPerfil = arrayImagenes?.find((elemt) => elemt.nombre == "perfil");
-
     if (imgPerfil) {
       setPreviewURL(imgPerfil?.url);
     }
@@ -40,7 +39,7 @@ export default function ContenedorInputFile() {
 
   const cargarImagen = (e) => {
     e.preventDefault();
-    cargaImagenes(userActivo.uid, file, fileName);
+    cargaImagenes(userActivo, file, fileName);
   };
   return (
     <div className="flex-auto  w-11/12 md:w-full md:px-4 lg:px-4 mx-auto  flex items-center justify-between px-5 pt-5">

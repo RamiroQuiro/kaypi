@@ -60,6 +60,7 @@ export const useContextDatosUser = create((set, get) => ({
       ...state,
       userActivo: id,
     }));
+    console.log(id)
   },
   actualizarEnlaces: () => {
     const { userData } = get();
